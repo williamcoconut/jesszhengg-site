@@ -11,8 +11,10 @@ Single-page media kit / portfolio website for content creator Jess Zheng (Bangko
 ## Hosting & Deployment
 - **GitHub repo**: https://github.com/williamcoconut/jesszhengg-site
 - **Branch**: `main`
-- **Netlify project**: `effervescent-narwhal-4c7625`
-- **Deploy workflow**: `git push` to main → Netlify auto-deploys
+- **Hosting**: GitHub Pages (free, unlimited deploys)
+- **Live URL**: https://williamcoconut.github.io/jesszhengg-site/
+- **Deploy workflow**: `git push` to main → GitHub Pages auto-deploys (free, no credit system)
+- **Previous hosting**: Netlify (moved away due to credit limits)
 - **Publish directory**: root `/`
 
 ## Project Structure
