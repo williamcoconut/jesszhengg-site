@@ -6,13 +6,14 @@ Single-page media kit / portfolio website for content creator Jess Zheng (Bangko
 ## Tech Stack
 - Static HTML site (single `index.html` with inline CSS/JS)
 - No build step needed
-- Hosted on Netlify with auto-deploy from GitHub
+- Hosted on GitHub Pages (free) with custom domain
 
 ## Hosting & Deployment
 - **GitHub repo**: https://github.com/williamcoconut/jesszhengg-site
 - **Branch**: `main`
 - **Hosting**: GitHub Pages (free, unlimited deploys)
-- **Live URL**: https://williamcoconut.github.io/jesszhengg-site/
+- **Live URL**: https://jesszheng.co
+- **Fallback URL**: https://williamcoconut.github.io/jesszhengg-site/
 - **Deploy workflow**: `git push` to main → GitHub Pages auto-deploys (free, no credit system)
 - **Previous hosting**: Netlify (moved away due to credit limits)
 - **Publish directory**: root `/`
