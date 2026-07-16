@@ -14,6 +14,8 @@
       metrics, 3D-tilt cards, logo marquee, ticker, new typography, OG meta tags
 - [x] Verify redesign: desktop + mobile layouts, EN/TH toggle, all sections
 
+- [x] Back up old site (git tag `pre-redesign-backup` + ~/Development/jesszhengg-site-backup-pre-redesign.zip)
+- [x] Push redesign live to GitHub Pages (2026-07-16) — verified at https://jesszheng.co
+
 ## To Do
-- [ ] Push redesign to GitHub Pages (awaiting William's go-ahead — push = live deploy)
 - [ ] Optional: compress images (profile-hd.jpg etc.) for faster mobile load
