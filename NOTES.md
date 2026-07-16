@@ -1,5 +1,15 @@
 # Notes
 
+## Rates + Stats Update (2026-07-16)
+- New rates: IG Reel $900, TikTok $900, YouTube $1,000, Bundle $1,500 (save $700);
+  FB $400 and add-ons unchanged
+- Follower stats refreshed from live platforms (all grown since Feb):
+  TikTok 62.3K (Social Blade), IG 43.7K (verified badge), YouTube 23K, FB 20K
+  → total 149K+; also added 6.4M+ TikTok likes as a metric (replaced "4 Platforms")
+- Platform access notes: TikTok web bot-walls both browsers (Social Blade works as
+  proxy for counts); Instagram shows profile header logged-out but blocks scrolling;
+  YouTube + Facebook fully readable logged-out
+
 ## Visual Redesign (2026-07-16) — COMMITTED LOCALLY, NOT YET PUSHED
 - Complete overhaul of index.html (still single-file, no build step)
 - New look: editorial serif (Fraunces) + DM Sans, cream/coral palette, film grain,

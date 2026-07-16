@@ -17,5 +17,10 @@
 - [x] Back up old site (git tag `pre-redesign-backup` + ~/Development/jesszhengg-site-backup-pre-redesign.zip)
 - [x] Push redesign live to GitHub Pages (2026-07-16) — verified at https://jesszheng.co
 
+- [x] Update rates (IG/TikTok $900, YT $1,000, bundle $1,500) + refresh follower
+      stats from live platforms (149K+ total) — deployed 2026-07-16
+
 ## To Do
 - [ ] Optional: compress images (profile-hd.jpg etc.) for faster mobile load
+- [ ] Optional: refresh IG grid images (IG blocks logged-out scraping; grab fresh
+      screenshots when logged into Instagram in Chrome)
