@@ -10,5 +10,10 @@
 - [x] DNS propagation complete
 - [x] Enable HTTPS enforcement on GitHub Pages
 - [x] Deactivate old Netlify site
+- [x] Full visual redesign (Jul 2026) — aurora hero, scroll reveals, count-up
+      metrics, 3D-tilt cards, logo marquee, ticker, new typography, OG meta tags
+- [x] Verify redesign: desktop + mobile layouts, EN/TH toggle, all sections
 
 ## To Do
+- [ ] Push redesign to GitHub Pages (awaiting William's go-ahead — push = live deploy)
+- [ ] Optional: compress images (profile-hd.jpg etc.) for faster mobile load

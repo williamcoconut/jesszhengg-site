@@ -1,5 +1,8 @@
 # Jess Zheng Media Kit Website
 
+## Project Location
+`~/Development/jesszhengg-site`
+
 ## Overview
 Single-page media kit / portfolio website for content creator Jess Zheng (Bangkok-based).
 
@@ -37,5 +40,11 @@ images/logos/       # Brand/partner logos
 
 ## Key Decisions
 - Phone number was removed from contact section (Feb 2026)
-- Site uses DM Sans + DM Serif Display fonts (Google Fonts)
-- Color scheme: coral (#e8707a), dark, gray, light
+- Full visual redesign (Jul 2026): Fraunces serif + DM Sans + Noto Sans Thai (Google Fonts)
+- Color scheme: coral (#e8707a), cream (#fdfaf7), dark (#141114)
+- Design features: aurora gradient hero, static film-grain overlay, scroll-reveal
+  animations (IntersectionObserver), count-up metrics, 3D-tilt collab cards with
+  shine sweep, infinite logo marquee, tilted kinetic ticker, scroll progress bar
+- All animations respect prefers-reduced-motion; grain is static (animating it
+  repaints the whole page every frame and tanks performance)
+- Marquees (ticker + logos) are duplicated via JS on load for seamless looping
