@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jess Zheng — Media Kit · Content Creator · Bangkok</title>
+<meta name="description" content="Jess Zheng — Bangkok-based content creator. 149K+ followers, 100M+ views across TikTok, Instagram, YouTube & Facebook. Media kit, rates & brand collaborations.">
+<meta property="og:title" content="Jess Zheng — Media Kit">
+<meta property="og:description" content="Bangkok-based content creator · 149K+ followers · 100M+ views. Travel, food & lifestyle collaborations.">
+<meta property="og:image" content="https://jesszheng.co/images/profile-hd.jpg">
+<meta property="og:url" content="https://jesszheng.co">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --coral:#e8707a;
+  --coral-deep:#d4525f;
+  --coral-soft:#fdf0f1;
+  --peach:#ffb88a;
+  --rose:#ffd9dd;
+  --dark:#141114;
+  --ink:#1f1a1c;
+  --gray:#6e6469;
+  --light:#faf6f4;
+  --cream:#fdfaf7;
+  --white:#fff;
+  --serif:'Fraunces','Noto Sans Thai',serif;
+  --sans:'DM Sans','Noto Sans Thai',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+::selection{background:var(--coral);color:#fff}
+
+/* ---------- FILM GRAIN OVERLAY ---------- */
+/* static grain — animating this repaints the whole page every frame and tanks perf */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- SCROLL PROGRESS ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--coral),var(--peach));z-index:2001;transition:width .1s linear}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:2000;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:rgba(253,250,247,.8);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(20,17,20,.06)}
+.wordmark{font-family:var(--serif);font-weight:600;font-size:1.15rem;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.wordmark .spark{color:var(--coral);display:inline-block;animation:spin-slow 7s linear infinite}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-toggle{display:flex;background:rgba(20,17,20,.05);border-radius:50px;overflow:hidden;border:1px solid rgba(20,17,20,.08);padding:2px}
+.lang-btn{padding:5px 15px;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .25s;border:none;background:none;font-family:var(--sans);color:var(--gray);border-radius:50px}
+.lang-btn.active{background:var(--dark);color:#fff}
+.nav-cta{background:var(--dark);color:#fff;font-size:.8rem;font-weight:600;padding:9px 20px;border-radius:50px;transition:background .25s,transform .25s}
+.nav-cta:hover{background:var(--coral);transform:translateY(-1px)}
+@media(max-width:600px){.nav-cta{display:none}.nav{padding:12px 18px}}
+
+/* ---------- SECTION BASICS ---------- */
+.section{padding:110px 24px;max-width:1140px;margin:0 auto;position:relative}
+.sec-head{margin-bottom:56px;text-align:center;position:relative}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+.sec-eyebrow::before,.sec-eyebrow::after{content:"✦";font-size:.6rem;animation:spin-slow 6s linear infinite}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.02em;line-height:1.08}
+h2 em{font-style:italic;color:var(--coral)}
+.section-sub{color:var(--gray);margin-top:14px;font-size:1rem;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
+.sec-index{position:absolute;top:-38px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-style:italic;font-size:5.5rem;font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(232,112,122,.28);pointer-events:none;user-select:none}
+
+/* ---------- REVEAL ANIMATIONS ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,.9,.3,1),transform .8s cubic-bezier(.22,.9,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.22,.9,.3,1),transform .7s cubic-bezier(.22,.9,.3,1)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(1){transition-delay:.05s}.stagger.in>*:nth-child(2){transition-delay:.13s}
+.stagger.in>*:nth-child(3){transition-delay:.21s}.stagger.in>*:nth-child(4){transition-delay:.29s}
+.stagger.in>*:nth-child(5){transition-delay:.37s}.stagger.in>*:nth-child(6){transition-delay:.45s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:120px 24px 70px;overflow:hidden;background:var(--cream)}
+.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5}
+.blob-1{width:560px;height:560px;background:#ffc2c9;top:-160px;left:-120px;animation:drift1 18s ease-in-out infinite alternate}
+.blob-2{width:480px;height:480px;background:#ffdcc2;bottom:-140px;right:-100px;animation:drift2 22s ease-in-out infinite alternate}
+.blob-3{width:380px;height:380px;background:#ffe9ec;top:30%;left:55%;animation:drift3 26s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(120px,90px) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-100px,-70px) scale(1.2)}}
+@keyframes drift3{to{transform:translate(-140px,60px) scale(.9)}}
+.hero-inner{display:flex;align-items:center;gap:72px;max-width:1140px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
+.hero-text{max-width:520px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.7);border:1px solid rgba(232,112,122,.3);backdrop-filter:blur(8px);border-radius:50px;padding:7px 16px;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:24px}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,112,122,.5)}50%{box-shadow:0 0 0 7px rgba(232,112,122,0)}}
+.hero-text h1{font-family:var(--serif);font-weight:500;font-size:clamp(3rem,7vw,5rem);line-height:.98;letter-spacing:-.03em;margin-bottom:20px}
+.hero-text h1 .line{display:block;overflow:hidden}
+.hero-text h1 .line>span{display:inline-block;transform:translateY(110%);animation:rise 1s cubic-bezier(.22,.9,.3,1) forwards}
+.hero-text h1 .line:nth-child(2)>span{animation-delay:.12s}
+.hero-text h1 em{font-style:italic;color:var(--coral)}
+@keyframes rise{to{transform:none}}
+.hero-text .tagline{font-size:1.02rem;color:var(--gray);line-height:1.75;margin-bottom:28px;max-width:460px}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.hero-badge{background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border:1px solid rgba(20,17,20,.08);border-radius:50px;padding:8px 16px;font-size:.83rem;font-weight:500;display:flex;align-items:center;gap:6px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.hero-badge:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(232,112,122,.18);border-color:rgba(232,112,122,.45)}
+.hero-badge .num{color:var(--coral-deep);font-weight:700}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.cta{position:relative;display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:#fff;padding:15px 32px;border-radius:50px;font-weight:600;font-size:.92rem;transition:transform .25s,box-shadow .25s;overflow:hidden}
+.cta .arr{transition:transform .25s}
+.cta:hover .arr{transform:translateX(4px)}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,var(--coral),var(--coral-deep));opacity:0;transition:opacity .3s}
+.cta:hover::before{opacity:1}
+.cta span,.cta .arr{position:relative;z-index:1}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(232,112,122,.35)}
+.cta-outline{background:transparent;border:1.5px solid rgba(20,17,20,.25);color:var(--ink)}
+.cta-outline::before{background:var(--dark)}
+.cta-outline:hover{color:#fff;border-color:var(--dark)}
+
+/* hero photo */
+.hero-visual{position:relative;flex-shrink:0}
+.hero-frame{position:relative;width:min(380px,78vw)}
+.hero-frame::before{content:"";position:absolute;inset:-14px;border:1.5px dashed rgba(232,112,122,.5);border-radius:250px 250px 28px 28px;animation:breathe 5s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.02);opacity:1}}
+.hero-img{width:100%;aspect-ratio:38/47;object-fit:cover;border-radius:240px 240px 22px 22px;box-shadow:0 40px 90px rgba(212,82,95,.28);display:block;position:relative;z-index:1}
+.float-chip{position:absolute;z-index:3;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid rgba(20,17,20,.07);border-radius:16px;padding:11px 16px;box-shadow:0 14px 36px rgba(20,17,20,.14);animation:floaty 5.5s ease-in-out infinite}
+.float-chip .big{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--coral-deep);line-height:1.1}
+.float-chip .small{font-size:.68rem;color:var(--gray);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.chip-a{top:9%;left:-52px}
+.chip-b{bottom:14%;right:-46px;animation-delay:-2.7s}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-14px) rotate(1.5deg)}}
+.hero-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gray);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.hero-scroll::after{content:"";width:1px;height:34px;background:linear-gradient(var(--coral),transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- TICKER ---------- */
+.ticker{background:var(--dark);color:var(--cream);overflow:hidden;padding:16px 0;transform:rotate(-1.2deg) scale(1.02);margin:-12px 0 0;position:relative;z-index:5;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.ticker-track{display:flex;width:max-content;animation:ticker 28s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{font-family:var(--serif);font-size:1.05rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:0 18px;display:flex;align-items:center;gap:36px}
+.ticker-item em{font-style:italic;color:var(--coral)}
+.ticker-item .tick-star{color:var(--coral);font-size:.85rem}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- METRICS ---------- */
+.metrics-bar{background:var(--dark);color:#fff;padding:100px 24px 90px;position:relative;overflow:hidden}
+.metrics-bar::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,122,.22),transparent 65%);top:-320px;left:50%;transform:translateX(-50%);pointer-events:none}
+.metrics-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;position:relative}
+.metric-item{position:relative;padding:10px 6px}
+.metric-item+.metric-item::before{content:"";position:absolute;left:-12px;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.12)}
+.metric-num{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5vw,3.6rem);color:#fff;line-height:1;letter-spacing:-.02em}
+.metric-num .accent{color:var(--coral)}
+.metric-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.45);margin-top:12px}
+
+/* ---------- COLLABS ---------- */
+.collab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;perspective:1200px}
+.collab-card{position:relative;border-radius:18px;overflow:hidden;background:#eee;aspect-ratio:9/12;transform-style:preserve-3d;transition:transform .18s ease-out,box-shadow .35s;will-change:transform;box-shadow:0 6px 24px rgba(20,17,20,.08)}
+.collab-card:hover{box-shadow:0 30px 60px rgba(212,82,95,.25)}
+.collab-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.9,.3,1)}
+.collab-card:hover img{transform:scale(1.07)}
+.collab-card::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .7s ease;z-index:3;pointer-events:none}
+.collab-card:hover::after{left:130%}
+.collab-overlay{position:absolute;inset:0;background:linear-gradient(transparent 32%,rgba(15,10,12,.88));display:flex;flex-direction:column;justify-content:flex-end;padding:22px;z-index:2}
+.collab-category{display:inline-block;background:var(--coral);color:#fff;font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 11px;border-radius:50px;margin-bottom:9px;width:fit-content}
+.collab-title{color:#fff;font-size:.95rem;font-weight:600;line-height:1.35;margin-bottom:9px}
+.collab-meta{display:flex;align-items:center;gap:12px}
+.collab-views{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:#fff;display:flex;align-items:center;gap:6px}
+.collab-views svg{width:17px;height:17px;fill:var(--coral)}
+.collab-platform{background:rgba(255,255,255,.14);backdrop-filter:blur(4px);color:#fff;font-size:.68rem;font-weight:600;padding:4px 11px;border-radius:50px}
+
+/* ---------- DEMOGRAPHICS ---------- */
+.demo-bg{background:var(--light);position:relative;overflow:hidden}
+.demo-bg::before{content:"✦";position:absolute;font-size:14rem;color:rgba(232,112,122,.06);top:-40px;right:-30px;font-family:var(--serif)}
+.demo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.demo-card{background:var(--white);border-radius:20px;padding:32px 22px;text-align:center;box-shadow:0 3px 16px rgba(20,17,20,.05);border:1px solid rgba(20,17,20,.04);transition:transform .3s,box-shadow .3s}
+.demo-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(212,82,95,.14)}
+.demo-icon{width:54px;height:54px;margin:0 auto 14px;border-radius:16px;background:linear-gradient(135deg,var(--coral-soft),var(--rose));display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.demo-label{font-size:.7rem;color:var(--gray);margin-bottom:8px;text-transform:uppercase;letter-spacing:.16em;font-weight:600}
+.demo-value{font-family:var(--serif);font-size:1.3rem;font-weight:500;line-height:1.3}
+.demo-detail{font-size:.82rem;color:var(--gray);margin-top:6px}
+.gender-bar{height:8px;border-radius:6px;background:#e9e2e4;margin-top:14px;overflow:hidden}
+.gender-bar>i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,var(--coral),var(--peach));transition:width 1.2s cubic-bezier(.22,.9,.3,1) .3s}
+.demo-card.in-view .gender-bar>i{width:65%}
+
+/* ---------- WHY ---------- */
+.why-bg{background:var(--coral-soft);position:relative;overflow:hidden}
+.why-bg::before{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,138,.35),transparent 70%);bottom:-200px;left:-140px;pointer-events:none}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+.why-card{background:var(--white);border-radius:22px;padding:36px 28px;box-shadow:0 3px 16px rgba(20,17,20,.05);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.why-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(212,82,95,.16)}
+.why-num{font-family:var(--serif);font-style:italic;font-size:3.4rem;font-weight:300;line-height:1;color:transparent;-webkit-text-stroke:1.3px var(--coral);margin-bottom:16px}
+.why-title{font-weight:700;font-size:1.02rem;margin-bottom:9px}
+.why-desc{font-size:.88rem;color:var(--gray);line-height:1.7}
+
+/* ---------- FORMATS ---------- */
+.formats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.format-card{background:var(--white);border:1px solid rgba(20,17,20,.07);border-radius:18px;padding:28px 20px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.format-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--coral-soft),transparent 60%);opacity:0;transition:opacity .3s}
+.format-card:hover{transform:translateY(-5px);border-color:rgba(232,112,122,.4);box-shadow:0 16px 36px rgba(212,82,95,.12)}
+.format-card:hover::before{opacity:1}
+.format-icon{font-size:1.9rem;margin-bottom:12px;position:relative}
+.format-name{font-weight:700;font-size:.95rem;margin-bottom:4px;position:relative}
+.format-desc{font-size:.8rem;color:var(--gray);position:relative;line-height:1.5}
+
+/* ---------- PARTNERS MARQUEE ---------- */
+.partners-section{padding-top:0}
+.logo-marquee{overflow:hidden;position:relative;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.logo-track{display:flex;align-items:center;gap:56px;width:max-content;animation:ticker 36s linear infinite}
+.logo-track:hover{animation-play-state:paused}
+.logo-track a{flex-shrink:0;display:flex;align-items:center}
+.partner-logo{height:38px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) opacity(.45);transition:filter .35s,transform .35s}
+.logo-track a:hover .partner-logo{filter:grayscale(0) opacity(1);transform:scale(1.08)}
+.partner-logo-rounded{border-radius:8px}
+.partners-more{text-align:center;margin-top:26px;font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gray)}
+
+/* ---------- INSTAGRAM ---------- */
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ig-grid a{position:relative;display:block;border-radius:14px;overflow:hidden}
+.ig-grid img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.9,.3,1)}
+.ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(212,82,95,.35);opacity:0;transition:opacity .35s}
+.ig-grid a::before{content:"↗";position:absolute;top:50%;left:50%;transform:translate(-50%,-40%);color:#fff;font-size:1.9rem;z-index:2;opacity:0;transition:opacity .35s,transform .35s}
+.ig-grid a:hover::after{opacity:1}
+.ig-grid a:hover::before{opacity:1;transform:translate(-50%,-50%)}
+.ig-grid a:hover img{transform:scale(1.08)}
+
+/* ---------- ABOUT ---------- */
+.about-bg{background:var(--light);position:relative;overflow:hidden}
+.about-inner{max-width:720px;margin:0 auto;text-align:center;position:relative}
+.about-quote{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:400;line-height:1.65;color:var(--ink)}
+.about-quote em{font-style:italic;color:var(--coral-deep)}
+.about-mark{font-family:var(--serif);font-size:5rem;line-height:0;color:rgba(232,112,122,.3);display:block;margin-bottom:34px}
+
+/* ---------- RATES ---------- */
+.rates-wrapper{max-width:1040px;margin:0 auto}
+.rates-main{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:20px}
+.rate-card{background:var(--white);border:1px solid rgba(20,17,20,.07);border-radius:20px;padding:32px 16px;text-align:center;transition:transform .3s,box-shadow .3s,border-color .3s}
+.rate-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(212,82,95,.14);border-color:rgba(232,112,122,.35)}
+.rate-card.featured{background:linear-gradient(150deg,var(--coral),var(--coral-deep));color:#fff;position:relative;border:none;box-shadow:0 18px 44px rgba(212,82,95,.35)}
+.rate-card.featured:hover{transform:translateY(-6px) scale(1.02)}
+.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;padding:5px 15px;border-radius:50px;white-space:nowrap}
+.rate-card .service{font-weight:700;font-size:.92rem;margin-bottom:4px}
+.rate-card .service-sub{font-size:.75rem;color:var(--gray);margin-bottom:14px;line-height:1.4}
+.rate-card.featured .service-sub{color:rgba(255,255,255,.75)}
+.rate-card .price{font-family:var(--serif);font-weight:500;font-size:1.85rem;letter-spacing:-.02em}
+.rate-card.featured .service,.rate-card.featured .price{color:#fff}
+.rate-card .price-note{font-size:.7rem;color:var(--gray);margin-top:6px}
+.rate-card.featured .price-note{color:rgba(255,255,255,.7)}
+.rates-addons-title{text-align:center;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gray);margin:40px 0 18px}
+.rates-addons{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.addon-card{background:var(--light);border-radius:18px;padding:26px 18px;text-align:center;transition:transform .3s,box-shadow .3s}
+.addon-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(212,82,95,.1)}
+.addon-card .service{font-weight:600;font-size:.88rem;margin-bottom:4px}
+.addon-card .service-sub{font-size:.74rem;color:var(--gray);margin-bottom:10px;min-height:1em}
+.addon-card .price{font-family:var(--serif);font-weight:500;font-size:1.45rem}
+.rates-note{text-align:center;color:var(--gray);margin-top:32px;font-size:.86rem;line-height:1.6}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--dark);color:#fff;text-align:center;padding:130px 24px 90px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,122,.18),transparent 62%);bottom:-420px;left:50%;transform:translateX(-50%);pointer-events:none}
+.contact .sec-eyebrow{color:var(--coral)}
+.contact h2{color:#fff;font-size:clamp(2.4rem,6vw,4.2rem)}
+.contact .section-sub{color:rgba(255,255,255,.5)}
+.contact-email{display:inline-block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.3rem,3.6vw,2.2rem);color:#fff;margin:44px 0 40px;position:relative;transition:color .3s}
+.contact-email::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1.5px;background:var(--coral);transform:scaleX(.3);transform-origin:left;transition:transform .45s cubic-bezier(.22,.9,.3,1)}
+.contact-email:hover{color:var(--coral)}
+.contact-email:hover::after{transform:scaleX(1)}
+.socials{display:flex;justify-content:center;gap:16px;margin-top:8px;position:relative}
+.socials a{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;transition:border-color .3s,background .3s,transform .3s}
+.socials a:hover{border-color:var(--coral);background:var(--coral);transform:translateY(-4px)}
+.socials svg{width:19px;height:19px;fill:#fff}
+.footer-note{margin-top:70px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);position:relative}
+.footer-note .spark{color:var(--coral)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .rates-main{grid-template-columns:repeat(3,1fr)}
+  .rates-addons{grid-template-columns:repeat(3,1fr)}
+  .why-grid{grid-template-columns:1fr}
+  .demo-grid{grid-template-columns:repeat(2,1fr)}
+  .chip-a{left:-16px}.chip-b{right:-12px}
+}
+@media(max-width:768px){
+  .section{padding:80px 20px}
+  .hero{padding:110px 20px 80px}
+  .hero-inner{flex-direction:column-reverse;gap:44px;text-align:center}
+  .hero-text .tagline{margin-left:auto;margin-right:auto}
+  .hero-badges,.hero-ctas{justify-content:center}
+  .collab-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .collab-card{aspect-ratio:9/14}
+  .collab-title{font-size:.82rem}
+  .collab-views{font-size:1.05rem}
+  .collab-category{font-size:.58rem}
+  .metrics-inner{grid-template-columns:repeat(2,1fr);gap:36px 20px}
+  .metric-item+.metric-item::before{display:none}
+  .rates-main{grid-template-columns:repeat(2,1fr)}
+  .rates-addons{grid-template-columns:repeat(2,1fr)}
+  .formats-grid{grid-template-columns:repeat(2,1fr)}
+  .ig-grid{grid-template-columns:repeat(2,1fr)}
+  .sec-index{font-size:4rem;top:-28px}
+}
+@media(max-width:480px){
+  .section{padding:64px 16px}
+  .hero{padding:100px 16px 76px}
+  .hero-frame{width:min(280px,80vw)}
+  .float-chip{padding:8px 12px}
+  .float-chip .big{font-size:1rem}
+  .float-chip .small{font-size:.58rem}
+  .chip-a{left:-10px;top:6%}
+  .chip-b{right:-8px}
+  .hero-text h1{font-size:2.7rem}
+  .hero-scroll{display:none}
+  .hero-text .tagline{font-size:.9rem}
+  .hero-badge{font-size:.75rem;padding:6px 12px}
+  .hero-ctas .cta{padding:13px 24px;font-size:.85rem}
+  .collab-grid{gap:9px}
+  .collab-overlay{padding:13px}
+  .collab-title{font-size:.74rem;margin-bottom:5px}
+  .collab-views{font-size:.95rem}
+  .collab-views svg{width:13px;height:13px}
+  .collab-category{font-size:.54rem;padding:3px 8px;margin-bottom:5px}
+  .collab-platform{font-size:.58rem;padding:3px 8px}
+  .metrics-bar{padding:70px 16px 60px}
+  .rates-main{grid-template-columns:1fr 1fr}
+  .rates-addons{grid-template-columns:1fr}
+  .demo-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .demo-card{padding:24px 14px}
+  .formats-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .format-card{padding:20px 12px}
+  .rate-card{padding:24px 12px}
+  .rate-card .price{font-size:1.5rem}
+  .contact{padding:100px 16px 70px}
+  .ticker-item{font-size:.88rem}
+}
+
+@media(max-height:820px){.hero-scroll{display:none}}
+
+/* ---------- REDUCED MOTION ---------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.stagger>*{opacity:1;transform:none}
+  .hero-text h1 .line>span{transform:none}
+  body::after{display:none}
+}
+
+/* ---------- LANG SWITCHING ---------- */
+[data-lang="th"]{display:none}
+body.th [data-lang="th"]{display:initial}
+body.th [data-lang="en"]{display:none}
+body.th [data-lang-block="th"]{display:block}
+body.th [data-lang-block="en"]{display:none}
+[data-lang-block="th"]{display:none}
+body.th [data-lang-grid="th"]{display:grid}
+body.th [data-lang-grid="en"]{display:none}
+[data-lang-grid="th"]{display:none}
+body.th [data-lang-flex="th"]{display:flex}
+body.th [data-lang-flex="en"]{display:none}
+[data-lang-flex="th"]{display:none}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="wordmark"><span class="spark">✦</span>Jess Zheng</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('th')" id="btn-th">TH</button>
+    </div>
+    <a href="#contact" class="nav-cta">
+      <span data-lang="en">Work with me</span>
+      <span data-lang="th">ร่วมงานกัน</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="aurora">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="dot"></span>
+        <span data-lang="en">Content Creator · Bangkok 🇹🇭</span>
+        <span data-lang="th">ครีเอเตอร์ · กรุงเทพฯ 🇹🇭</span>
+      </div>
+      <h1>
+        <span class="line"><span>Jess</span></span>
+        <span class="line"><span><em>Zheng</em></span></span>
+      </h1>
+      <p class="tagline">
+        <span data-lang="en">Canadian creator bringing Thailand to life — from hidden street food gems and boutique hotels to local markets and expat lifestyle. Trusted by top hospitality and lifestyle brands across Southeast Asia.</span>
+        <span data-lang="th">ครีเอเตอร์ชาวแคนาดาที่พาคุณสัมผัสประเทศไทย — ตั้งแต่ร้านอาหารริมทางที่ซ่อนอยู่ โรงแรมบูทีค ตลาดท้องถิ่น ไปจนถึงไลฟ์สไตล์ชาวต่างชาติ ได้รับความไว้วางใจจากแบรนด์ชั้นนำด้านการท่องเที่ยวและไลฟ์สไตล์ทั่วเอเชียตะวันออกเฉียงใต้</span>
+      </p>
+      <div class="hero-badges">
+        <div class="hero-badge">📱 TikTok <span class="num">62K</span></div>
+        <div class="hero-badge">📸 Instagram <span class="num">43.7K</span> ✓</div>
+        <div class="hero-badge">🎬 YouTube <span class="num">23K</span></div>
+        <div class="hero-badge">📘 Facebook <span class="num">20K</span></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#rates" class="cta"><span data-lang="en">View Packages &amp; Rates</span><span data-lang="th">ดูแพ็คเกจ &amp; ราคา</span> <span class="arr">→</span></a>
+        <a href="#contact" class="cta cta-outline"><span data-lang="en">Let's Work Together</span><span data-lang="th">มาร่วมงานกัน</span></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <img src="images/profile-hd.jpg" alt="Jess Zheng" class="hero-img">
+        <div class="float-chip chip-a">
+          <div class="big">100M+</div>
+          <div class="small"><span data-lang="en">Total views</span><span data-lang="th">ยอดวิวรวม</span></div>
+        </div>
+        <div class="float-chip chip-b">
+          <div class="big">149K+</div>
+          <div class="small"><span data-lang="en">Followers</span><span data-lang="th">ผู้ติดตาม</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span data-lang="en">Scroll</span><span data-lang="th">เลื่อนลง</span></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track">
+    <div class="ticker-item">Travel <span class="tick-star">✦</span> <em>Street Food</em> <span class="tick-star">✦</span> Lifestyle <span class="tick-star">✦</span> <em>Bangkok</em> <span class="tick-star">✦</span> Hotels <span class="tick-star">✦</span> <em>Night Markets</em> <span class="tick-star">✦</span> Expat Life <span class="tick-star">✦</span> <em>Thailand</em> <span class="tick-star">✦</span>&nbsp;</div>
+  </div>
+</div>
+
+<!-- KEY METRICS -->
+<div class="metrics-bar">
+  <div class="metrics-inner stagger">
+    <div class="metric-item">
+      <div class="metric-num"><span class="count" data-target="149">0</span>K<span class="accent">+</span></div>
+      <div class="metric-label">
+        <span data-lang="en">Total Followers</span>
+        <span data-lang="th">ผู้ติดตามทั้งหมด</span>
+      </div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num"><span class="count" data-target="100">0</span>M<span class="accent">+</span></div>
+      <div class="metric-label">
+        <span data-lang="en">Total Views</span>
+        <span data-lang="th">ยอดวิวทั้งหมด</span>
+      </div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num"><span class="count" data-target="5.8" data-decimals="1">0</span><span class="accent">%</span></div>
+      <div class="metric-label">
+        <span data-lang="en">Avg Engagement</span>
+        <span data-lang="th">Engagement เฉลี่ย</span>
+      </div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num"><span class="count" data-target="6.4" data-decimals="1">0</span>M<span class="accent">+</span></div>
+      <div class="metric-label">
+        <span data-lang="en">TikTok Likes</span>
+        <span data-lang="th">ยอดไลค์ TikTok</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND COLLABORATION SHOWCASE -->
+<section class="section">
+  <div class="sec-head reveal">
+    <div class="sec-index">01</div>
+    <div class="sec-eyebrow"><span data-lang="en">Portfolio</span><span data-lang="th">ผลงาน</span></div>
+    <h2>
+      <span data-lang="en">Brand Collaboration <em>Highlights</em></span>
+      <span data-lang="th">ผลงานความร่วมมือกับ<em>แบรนด์</em></span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="en">Top-performing sponsored content by category — authentic storytelling that drives real results</span>
+      <span data-lang="th">คอนเทนต์สปอนเซอร์ที่มียอดสูงสุดแยกตามหมวดหมู่ — เล่าเรื่องจริงใจ สร้างผลลัพธ์จริง</span>
+    </p>
+  </div>
+  <div class="collab-grid stagger">
+
+    <a href="https://www.tiktok.com/@jesszhengg/video/7542109220179561746" target="_blank" class="collab-card">
+      <img src="images/lelys-clinic.jpg" alt="Ulthera Prime at Le Lys Clinic">
+      <div class="collab-overlay">
+        <div class="collab-category">
+          <span data-lang="en">💆 Beauty & Wellness</span>
+          <span data-lang="th">💆 ความงาม & สุขภาพ</span>
+        </div>
+        <div class="collab-title">
+          <span data-lang="en">Ulthera Prime Treatment — Le Lys Clinic</span>
+          <span data-lang="th">ทรีทเมนต์ Ulthera Prime — Le Lys Clinic</span>
+        </div>
+        <div class="collab-meta">
+          <div class="collab-views"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>211.5K</div>
+          <div class="collab-platform">IG + TikTok</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/reel/DPgluNDASHd/" target="_blank" class="collab-card">
+      <img src="images/bkk2-pajamas.jpg" alt="Thai pajamas — Sleeping Cloud">
+      <div class="collab-overlay">
+        <div class="collab-category">
+          <span data-lang="en">👗 Fashion</span>
+          <span data-lang="th">👗 แฟชั่น</span>
+        </div>
+        <div class="collab-title">
+          <span data-lang="en">Thai Pajamas You NEED — Sleeping Cloud</span>
+          <span data-lang="th">ชุดนอนไทยที่คุณต้องมี — Sleeping Cloud</span>
+        </div>
+        <div class="collab-meta">
+          <div class="collab-views"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>1.5M</div>
+          <div class="collab-platform">IG + TikTok</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/reel/DOdyVgbAXKZ/" target="_blank" class="collab-card">
+      <img src="images/muvmi.jpg" alt="MuvMi electric tuk tuk Bangkok">
+      <div class="collab-overlay">
+        <div class="collab-category">
+          <span data-lang="en">🛺 Transport</span>
+          <span data-lang="th">🛺 การเดินทาง</span>
+        </div>
+        <div class="collab-title">
+          <span data-lang="en">Electric Tuk Tuk App — MuvMi</span>
+          <span data-lang="th">แอปตุ๊กตุ๊กไฟฟ้า — MuvMi</span>
+        </div>
+        <div class="collab-meta">
+          <div class="collab-views"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>1.09M</div>
+          <div class="collab-platform">IG + TikTok</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.tiktok.com/@jesszhengg/video/7549170049374768385" target="_blank" class="collab-card">
+      <img src="images/shanghai-wonderland.jpg" alt="InterContinental Shanghai Wonderland">
+      <div class="collab-overlay">
+        <div class="collab-category">
+          <span data-lang="en">🏨 Luxury Hotel</span>
+          <span data-lang="th">🏨 โรงแรมหรู</span>
+        </div>
+        <div class="collab-title">
+          <span data-lang="en">Hotel in an Abandoned Quarry — InterContinental Shanghai</span>
+          <span data-lang="th">โรงแรมในเหมืองร้าง — InterContinental Shanghai</span>
+        </div>
+        <div class="collab-meta">
+          <div class="collab-views"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>229.5K</div>
+          <div class="collab-platform">TikTok</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.tiktok.com/@jesszhengg/video/7584662829597461781" target="_blank" class="collab-card">
+      <img src="images/capcut-pad.jpg" alt="CapCut Pad editing on iPad">
+      <div class="collab-overlay">
+        <div class="collab-category">
+          <span data-lang="en">📱 Tech</span>
+          <span data-lang="th">📱 เทคโนโลยี</span>
+        </div>
+        <div class="collab-title">
+          <span data-lang="en">Multi-Track Editing on iPad — CapCut Pad</span>
+          <span data-lang="th">ตัดต่อหลายแทร็กบน iPad — CapCut Pad</span>
+        </div>
+        <div class="collab-meta">
+          <div class="collab-views"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>Featured</div>
+          <div class="collab-platform">TikTok</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/reel/DQMHZxjgajy/" target="_blank" class="collab-card">
+      <img src="images/tagthai.jpg" alt="TAGTHAi Bangkok Day Pass">
+      <div class="collab-overlay">
+        <div class="collab-category">
+          <span data-lang="en">🎫 Travel</span>
+          <span data-lang="th">🎫 ท่องเที่ยว</span>
+        </div>
+        <div class="collab-title">
+          <span data-lang="en">Bangkok Day Pass — TAGTHAi</span>
+          <span data-lang="th">บัตรเที่ยวกรุงเทพ — TAGTHAi</span>
+        </div>
+        <div class="collab-meta">
+          <div class="collab-views"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>Featured</div>
+          <div class="collab-platform">Instagram</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- AUDIENCE DEMOGRAPHICS -->
+<section class="demo-bg">
+  <div class="section">
+    <div class="sec-head reveal">
+      <div class="sec-index">02</div>
+      <div class="sec-eyebrow"><span data-lang="en">The Audience</span><span data-lang="th">กลุ่มผู้ชม</span></div>
+      <h2>
+        <span data-lang="en">Audience <em>Demographics</em></span>
+        <span data-lang="th">ข้อมูล<em>กลุ่มผู้ชม</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="en">Highly engaged, travel-curious audience with strong purchase intent</span>
+        <span data-lang="th">กลุ่มผู้ชมที่มีส่วนร่วมสูง สนใจการท่องเที่ยว และมีแนวโน้มซื้อสินค้าสูง</span>
+      </p>
+    </div>
+    <div class="demo-grid stagger">
+      <div class="demo-card">
+        <div class="demo-icon">👥</div>
+        <div class="demo-label">
+          <span data-lang="en">Gender Split</span>
+          <span data-lang="th">สัดส่วนเพศ</span>
+        </div>
+        <div class="demo-value">65% <span data-lang="en">Female</span><span data-lang="th">ผู้หญิง</span></div>
+        <div class="demo-detail">35% <span data-lang="en">Male</span><span data-lang="th">ผู้ชาย</span></div>
+        <div class="gender-bar"><i></i></div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-icon">🎂</div>
+        <div class="demo-label">
+          <span data-lang="en">Core Age</span>
+          <span data-lang="th">ช่วงอายุหลัก</span>
+        </div>
+        <div class="demo-value">18 – 34</div>
+        <div class="demo-detail">Millennials & Gen Z</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-icon">🌍</div>
+        <div class="demo-label">
+          <span data-lang="en">Top Regions</span>
+          <span data-lang="th">ภูมิภาคหลัก</span>
+        </div>
+        <div class="demo-value">US · CA · UK · AU</div>
+        <div class="demo-detail">
+          <span data-lang="en">English-speaking travelers</span>
+          <span data-lang="th">นักเดินทางที่พูดภาษาอังกฤษ</span>
+        </div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-icon">✈️</div>
+        <div class="demo-label">
+          <span data-lang="en">Interests</span>
+          <span data-lang="th">ความสนใจ</span>
+        </div>
+        <div class="demo-value">
+          <span data-lang="en">Travel · Food · Lifestyle</span>
+          <span data-lang="th">ท่องเที่ยว · อาหาร · ไลฟ์สไตล์</span>
+        </div>
+        <div class="demo-detail">
+          <span data-lang="en">Thailand & SE Asia</span>
+          <span data-lang="th">ไทย & เอเชียตะวันออกเฉียงใต้</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WORK WITH JESS -->
+<section class="why-bg">
+  <div class="section">
+    <div class="sec-head reveal">
+      <div class="sec-index">03</div>
+      <div class="sec-eyebrow"><span data-lang="en">The Difference</span><span data-lang="th">จุดเด่น</span></div>
+      <h2>
+        <span data-lang="en">Why Work With <em>Jess</em></span>
+        <span data-lang="th">ทำไมต้องร่วมงานกับ<em>เจส</em></span>
+      </h2>
+    </div>
+    <div class="why-grid stagger">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-title">
+          <span data-lang="en">Authentic Storytelling</span>
+          <span data-lang="th">เล่าเรื่องอย่างจริงใจ</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="en">Every collaboration feels like a genuine recommendation. My audience trusts my reviews — that's why sponsored content performs just as well as organic.</span>
+          <span data-lang="th">ทุกความร่วมมือให้ความรู้สึกเหมือนคำแนะนำจริงใจ ผู้ชมของฉันเชื่อมั่นในรีวิว — คอนเทนต์สปอนเซอร์จึงทำผลงานได้ดีเท่ากับคอนเทนต์ทั่วไป</span>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-title">
+          <span data-lang="en">Multi-Platform Reach</span>
+          <span data-lang="th">เข้าถึงหลายแพลตฟอร์ม</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="en">Content across TikTok, Instagram, YouTube, and Facebook simultaneously. One shoot, four platforms, maximum exposure to 149K+ followers.</span>
+          <span data-lang="th">คอนเทนต์บน TikTok, Instagram, YouTube และ Facebook พร้อมกัน ถ่ายครั้งเดียว สี่แพลตฟอร์ม เข้าถึงผู้ติดตาม 149K+</span>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-title">
+          <span data-lang="en">Proven Viral Potential</span>
+          <span data-lang="th">พิสูจน์แล้วว่าไวรัลได้</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="en">100M+ total views across platforms with multiple videos hitting 500K–780K+ organically. Content consistently reaches far beyond my follower count through strong algorithmic performance.</span>
+          <span data-lang="th">ยอดวิวรวมกว่า 100 ล้านครั้งทุกแพลตฟอร์ม หลายวิดีโอทำยอด 500K–780K+ แบบออร์แกนิก คอนเทนต์เข้าถึงคนไกลกว่าจำนวนผู้ติดตามอย่างต่อเนื่อง</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT FORMATS -->
+<section class="section">
+  <div class="sec-head reveal">
+    <div class="sec-index">04</div>
+    <div class="sec-eyebrow"><span data-lang="en">Deliverables</span><span data-lang="th">รูปแบบงาน</span></div>
+    <h2>
+      <span data-lang="en">Content <em>Formats</em></span>
+      <span data-lang="th">รูปแบบ<em>คอนเทนต์</em></span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="en">Flexible deliverables tailored to your brand's goals</span>
+      <span data-lang="th">รูปแบบที่ยืดหยุ่น ปรับให้เข้ากับเป้าหมายของแบรนด์</span>
+    </p>
+  </div>
+  <div class="formats-grid stagger">
+    <div class="format-card">
+      <div class="format-icon">🎵</div>
+      <div class="format-name">TikTok</div>
+      <div class="format-desc">
+        <span data-lang="en">15–60s short-form, trending audio</span>
+        <span data-lang="th">วิดีโอสั้น 15–60 วินาที เสียงเทรนด์</span>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">📸</div>
+      <div class="format-name">Instagram Reel</div>
+      <div class="format-desc">
+        <span data-lang="en">Polished vertical video + carousel</span>
+        <span data-lang="th">วิดีโอแนวตั้ง + คารูเซล</span>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">🎬</div>
+      <div class="format-name">YouTube Vlog</div>
+      <div class="format-desc">
+        <span data-lang="en">Long-form review or tour (5–15 min)</span>
+        <span data-lang="th">รีวิวยาวหรือทัวร์ (5–15 นาที)</span>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">📖</div>
+      <div class="format-name">IG Stories</div>
+      <div class="format-desc">
+        <span data-lang="en">Real-time takeovers, polls, links</span>
+        <span data-lang="th">สตอรี่สด โพล ลิงก์</span>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">📝</div>
+      <div class="format-name">Facebook</div>
+      <div class="format-desc">
+        <span data-lang="en">Cross-posted video or write-up</span>
+        <span data-lang="th">วิดีโอหรือโพสต์ข้ามแพลตฟอร์ม</span>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="format-icon">📦</div>
+      <div class="format-name">UGC / Whitelisting</div>
+      <div class="format-desc">
+        <span data-lang="en">Raw content for your brand's ads</span>
+        <span data-lang="th">คอนเทนต์สำหรับโฆษณาของแบรนด์</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAST PARTNERS -->
+<section class="section partners-section">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow"><span data-lang="en">Trusted By</span><span data-lang="th">ความไว้วางใจ</span></div>
+    <h2>
+      <span data-lang="en">Brands I've <em>Worked With</em></span>
+      <span data-lang="th">แบรนด์ที่เคย<em>ร่วมงาน</em></span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="en">Trusted by leading hospitality, nightlife, dining, and lifestyle brands across Thailand</span>
+      <span data-lang="th">ได้รับความไว้วางใจจากแบรนด์ชั้นนำด้านโรงแรม ไนท์ไลฟ์ อาหาร และไลฟ์สไตล์ทั่วประเทศไทย</span>
+    </p>
+  </div>
+  <div class="logo-marquee reveal">
+    <div class="logo-track" id="logo-track">
+      <a href="https://www.sripanwa.com/" target="_blank"><img src="images/logos/sri-panwa.png" alt="Sri Panwa" title="Sri Panwa" class="partner-logo"></a>
+      <a href="https://www.ihg.com/intercontinental" target="_blank"><img src="images/logos/intercontinental.svg" alt="InterContinental" title="InterContinental" class="partner-logo"></a>
+      <a href="https://www.sfcinemacity.com/" target="_blank"><img src="images/logos/sf-cinema.svg" alt="SF Cinema" title="SF Cinema" class="partner-logo"></a>
+      <a href="https://www.siamparagon.co.th/" target="_blank"><img src="images/logos/siam-paragon.png" alt="Siam Paragon" title="Siam Paragon" class="partner-logo"></a>
+      <a href="https://www.central.co.th/" target="_blank"><img src="images/logos/central.svg" alt="Central" title="Central" class="partner-logo"></a>
+      <a href="https://www.capcut.com/" target="_blank"><img src="images/logos/capcut.svg" alt="CapCut" title="CapCut" class="partner-logo"></a>
+      <a href="https://www.terminal21.co.th/" target="_blank"><img src="images/logos/terminal21.png" alt="Terminal 21" title="Terminal 21" class="partner-logo"></a>
+      <a href="https://www.gowabi.com/" target="_blank"><img src="images/logos/gowabi.png" alt="GoWabi" title="GoWabi" class="partner-logo"></a>
+      <a href="https://www.hungryhub.com/" target="_blank"><img src="images/logos/hungryhub.png" alt="HungryHub" title="HungryHub" class="partner-logo"></a>
+      <a href="https://www.lelysclinic.com/" target="_blank"><img src="images/logos/le-lys-clinic.png" alt="Le Lys Clinic" title="Le Lys Clinic" class="partner-logo"></a>
+      <a href="https://www.allmaxnutrition.com/" target="_blank"><img src="images/logos/allmax.png" alt="Allmax" title="Allmax" class="partner-logo"></a>
+      <a href="https://www.eveandboy.com/" target="_blank"><img src="images/logos/eveandboy.svg" alt="EVEANDBOY" title="EVEANDBOY" class="partner-logo"></a>
+      <a href="https://www.instagram.com/gotbangkok/" target="_blank"><img src="images/logos/got.jpg" alt="G.O.T. Good Old Times" title="G.O.T. Good Old Times" class="partner-logo partner-logo-rounded"></a>
+      <a href="https://www.instagram.com/whatshappened.bkk/" target="_blank"><img src="images/logos/whatshappened.jpg" alt="What's Happened" title="What's Happened" class="partner-logo partner-logo-rounded"></a>
+      <a href="https://www.instagram.com/salonedivita/" target="_blank"><img src="images/logos/salone.jpg" alt="Salone" title="Salone" class="partner-logo partner-logo-rounded"></a>
+      <a href="https://www.instagram.com/tictactoebangkok/" target="_blank"><img src="images/logos/tictactoe.jpg" alt="Tictactoe Bangkok" title="Tictactoe Bangkok" class="partner-logo partner-logo-rounded"></a>
+      <a href="https://muvmi.co/en" target="_blank"><img src="images/logos/muvmi.svg" alt="MuvMi" title="MuvMi" class="partner-logo"></a>
+      <a href="https://www.tagthai.com/" target="_blank"><img src="images/logos/tagthai.svg" alt="TAGTHAi" title="TAGTHAi" class="partner-logo"></a>
+    </div>
+  </div>
+  <p class="partners-more reveal">
+    <span data-lang="en">…and many more ✦</span>
+    <span data-lang="th">…และอีกมากมาย ✦</span>
+  </p>
+</section>
+
+<!-- INSTAGRAM GRID -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">@jesszhengg</div>
+    <h2><span data-lang="en">On <em>Instagram</em></span><span data-lang="th">บน <em>Instagram</em></span></h2>
+    <p class="section-sub">@jesszhengg · 43.7K followers</p>
+  </div>
+  <div class="ig-grid stagger">
+    <a href="https://instagram.com/jesszhengg" target="_blank"><img src="images/grid1-tailor.jpg" alt="Custom tailor"></a>
+    <a href="https://instagram.com/jesszhengg" target="_blank"><img src="images/grid2-fishing.jpg" alt="Koh Larn fishing"></a>
+    <a href="https://instagram.com/jesszhengg" target="_blank"><img src="images/grid3-weekend.jpg" alt="Weekend getaway"></a>
+    <a href="https://instagram.com/jesszhengg" target="_blank"><img src="images/grid4-japanese.jpg" alt="Japanese food"></a>
+    <a href="https://instagram.com/jesszhengg" target="_blank"><img src="images/grid5-rooftop.jpg" alt="Rooftop bar"></a>
+    <a href="https://instagram.com/jesszhengg" target="_blank"><img src="images/grid6-wellnista.jpg" alt="Brand collab"></a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-bg">
+  <div class="section about-inner reveal">
+    <div class="sec-eyebrow"><span data-lang="en">About Jess</span><span data-lang="th">เกี่ยวกับเจส</span></div>
+    <p class="about-quote">
+      <span class="about-mark">"</span>
+      <span data-lang="en">Canadian creator living in Bangkok, sharing the best of Thailand — from hidden street food gems and local night markets to boutique hotels and everyday expat life. With a combined audience of 149K+ across four platforms, I help brands connect authentically with audiences passionate about travel, lifestyle, and Thai culture. My content consistently goes viral because it feels real — <em>because it is.</em></span>
+      <span data-lang="th">ครีเอเตอร์ชาวแคนาดาที่อาศัยอยู่ในกรุงเทพ แบ่งปันสิ่งดีๆ ของประเทศไทย — ตั้งแต่ร้านอาหารริมทางที่ซ่อนอยู่ ตลาดกลางคืน โรงแรมบูทีค ไปจนถึงชีวิตประจำวันของชาวต่างชาติ ด้วยผู้ชมกว่า 149K+ จากสี่แพลตฟอร์ม ฉันช่วยให้แบรนด์เชื่อมต่อกับกลุ่มเป้าหมายที่หลงใหลในการท่องเที่ยว ไลฟ์สไตล์ และวัฒนธรรมไทยอย่างแท้จริง</span>
+    </p>
+  </div>
+</section>
+
+<!-- RATES -->
+<section class="section" id="rates">
+  <div class="sec-head reveal">
+    <div class="sec-index">05</div>
+    <div class="sec-eyebrow"><span data-lang="en">Investment</span><span data-lang="th">ราคา</span></div>
+    <h2>
+      <span data-lang="en">Services &amp; <em>Rates</em></span>
+      <span data-lang="th">บริการ &amp; <em>ราคา</em></span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="en">All rates in USD · Custom packages available</span>
+      <span data-lang="th">ราคาทั้งหมดเป็นดอลลาร์สหรัฐ · แพ็คเกจพิเศษตามความต้องการ</span>
+    </p>
+  </div>
+  <div class="rates-wrapper">
+    <div class="rates-main stagger">
+      <div class="rate-card">
+        <div class="service">Instagram Reel</div>
+        <div class="service-sub">
+          <span data-lang="en">30–60s vertical video</span>
+          <span data-lang="th">วิดีโอแนวตั้ง 30–60 วินาที</span>
+        </div>
+        <div class="price">$1,500</div>
+      </div>
+      <div class="rate-card">
+        <div class="service">TikTok Video</div>
+        <div class="service-sub">
+          <span data-lang="en">15–60s native format</span>
+          <span data-lang="th">วิดีโอ 15–60 วินาที</span>
+        </div>
+        <div class="price">$1,500</div>
+      </div>
+      <div class="rate-card">
+        <div class="service">Facebook Post</div>
+        <div class="service-sub">
+          <span data-lang="en">Video or photo post</span>
+          <span data-lang="th">วิดีโอหรือโพสต์รูป</span>
+        </div>
+        <div class="price">$700</div>
+      </div>
+      <div class="rate-card">
+        <div class="service">YouTube Long Form</div>
+        <div class="service-sub">
+          <span data-lang="en">5–15 min vlog / review</span>
+          <span data-lang="th">วล็อก / รีวิว 5–15 นาที</span>
+        </div>
+        <div class="price">$1,800</div>
+      </div>
+      <div class="rate-card featured">
+        <div class="popular-badge">⭐ Most Popular</div>
+        <div class="service">
+          <span data-lang="en">Bundle</span>
+          <span data-lang="th">แพ็คเกจ</span>
+        </div>
+        <div class="service-sub">IG + TikTok + FB</div>
+        <div class="price">$2,600</div>
+        <div class="price-note">
+          <span data-lang="en">Save $1,100 vs individual</span>
+          <span data-lang="th">ประหยัด $1,100</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rates-addons-title">
+      <span data-lang="en">Add-Ons</span>
+      <span data-lang="th">บริการเสริม</span>
+    </div>
+    <div class="rates-addons stagger">
+      <div class="addon-card">
+        <div class="service">IG Stories</div>
+        <div class="service-sub">&nbsp;</div>
+        <div class="price">$350</div>
+      </div>
+      <div class="addon-card">
+        <div class="service">UGC / Whitelisting</div>
+        <div class="service-sub">
+          <span data-lang="en">Raw content for brand ads</span>
+          <span data-lang="th">คอนเทนต์สำหรับโฆษณาแบรนด์</span>
+        </div>
+        <div class="price">$900</div>
+      </div>
+      <div class="addon-card">
+        <div class="service">TikTok Gen Code</div>
+        <div class="service-sub">
+          <span data-lang="en">30-day usage rights</span>
+          <span data-lang="th">สิทธิ์ใช้งาน 30 วัน</span>
+        </div>
+        <div class="price">$450</div>
+      </div>
+    </div>
+
+    <p class="rates-note reveal">
+      <span data-lang="en">All packages include 1 revision. Multi-video deals, long-term partnerships, and custom bundles available upon request.</span>
+      <span data-lang="th">ทุกแพ็คเกจรวมการแก้ไข 1 ครั้ง ดีลหลายวิดีโอ พาร์ทเนอร์ชิพระยะยาว และแพ็คเกจพิเศษ สอบถามเพิ่มเติมได้</span>
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="reveal">
+    <div class="sec-eyebrow"><span data-lang="en">Get in Touch</span><span data-lang="th">ติดต่อ</span></div>
+    <h2>
+      <span data-lang="en">Let's create something <em>amazing</em></span>
+      <span data-lang="th">มาสร้างสรรค์สิ่ง<em>ดีๆ</em> ด้วยกัน</span>
+    </h2>
+    <p class="section-sub">
+      <span data-lang="en">Ready to put your brand in front of 149K+ engaged travelers? Let's chat.</span>
+      <span data-lang="th">พร้อมพาแบรนด์ของคุณไปหาผู้ชมกว่า 149K+ แล้วหรือยัง? มาคุยกัน</span>
+    </p>
+    <a class="contact-email" href="mailto:jessxzheng@gmail.com">jessxzheng@gmail.com</a>
+    <div class="socials">
+      <a href="https://tiktok.com/@jesszhengg" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.87a8.16 8.16 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.3z"/></svg></a>
+      <a href="https://instagram.com/jesszhengg" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://youtube.com/@jesszhengg" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://facebook.com/jesszhengg" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    </div>
+    <div class="footer-note"><span class="spark">✦</span> Jess Zheng · Bangkok · jesszheng.co</div>
+  </div>
+</section>
+
+<script>
+// ---------- Language toggle (persisted) ----------
+function setLang(lang) {
+  document.body.classList.toggle('th', lang === 'th');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+  localStorage.setItem('jz-lang', lang);
+}
+const saved = localStorage.getItem('jz-lang');
+if (saved === 'th') setLang('th');
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---------- Duplicate marquee tracks so the loop is seamless ----------
+['ticker-track', 'logo-track'].forEach(id => {
+  const track = document.getElementById(id);
+  track.innerHTML += track.innerHTML; // second copy fills the gap while the first scrolls out
+});
+
+// ---------- Scroll progress bar ----------
+const progress = document.getElementById('progress');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, { passive: true });
+
+// ---------- Reveal-on-scroll ----------
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in', 'in-view');
+    if (e.target.classList.contains('metrics-inner')) runCounters();
+    io.unobserve(e.target);
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal, .stagger, .demo-card').forEach(el => io.observe(el));
+
+// ---------- Count-up metrics ----------
+let counted = false;
+function runCounters() {
+  if (counted) return;
+  counted = true;
+  document.querySelectorAll('.count').forEach(el => {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals || 0);
+    if (reducedMotion) { el.textContent = target.toFixed(decimals); return; }
+    const dur = 1600, start = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 4); // ease-out so the last digits land softly
+      el.textContent = (target * eased).toFixed(decimals);
+      if (p < 1) requestAnimationFrame(tick);
+    })(start);
+  });
+}
+
+// ---------- 3D tilt on collab cards (desktop pointers only) ----------
+if (matchMedia('(hover:hover) and (pointer:fine)').matches && !reducedMotion) {
+  document.querySelectorAll('.collab-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `rotateY(${x * 9}deg) rotateX(${-y * 9}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+}
+</script>
+
+</body>
+</html>
