@@ -1,6 +1,27 @@
 # Notes
 
-## Experimental /temp Rate Card (2026-08-12)
+## /temp Rate Card v2 (2026-08-12, same day as v1)
+- Rework on William's ask: crazier animation, cuter, Thai toggle, mobile conversion
+- Added: EN/ไทย toggle (localStorage jz-lang, html.th class flips [data-lang] spans;
+  Chonburi for Thai display headings, Noto Sans Thai body, all Thai spans lang-tagged),
+  odometer price digits, tuk-tuk drive-by (x in vw), MOST BOOKED/ยอดฮิต stamp,
+  steam wisps, confetti burst on CTA, magnetic CTA (own transform, reveal on wrapper),
+  swinging neon sign, bulb + food doodles, double counter-scrolling tickers,
+  sticky mobile book bar, partner logo row, prefilled mailto + IG DM fallback
+- Ran a 14-agent review workflow (5 reviewers -> adversarial verify). 4 confirmed fixes:
+  sticky bar observed #cta with rootMargin -150px (not #book at 15%), ?static now adds
+  html.static + animation:none CSS (was GSAP-only), --dim raised .42 -> .56 for WCAG AA,
+  inset cream focus ring on lang toggle (outline was clipped by overflow:hidden)
+- Refuted by verification (do NOT "fix" these): viewport-fit=cover (would break header
+  under notch), &nbsp; between flex items (spec discards whitespace; gap handles it),
+  Thai ZWSP insertion (runs measured, fit fine; spaces mid-verb-phrase read wrong)
+- Thai copy: แม่ค้าเจส / สำรับใหญ่ / จานเด็ด / แขกที่เคยมาทาน; fixed หิวโหยกว่า+ redundancy,
+  เที่ยวโรงแรม -> รีวิวโรงแรม
+- Gotcha: h1 .word overflow:hidden clips Thai descenders (สระ อู) — padded mask +
+  negative margin on the Thai word
+- Images: temp/img/*-480.jpg copies (sips -Z 480), main images/ untouched
+
+## Experimental /temp Rate Card v1 (2026-08-12)
 - Live at https://jesszheng.co/temp/ — standalone, does NOT touch index.html or tier pages
 - Concept: rate card as a Bangkok night-market menu (Jess is known for street food
   content). Mains = platform rates, Sides = add-ons, Chef's Special = bundle with a

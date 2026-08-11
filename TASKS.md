@@ -21,10 +21,15 @@
       stats from live platforms (149K+ total) — deployed 2026-07-16
 
 - [x] Experimental animated rate card at /temp (night-market menu concept,
-      noindex, GSAP scroll animations) — deployed 2026-08-12, awaiting William's verdict
+      noindex, GSAP scroll animations) — deployed 2026-08-12
+- [x] /temp v2: crazier animations, cuter details, EN/ไทย toggle, mobile
+      conversion pass (sticky book bar, logo proof, resized images), 14-agent
+      review workflow fixes — deployed 2026-08-12, awaiting William's verdict
 
 ## To Do
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete
+- [ ] If promoted: real-device pass (iPhone Safari + Android Chrome) for the
+      sticky bar handoff and animation feel
 - [ ] Optional: compress images (profile-hd.jpg etc.) for faster mobile load
 - [ ] Optional: refresh IG grid images (IG blocks logged-out scraping; grab fresh
       screenshots when logged into Instagram in Chrome)
