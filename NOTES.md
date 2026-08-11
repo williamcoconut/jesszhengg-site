@@ -1,5 +1,24 @@
 # Notes
 
+## /temp Rate Card v3: de-metaphored (2026-08-12)
+- William: menu idea confusing; wants clear + brilliant + beautiful + CUTE
+- Kept: full Bangkok atmosphere (neon sign, food/bulb doodles, tuk-tuk, polaroids,
+  อร่อย! sticker now wiggling, MOST BOOKED/ยอดฮิต stamp, confetti hearts, tickers,
+  odometer prices, EN/ไทย toggle) because street food IS her niche, not a metaphor
+- Replaced every structural label with literal copy:
+  h1 THE MENU -> RATE CARD / เรทราคา (industry phrase brands DM her with)
+  Tonight's Menu -> Services & Rates / บริการ & ราคา (matches main site)
+  Mains/Sides -> Content/Add-ons · คอนเทนต์/บริการเสริม
+  Chef's special badge -> "3 in 1"; The Full Table -> The Bundle / แพ็คเกจรวม
+  Hungry? -> Say hi! / ทักมาเลย!; house rules -> the fine print / เรื่องเล็กๆ ที่ควรรู้
+  past dinner guests -> in good company / แบรนด์ดังการันตี; แม่ค้าเจส -> สวัสดีค่ะ เจสเอง
+- Steam wisps removed (food-coded); Thai h1 clamp reduced (เรทราคา is longer)
+- Gotcha: amber word color must sit on .menu-word (the WORD), not .ch — split chars
+  don't exist in static/reduced-motion mode, so char-level color rules silently drop
+- 3-agent clarity workflow findings applied: ส่งตรงถึง (not กับ) for audience reach,
+  "all prices in USD" (Thai leak removed from EN span), Spark Ads clarifier on
+  Gen Code, long-term hyphen, แบรนด์ดังการันตี dedupe
+
 ## /temp Rate Card v2 (2026-08-12, same day as v1)
 - Rework on William's ask: crazier animation, cuter, Thai toggle, mobile conversion
 - Added: EN/ไทย toggle (localStorage jz-lang, html.th class flips [data-lang] spans;

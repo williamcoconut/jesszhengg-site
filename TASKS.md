@@ -24,7 +24,10 @@
       noindex, GSAP scroll animations) — deployed 2026-08-12
 - [x] /temp v2: crazier animations, cuter details, EN/ไทย toggle, mobile
       conversion pass (sticky book bar, logo proof, resized images), 14-agent
-      review workflow fixes — deployed 2026-08-12, awaiting William's verdict
+      review workflow fixes — deployed 2026-08-12
+- [x] /temp v3: menu metaphor removed per William (labels now literal: Rate Card,
+      Services & Rates, Content/Add-ons, The Bundle, Say hi!), Bangkok charm and
+      cuteness kept — deployed 2026-08-12, awaiting William's verdict
 
 ## To Do
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete
