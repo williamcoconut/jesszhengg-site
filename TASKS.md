@@ -20,7 +20,11 @@
 - [x] Update rates (IG/TikTok $900, YT $1,000, bundle $1,500) + refresh follower
       stats from live platforms (149K+ total) — deployed 2026-07-16
 
+- [x] Experimental animated rate card at /temp (night-market menu concept,
+      noindex, GSAP scroll animations) — deployed 2026-08-12, awaiting William's verdict
+
 ## To Do
+- [ ] Decide fate of /temp experiment: promote the design, iterate, or delete
 - [ ] Optional: compress images (profile-hd.jpg etc.) for faster mobile load
 - [ ] Optional: refresh IG grid images (IG blocks logged-out scraping; grab fresh
       screenshots when logged into Instagram in Chrome)

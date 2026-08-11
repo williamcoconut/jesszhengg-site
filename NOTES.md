@@ -1,5 +1,22 @@
 # Notes
 
+## Experimental /temp Rate Card (2026-08-12)
+- Live at https://jesszheng.co/temp/ — standalone, does NOT touch index.html or tier pages
+- Concept: rate card as a Bangkok night-market menu (Jess is known for street food
+  content). Mains = platform rates, Sides = add-ons, Chef's Special = bundle with a
+  hand-drawn neon circle that draws itself on scroll
+- Uses PUBLIC rates (same as index.html), English only, noindex/nofollow meta
+- Design: aubergine dark + neon pink + tungsten amber; Bricolage Grotesque display,
+  Schibsted Grotesk body, Sriracha (Thai handwriting font) for menu scribbles + Thai accents
+- Motion: GSAP CDN + ScrollTrigger. Char-split hero, count-up prices, scroll reveals,
+  parallax glows, cursor "lantern" glow (desktop only). Page fully readable with no JS;
+  prefers-reduced-motion kills all motion; `?static` query param also disables animation
+  (useful for QC screenshots in the browser pane, which reloads on every capture)
+- Gotcha fixed: img width/height attrs + max-width:100% stretched images until
+  `height:auto` was added; profile crop needed object-position 50% 15%
+- QC tip: local server via python http.server (port 8931), file:// renders as a
+  static snapshot in the pane and won't scroll or animate
+
 ## Rates + Stats Update (2026-07-16)
 - New rates: IG Reel $900, TikTok $900, YouTube $1,000, Bundle $1,500 (save $700);
   FB $400 and add-ons unchanged
