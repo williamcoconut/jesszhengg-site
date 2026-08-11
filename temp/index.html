@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Jess Zheng · The Menu</title>
+<title>Jess Zheng · Rate Card</title>
 <meta name="description" content="Rates for working with Jess Zheng. Canadian creator, Bangkok local.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9C%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,11 +159,11 @@ h1{
 }
 h1 .word{display:block;overflow:hidden;padding:.06em 0}
 h1 .ch{display:inline-block}
-h1 .menu-word .ch,html.th h1 .word[data-lang="th"]{
-  color:var(--tungsten);
+h1 .menu-word{
+  color:var(--tungsten); /* on the word, not .ch: split chars don't exist in static/reduced mode */
   text-shadow:0 0 26px rgba(255,179,92,.45);
 }
-html.th h1{font-size:clamp(78px,20vw,250px)}
+html.th h1{font-size:clamp(56px,15vw,200px)} /* เรทราคา is a longer word than the EN pair */
 /* Thai vowel descenders (สระ อู) reach below the baseline; pad the reveal mask
    so they aren't clipped, and pull the gap back in with a negative margin */
 html.th h1 .word[data-lang="th"]{padding:.06em 0 .3em;margin-bottom:-.3em}
@@ -202,7 +202,9 @@ html.th .chip{text-transform:none;letter-spacing:.02em}
   background:var(--neon);color:var(--night);display:flex;align-items:center;justify-content:center;
   font-family:var(--hand);font-size:14px;transform:rotate(12deg);
   box-shadow:0 4px 12px rgba(0,0,0,.35);
+  animation:wiggle 3.4s ease-in-out infinite;
 }
+@keyframes wiggle{0%,100%{transform:rotate(8deg)}50%{transform:rotate(17deg)}}
 .polaroid-hero{right:clamp(12px,9vw,15vw);bottom:15vh}
 @media(max-width:760px){
   .polaroid-hero{position:static;transform:rotate(-3deg);margin-top:34px;width:128px}
@@ -340,17 +342,6 @@ html.th .special h3{font-family:var(--thdisp);text-transform:none}
 }
 .stamp .ring{fill:none;stroke:var(--neon);stroke-width:3}
 .stamp text{fill:var(--neon)}
-/* steam wisps */
-.steam{position:absolute;pointer-events:none}
-.steam path{fill:none;stroke:rgba(253,243,228,.5);stroke-width:2.5;stroke-linecap:round;opacity:0;animation:rise 3s ease-out infinite}
-.steam path:nth-child(2){animation-delay:1s}
-.steam path:nth-child(3){animation-delay:2s}
-@keyframes rise{
-  0%{opacity:0;transform:translateY(10px)}
-  35%{opacity:.55}
-  100%{opacity:0;transform:translateY(-18px)}
-}
-.steam-special{top:-46px;left:clamp(30px,8vw,80px);width:44px;height:54px}
 @media(max-width:560px){
   .dish p{max-width:210px}
   .special-inner{justify-content:center;text-align:center}
@@ -400,8 +391,6 @@ html.th .guests-label{text-transform:none;letter-spacing:.06em}
 .book-head{position:relative;display:inline-block}
 .book h2{font-size:clamp(52px,11vw,128px)}
 .book h2 em{font-style:normal;color:var(--neon);text-shadow:0 0 30px rgba(255,77,141,.5)}
-.steam-book{top:-40px;left:18%;width:44px;height:54px}
-.steam-book2{top:-40px;right:16%;left:auto;width:44px;height:54px}
 .book p{color:var(--faded);margin:18px auto 36px;max-width:430px}
 .cta{
   display:inline-block;position:relative;z-index:2;
@@ -507,19 +496,19 @@ html.static{scroll-behavior:auto}
     </div>
   </div>
 
-  <h1 id="hero-title" aria-label="The Menu">
-    <span class="word split" data-lang="en">The</span>
-    <span class="word menu-word split" data-lang="en">Menu</span>
-    <span class="word" data-lang="th" lang="th">เมนู</span>
+  <h1 id="hero-title" aria-label="Rate Card">
+    <span class="word split" data-lang="en">Rate</span>
+    <span class="word menu-word split" data-lang="en">Card</span>
+    <span class="word menu-word" data-lang="th" lang="th">เรทราคา</span>
   </h1>
 
   <p class="hero-sub">
     <span data-lang="en">Rates for working with <strong>Jess Zheng</strong>. Canadian creator, Bangkok local.
     Street food, night markets, hotels and the good life in Thailand,
-    served to <strong>149K+ hungry followers</strong>.</span>
+    for <strong>149K+ followers who actually watch</strong>.</span>
     <span data-lang="th" lang="th">ราคาสำหรับร่วมงานกับ <strong>Jess Zheng</strong> ครีเอเตอร์ชาวแคนาดา คนกรุงเทพฯ ตัวจริง
     พาชิมอาหารริมทาง เดินตลาดกลางคืน รีวิวโรงแรม และใช้ชีวิตดีๆ ในเมืองไทย
-    เสิร์ฟถึง<strong>ผู้ติดตามที่หิวโหย 149K+ คน</strong></span>
+    ส่งตรงถึง<strong>ผู้ติดตาม 149K+ คนที่ดูจริงๆ</strong></span>
   </p>
 
   <div class="hero-stats">
@@ -530,12 +519,12 @@ html.static{scroll-behavior:auto}
 
   <div class="polaroid polaroid-hero">
     <img src="img/profile-hd-480.jpg" alt="Jess Zheng" width="400" height="500" style="aspect-ratio:4/5;object-fit:cover;object-position:50% 15%">
-    <span class="cap"><span data-lang="en">your host, Jess</span><span data-lang="th" lang="th">แม่ค้าเจส</span></span>
+    <span class="cap"><span data-lang="en">hi, I'm Jess</span><span data-lang="th" lang="th">สวัสดีค่ะ เจสเอง</span></span>
     <span class="sticker" aria-hidden="true">อร่อย!</span>
   </div>
 
   <div class="scroll-hint">
-    <span><span data-lang="en">scroll for tonight's menu</span><span data-lang="th" lang="th">เลื่อนลงดูเมนูคืนนี้</span></span>
+    <span><span data-lang="en">scroll for rates</span><span data-lang="th" lang="th">เลื่อนลงดูเรทราคา</span></span>
     <span class="arr" aria-hidden="true">▼</span>
   </div>
 </section>
@@ -562,8 +551,8 @@ html.static{scroll-behavior:auto}
   </div>
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>Tonight's Menu</span><span class="th-word" lang="th">เมนูคืนนี้</span><span>IG Reels</span><span class="hot">TikTok</span><span>YouTube</span><span>Facebook</span><span class="th-word" lang="th">อร่อย</span><span>149K+ Followers</span><span class="hot">6.4M+ Likes</span><span>Bangkok</span><span class="th-word" lang="th">กรุงเทพฯ</span><span>Est. on the street</span>
-      <span>Tonight's Menu</span><span class="th-word" lang="th">เมนูคืนนี้</span><span>IG Reels</span><span class="hot">TikTok</span><span>YouTube</span><span>Facebook</span><span class="th-word" lang="th">อร่อย</span><span>149K+ Followers</span><span class="hot">6.4M+ Likes</span><span>Bangkok</span><span class="th-word" lang="th">กรุงเทพฯ</span><span>Est. on the street</span>
+      <span>Rate Card</span><span class="th-word" lang="th">เรทราคา</span><span>IG Reels</span><span class="hot">TikTok</span><span>YouTube</span><span>Facebook</span><span class="th-word" lang="th">อร่อย</span><span>149K+ Followers</span><span class="hot">6.4M+ Likes</span><span>Bangkok</span><span class="th-word" lang="th">กรุงเทพฯ</span><span>Est. on the street</span>
+      <span>Rate Card</span><span class="th-word" lang="th">เรทราคา</span><span>IG Reels</span><span class="hot">TikTok</span><span>YouTube</span><span>Facebook</span><span class="th-word" lang="th">อร่อย</span><span>149K+ Followers</span><span class="hot">6.4M+ Likes</span><span>Bangkok</span><span class="th-word" lang="th">กรุงเทพฯ</span><span>Est. on the street</span>
     </div>
   </div>
   <div class="ticker rev" aria-hidden="true">
@@ -577,15 +566,15 @@ html.static{scroll-behavior:auto}
 <!-- MENU -->
 <main class="menu" id="menu">
   <div class="menu-head reveal">
-    <div class="hand-note"><span data-lang="en">ราคา · all prices USD</span><span data-lang="th" lang="th">ราคาทั้งหมดเป็นดอลลาร์สหรัฐ</span></div>
-    <h2><span data-lang="en">Tonight's Menu</span><span data-lang="th" lang="th">เมนูคืนนี้</span></h2>
+    <div class="hand-note"><span data-lang="en">all prices in USD</span><span data-lang="th" lang="th">ราคาทั้งหมดเป็นดอลลาร์สหรัฐ</span></div>
+    <h2><span data-lang="en">Services &amp; Rates</span><span data-lang="th" lang="th">บริการ &amp; ราคา</span></h2>
     <svg class="squiggle" viewBox="0 0 240 14" aria-hidden="true"><path id="squig" d="M4 8c20-8 30 8 50 0s30 8 50 0 30 8 50 0 30 8 50 0 16 6 32 0"/></svg>
-    <p><span data-lang="en">Cooked fresh for every brand. Custom packages on request.</span><span data-lang="th" lang="th">ปรุงสดใหม่สำหรับทุกแบรนด์ แพ็คเกจพิเศษตามความต้องการ</span></p>
+    <p><span data-lang="en">Every collab planned around your brand. Custom packages on request.</span><span data-lang="th" lang="th">วางแผนทุกคอลแลบให้เข้ากับแบรนด์ของคุณ แพ็คเกจพิเศษตามความต้องการ</span></p>
   </div>
 
   <!-- MAINS -->
   <section class="course">
-    <div class="course-label reveal"><span data-lang="en">Mains</span><span data-lang="th" lang="th">จานหลัก</span><span class="th-word" data-lang="en" lang="th">จานหลัก</span><span class="th-word" data-lang="th" lang="en">mains</span></div>
+    <div class="course-label reveal"><span data-lang="en">Content</span><span data-lang="th" lang="th">คอนเทนต์</span><span class="th-word" data-lang="en" lang="th">คอนเทนต์</span><span class="th-word" data-lang="th" lang="en">content</span></div>
     <ul class="menu-list">
       <li class="menu-row reveal">
         <div class="dish">
@@ -625,12 +614,7 @@ html.static{scroll-behavior:auto}
   <!-- CHEF'S SPECIAL -->
   <section class="course reveal">
     <div class="special">
-      <svg class="steam steam-special" viewBox="0 0 44 54" aria-hidden="true">
-        <path d="M10 46c-4-8 4-10 0-18s4-10 0-18"/>
-        <path d="M22 48c-4-8 4-10 0-18s4-10 0-18"/>
-        <path d="M34 46c-4-8 4-10 0-18s4-10 0-18"/>
-      </svg>
-      <div class="badge"><span data-lang="en">Chef's special</span><span data-lang="th" lang="th">จานเด็ด</span></div>
+      <div class="badge">3 in 1</div>
       <svg class="stamp" id="stamp" viewBox="0 0 120 120" aria-hidden="true">
         <circle class="ring" cx="60" cy="60" r="55"/>
         <circle class="ring" cx="60" cy="60" r="46" stroke-dasharray="4 6"/>
@@ -640,7 +624,7 @@ html.static{scroll-behavior:auto}
       </svg>
       <div class="special-inner">
         <div>
-          <h3><span data-lang="en">The Full Table</span><span data-lang="th" lang="th">สำรับใหญ่</span></h3>
+          <h3><span data-lang="en">The Bundle</span><span data-lang="th" lang="th">แพ็คเกจรวม</span></h3>
           <p class="incl"><span data-lang="en">Instagram Reel + TikTok + Facebook, one shoot, three platforms</span><span data-lang="th" lang="th">Instagram Reel + TikTok + Facebook ถ่ายครั้งเดียว สามแพลตฟอร์ม</span></p>
           <span class="save"><span data-lang="en">save $700 vs ordering separately ✺</span><span data-lang="th" lang="th">ประหยัด $700 เทียบกับสั่งแยก ✺</span></span>
         </div>
@@ -656,7 +640,7 @@ html.static{scroll-behavior:auto}
 
   <!-- SIDES -->
   <section class="course">
-    <div class="course-label reveal"><span data-lang="en">Sides</span><span data-lang="th" lang="th">เครื่องเคียง</span><span class="th-word" data-lang="en" lang="th">เครื่องเคียง</span><span class="th-word" data-lang="th" lang="en">sides</span></div>
+    <div class="course-label reveal"><span data-lang="en">Add-ons</span><span data-lang="th" lang="th">บริการเสริม</span><span class="th-word" data-lang="en" lang="th">บริการเสริม</span><span class="th-word" data-lang="th" lang="en">add-ons</span></div>
     <ul class="menu-list">
       <li class="menu-row reveal">
         <div class="dish">
@@ -677,7 +661,7 @@ html.static{scroll-behavior:auto}
       <li class="menu-row reveal">
         <div class="dish">
           <h3>TikTok Gen Code</h3>
-          <p><span data-lang="en">30 day usage rights</span><span data-lang="th" lang="th">สิทธิ์ใช้งาน 30 วัน</span></p>
+          <p><span data-lang="en">Spark Ads authorization, 30 day usage rights</span><span data-lang="th" lang="th">โค้ดยิงโฆษณา Spark Ads สิทธิ์ใช้งาน 30 วัน</span></p>
         </div>
         <div class="leader"></div>
         <div class="price" data-price="250">$250</div>
@@ -686,17 +670,17 @@ html.static{scroll-behavior:auto}
   </section>
 
   <p class="small-print reveal">
-    <span class="hand-note"><span data-lang="en">house rules</span><span data-lang="th" lang="th">กฎร้าน</span></span>
-    <span data-lang="en">Every dish includes one revision. Multi-video deals, long term partnerships
+    <span class="hand-note"><span data-lang="en">the fine print</span><span data-lang="th" lang="th">เรื่องเล็กๆ ที่ควรรู้</span></span>
+    <span data-lang="en">Every deliverable includes one revision. Multi-video deals, long-term partnerships
     and custom bundles are priced on request. Service with a smile, always.</span>
-    <span data-lang="th" lang="th">ทุกจานรวมการแก้ไข 1 ครั้ง ดีลหลายวิดีโอ พาร์ทเนอร์ชิพระยะยาว
+    <span data-lang="th" lang="th">ทุกงานรวมการแก้ไข 1 ครั้ง ดีลหลายวิดีโอ พาร์ทเนอร์ชิพระยะยาว
     และแพ็คเกจพิเศษ สอบถามเพิ่มเติมได้ พร้อมบริการด้วยรอยยิ้มเสมอ</span>
   </p>
 </main>
 
 <!-- PAST DINNER GUESTS -->
 <section class="guests reveal">
-  <div class="hand-note"><span data-lang="en">past dinner guests ✦</span><span data-lang="th" lang="th">แขกที่เคยมาทาน ✦</span></div>
+  <div class="hand-note"><span data-lang="en">in good company ✦</span><span data-lang="th" lang="th">แบรนด์ดังการันตี ✦</span></div>
   <div class="guests-label"><span data-lang="en">Brands I've worked with</span><span data-lang="th" lang="th">แบรนด์ที่เคยร่วมงาน</span></div>
   <div class="logo-row">
     <img src="../images/logos/central.svg" alt="Central" loading="lazy">
@@ -732,16 +716,11 @@ html.static{scroll-behavior:auto}
   <div class="doodle doodle-spark spark-3" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M12 1v5"/><circle cx="12" cy="14" r="7"/><path d="M9 23h6M10 26h4M12 11v4M10 13l2 2 2-2"/></svg></div>
   <div class="doodle doodle-spark spark-4" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M12 1v5"/><circle cx="12" cy="14" r="7"/><path d="M9 23h6M10 26h4M12 11v4M10 13l2 2 2-2"/></svg></div>
   <div class="book-head reveal">
-    <svg class="steam steam-book" viewBox="0 0 44 54" aria-hidden="true">
-      <path d="M10 46c-4-8 4-10 0-18s4-10 0-18"/>
-      <path d="M22 48c-4-8 4-10 0-18s4-10 0-18"/>
-      <path d="M34 46c-4-8 4-10 0-18s4-10 0-18"/>
-    </svg>
-    <h2><span data-lang="en">Hungry<em>?</em></span><span data-lang="th" lang="th">หิวไหม<em>?</em></span></h2>
+    <h2><span data-lang="en">Say <em>hi!</em></span><span data-lang="th" lang="th">ทักมา<em>เลย!</em></span></h2>
   </div>
   <p class="reveal">
-    <span data-lang="en">Table for two. Tell me about your brand and let's cook something people actually watch.</span>
-    <span data-lang="th" lang="th">โต๊ะสำหรับสองที่ เล่าเรื่องแบรนด์ของคุณให้ฉันฟังหน่อย แล้วมาปรุงคอนเทนต์ที่คนดูจริงๆ กันเถอะ</span>
+    <span data-lang="en">Tell me about your brand and let's make something people actually watch.</span>
+    <span data-lang="th" lang="th">เล่าเรื่องแบรนด์ของคุณให้ฉันฟังหน่อย แล้วมาทำคอนเทนต์ที่คนดูจริงๆ กันเถอะ</span>
   </p>
   <!-- reveal lives on the wrapper so the magnetic quickTo owns the anchor's own transform -->
   <div class="reveal">
@@ -768,7 +747,7 @@ html.static{scroll-behavior:auto}
 <!-- STICKY MOBILE BOOK BAR -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sc-label">
-    <span class="sc-name"><span data-lang="en">The Full Table</span><span data-lang="th" lang="th">สำรับใหญ่</span></span>
+    <span class="sc-name"><span data-lang="en">The Bundle</span><span data-lang="th" lang="th">แพ็คเกจรวม</span></span>
     <b>$1,500</b> <span data-lang="en">· 3 platforms</span><span data-lang="th" lang="th">· 3 แพลตฟอร์ม</span>
   </div>
   <a class="sc-btn" href="mailto:jessxzheng@gmail.com?subject=Collab%20with%20Jess&body=Hi%20Jess!%20We%27re%20reaching%20out%20from%20%5Bbrand%5D.%20We%27d%20love%20to%20work%20with%20you%20on...">
@@ -801,7 +780,7 @@ html.static{scroll-behavior:auto}
     document.documentElement.lang = th ? "th" : "en";
     btnEn.setAttribute("aria-pressed", String(!th));
     btnTh.setAttribute("aria-pressed", String(th));
-    h1.setAttribute("aria-label", th ? "เมนู" : "The Menu");
+    h1.setAttribute("aria-label", th ? "เรทราคา" : "Rate Card");
     try { localStorage.setItem("jz-lang", lang); } catch (e) {}
     if (anchor) window.scrollBy(0, anchor.getBoundingClientRect().top - before);
     /* let the browser paint the reflow before ScrollTrigger re-measures everything */
@@ -812,7 +791,7 @@ html.static{scroll-behavior:auto}
   if (document.documentElement.classList.contains("th")) {
     btnEn.setAttribute("aria-pressed", "false");
     btnTh.setAttribute("aria-pressed", "true");
-    h1.setAttribute("aria-label", "เมนู");
+    h1.setAttribute("aria-label", "เรทราคา");
   }
 
   /* ---------- sticky mobile book bar (UX, not decoration: runs even with reduced motion) ---------- */
