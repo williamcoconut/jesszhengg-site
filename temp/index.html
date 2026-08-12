@@ -512,7 +512,7 @@ html.th .fact-label{letter-spacing:.04em;text-transform:none}
   background:rgba(255,179,92,.35);
   border-left:1px dashed rgba(0,0,0,.12);border-right:1px dashed rgba(0,0,0,.12);
 }
-.work-shot img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.work-shot img,.work-shot video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--lacquer)}
 .work-meta{min-width:0}
 .work-brand{
   font-family:var(--disp);font-weight:600;font-size:clamp(16px,2.2vw,19px);
@@ -555,6 +555,20 @@ html.th .work-views span{letter-spacing:.02em;text-transform:none}
   .work-leader{display:none}
   .work-views span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0}
 }
+
+/* ---------- gallery ---------- */
+.gallery{max-width:900px;margin:0 auto;padding:clamp(56px,9vh,110px) 24px 0}
+.gal-head{text-align:center;margin-bottom:clamp(26px,4vh,40px)}
+.gal-head .hand-note{margin-bottom:8px}
+.gal-head h2{font-size:clamp(30px,5.5vw,54px)}
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(8px,1.6vw,14px)}
+@media(min-width:761px){.gal-grid{grid-template-columns:repeat(4,1fr)}}
+.gal-grid img{
+  width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
+  border-radius:8px;background:var(--lacquer);
+  filter:saturate(.92);transition:filter .3s,transform .3s;
+}
+.gal-grid img:hover{filter:saturate(1.15) brightness(1.05);transform:scale(1.02)}
 
 /* ---------- book ---------- */
 .book{
@@ -938,7 +952,7 @@ html.static{scroll-behavior:auto}
   <div class="work-grid">
     <a class="work-card" href="https://www.instagram.com/reel/DPgluNDASHd/" target="_blank" rel="noopener">
       <div class="work-shot">
-        <img src="img/bkk2-pajamas-540.jpg" alt="" width="540" height="675" loading="lazy">
+        <video class="work-vid" src="vid/pajamas.mp4" poster="vid/pajamas.jpg" width="360" height="450" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
       </div>
       <div class="work-meta">
         <div class="work-brand">Sleeping Cloud</div>
@@ -950,7 +964,7 @@ html.static{scroll-behavior:auto}
     </a>
     <a class="work-card" href="https://www.instagram.com/reel/DOdyVgbAXKZ/" target="_blank" rel="noopener">
       <div class="work-shot">
-        <img src="img/muvmi-540.jpg" alt="" width="540" height="675" loading="lazy">
+        <video class="work-vid" src="vid/muvmi.mp4" poster="vid/muvmi.jpg" width="360" height="450" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
       </div>
       <div class="work-meta">
         <div class="work-brand">MuvMi</div>
@@ -962,7 +976,7 @@ html.static{scroll-behavior:auto}
     </a>
     <a class="work-card" href="https://www.tiktok.com/@jesszhengg/video/7549170049374768385" target="_blank" rel="noopener">
       <div class="work-shot">
-        <img src="img/shanghai-wonderland-540.jpg" alt="" width="540" height="675" loading="lazy">
+        <video class="work-vid" src="vid/hotel.mp4" poster="vid/hotel.jpg" width="360" height="450" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
       </div>
       <div class="work-meta">
         <div class="work-brand">InterContinental Shanghai</div>
@@ -989,6 +1003,24 @@ html.static{scroll-behavior:auto}
   </div>
 </section>
 
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery" aria-labelledby="gal-h">
+  <div class="gal-head reveal">
+    <div class="hand-note"><span data-lang="en">a look around</span><span data-lang="th" lang="th">บรรยากาศงานที่ผ่านมา</span></div>
+    <h2 id="gal-h"><span data-lang="en">The feed</span><span data-lang="th" lang="th">ฟีดของเจส</span></h2>
+  </div>
+  <div class="gal-grid reveal">
+    <img src="img/gal/bkk4-markets.jpg" alt="Night market in Bangkok" width="420" height="525" loading="lazy">
+    <img src="img/gal/sri-panwa.jpg" alt="Sri Panwa resort, Phuket" width="420" height="525" loading="lazy">
+    <img src="img/gal/grid5-rooftop.jpg" alt="Bangkok rooftop at sunset" width="420" height="525" loading="lazy">
+    <img src="img/gal/grid4-japanese.jpg" alt="Seafood buffet in Bangkok" width="420" height="525" loading="lazy">
+    <img src="img/gal/bkk5-cinema.jpg" alt="Cinema night in Bangkok" width="420" height="525" loading="lazy">
+    <img src="img/gal/tagthai.jpg" alt="Exploring Bangkok with a day pass" width="420" height="525" loading="lazy">
+    <img src="img/gal/grid1-tailor.jpg" alt="Custom tailor in Bangkok" width="420" height="525" loading="lazy">
+    <img src="img/gal/bkk1-goodstuff.jpg" alt="MBK Center shopping mall, Bangkok" width="420" height="525" loading="lazy">
+  </div>
+</section>
 
 <!-- BOOK -->
 <section class="book" id="book" aria-labelledby="book-h">
@@ -1119,6 +1151,34 @@ html.static{scroll-behavior:auto}
       updateBar();
     }, { rootMargin: "0px 0px -150px 0px" }).observe(document.getElementById("cta"));
   }
+
+
+  /* ---------- work clips: play only while on screen ---------- */
+  (function(){
+    var vids = [].slice.call(document.querySelectorAll(".work-vid"));
+    if (!vids.length) return;
+    var conn = navigator.connection || {};
+    /* honour reduced motion and metered/slow connections: poster only */
+    if (reduced || conn.saveData || /2g/.test(conn.effectiveType || "")) return;
+    if (!("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var v = en.target;
+        if (en.isIntersecting) {
+          if (v.preload !== "auto") v.preload = "auto";
+          var pr = v.play();
+          if (pr && pr.catch) pr.catch(function(){}); /* autoplay refusal is fine, poster stays */
+        } else if (!v.paused) {
+          v.pause();
+        }
+      });
+    }, { rootMargin: "80px 0px", threshold: 0.25 });
+    vids.forEach(function(v){ io.observe(v); });
+    /* a backgrounded tab should not keep decoding frames */
+    document.addEventListener("visibilitychange", function(){
+      if (document.hidden) vids.forEach(function(v){ v.pause(); });
+    });
+  })();
 
   /* ---------- lantern cursor glow (desktop, motion allowed) ---------- */
   var lantern = document.getElementById("lantern");
