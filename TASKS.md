@@ -42,10 +42,17 @@
       — deployed 2026-08-12
 - [x] /temp v7: fixed misattributed view counts (1.5M/1.09M are IG+TikTok
       combined, now stated), GSAP clearProps hover bug, cards rebuilt with
-      polaroid frames and her real hooks, logo wall cut — deployed 2026-08-12,
-      awaiting William's verdict
+      polaroid frames and her real hooks, logo wall cut — deployed 2026-08-12
+- [x] /temp v8 final review (22 findings): fixed a stray brace that had deleted
+      the whole .book rule live, visible email fallback for in-app browsers,
+      sticky bar anchors at $900 not $200, hospitality logos (Sri Panwa),
+      iOS perf (grain, backdrop-filter, ignoreMobileResize) — deployed
+      2026-08-13, awaiting William's verdict
 
 ## To Do
+- [ ] ASK JESS: typical/median views per Reel and per TikTok. Every performance
+      number on /temp is a personal best, so a brand cannot price the buy. This
+      is the single biggest remaining conversion gap and needs real data.
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete
 - [ ] If promoted: real-device pass (iPhone Safari + Android Chrome) for the
       sticky bar handoff and animation feel

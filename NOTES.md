@@ -25,6 +25,37 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v8: final review, 22 findings (2026-08-13)
+- CRITICAL, shipped live for ~2 hours: a stray `}` left over from the work-card
+  CSS rewrite sat after an @media block. CSS error recovery then swallowed the
+  ENTIRE `.book` rule, so the booking section rendered with no centering,
+  padding or position:relative, and its glow escaped to paint over the ticker.
+  The one section whose job is conversion was the one that looked broken.
+  ALWAYS re-check brace depth after editing a CSS block; a balanced-looking
+  file can still be off by one. `python3` depth scan is in this file's history.
+- mailto: is the only CTA and the address existed ONLY inside the href. It
+  silently no-ops in the Instagram/TikTok in-app browsers, which is where this
+  link actually gets opened. The address is now selectable text.
+- Sticky bar opened at "Rates from $200", but $200 is IG Stories, an add-on.
+  A budget holder's first price was a fifth of the real entry rate. Now $900.
+- Logos reworked for the target buyer: Sri Panwa + InterContinental give the
+  hospitality proof the hero's "hotels" promise implies. All from index.html.
+- Perf on real phones: grain was fixed at 4x viewport (~50MB backing store on
+  iOS) -> inset:0. Sticky bar's backdrop-filter was invisible behind its own
+  92% opaque background -> removed. ScrollTrigger.config ignoreMobileResize
+  because iOS collapses its toolbar mid-scroll and forces a re-measure.
+- IntersectionObservers treated an instant jump as "never seen", so a deep link
+  could leave the sticky bar hidden permanently. Now also check
+  boundingClientRect.top < 0.
+- html{scroll-behavior:smooth} also governs scrollBy, so the language toggle's
+  scroll compensation animated. Use behavior:"instant".
+- aria-label is ignored on a generic div: the odometer prices needed role="img".
+
+### Open, needs William (not fixable without data)
+- Every performance number on the page is a personal best. There is no median
+  or typical views-per-post anywhere, so a buyer cannot build a business case.
+  index.html has no median either. Ask Jess for a typical range per platform.
+
 ## /temp v7: work-card fixes from the v6 audit (2026-08-12)
 - CRITICAL, caught by audit not by me: index.html pairs 1.5M and 1.09M with
   "IG + TikTok", i.e. COMBINED across two platforms. My cards linked to a single
