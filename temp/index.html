@@ -485,15 +485,54 @@ html.th .guests-label{text-transform:none;letter-spacing:.06em}
 }
 .logo-row img:hover{opacity:1;transform:scale(1.08)}
 
-/* market photo strip */
-.strip{display:flex;justify-content:center;gap:clamp(16px,4vw,44px);padding:clamp(40px,7vh,80px) 24px;flex-wrap:wrap}
-.strip .polaroid{position:static}
-.strip .polaroid:nth-child(1){transform:rotate(-4deg)}
-.strip .polaroid:nth-child(2){transform:rotate(2deg)}
-.strip .polaroid:nth-child(3){transform:rotate(-1.5deg)}
-/* hover pop lives on the img filter: gsap owns the polaroid's transform for parallax */
-.strip .polaroid img{transition:filter .3s}
-.strip .polaroid:hover img{filter:saturate(1.25) brightness(1.07)}
+/* ---------- recent work: paid collabs and what they pulled ---------- */
+.work{max-width:860px;margin:0 auto;padding:clamp(56px,9vh,110px) 24px 0}
+.work-head{text-align:center;margin-bottom:clamp(30px,5vh,48px)}
+.work-head .hand-note{margin-bottom:8px}
+.work-head h2{font-size:clamp(30px,5.5vw,54px)}
+.work-head p{color:var(--faded);margin-top:12px;font-size:15px}
+.work-grid{display:grid;gap:clamp(14px,2.5vw,22px)}
+@media(min-width:761px){.work-grid{grid-template-columns:repeat(3,1fr)}}
+
+.work-card{
+  display:flex;gap:16px;align-items:center;text-decoration:none;
+  border:1px solid var(--line);border-radius:14px;padding:12px;
+  background:rgba(34,18,25,.5);
+  transition:border-color .25s,background .25s,transform .25s;
+}
+.work-card:hover{border-color:rgba(255,77,141,.55);background:rgba(255,77,141,.07);transform:translateY(-3px)}
+.work-shot{
+  position:relative;flex:0 0 84px;width:84px;aspect-ratio:4/5;
+  border-radius:9px;overflow:hidden;background:var(--lacquer);
+}
+.work-shot img{width:100%;height:100%;object-fit:cover;transition:filter .3s}
+.work-card:hover .work-shot img{filter:saturate(1.2) brightness(1.06)}
+.work-cat{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon)}
+html.th .work-cat{letter-spacing:.03em;text-transform:none}
+.work-brand{
+  font-family:var(--disp);font-weight:600;font-size:16px;color:var(--cream);
+  margin:5px 0 7px;line-height:1.25;
+}
+.work-views{
+  font-family:var(--disp);font-weight:800;font-size:clamp(20px,2.6vw,26px);
+  color:var(--tungsten);line-height:1;
+}
+.work-views span{
+  font-family:var(--body);font-weight:400;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faded);margin-left:6px;
+}
+html.th .work-views span{letter-spacing:.02em;text-transform:none}
+.work-note{
+  text-align:center;color:var(--faded);font-size:14px;
+  max-width:520px;margin:clamp(24px,4vh,34px) auto 0;
+}
+.work-note b{color:var(--cream);font-weight:500}
+/* stack vertically once there is room for three across */
+@media(min-width:761px){
+  .work-card{flex-direction:column;align-items:stretch;gap:12px;padding:14px}
+  .work-shot{flex:none;width:100%;aspect-ratio:4/5}
+  .work-brand{font-size:15px}
+}
 
 /* ---------- book ---------- */
 .book{
@@ -643,7 +682,7 @@ html.static{scroll-behavior:auto}
   </a>
 
   <div class="polaroid polaroid-hero">
-    <img src="img/profile-hd-480.jpg" alt="Jess Zheng" width="400" height="500" style="aspect-ratio:4/5;object-fit:cover;object-position:50% 15%">
+    <img src="img/profile-hd-480.jpg" alt="Jess Zheng" width="480" height="480" style="aspect-ratio:4/5;object-fit:cover;object-position:50% 15%">
     <span class="cap"><span data-lang="en">hi, I'm Jess</span><span data-lang="th" lang="th">สวัสดีค่ะ เจสเอง</span></span>
     <span class="sticker" aria-hidden="true">อร่อย!</span>
   </div>
@@ -793,10 +832,10 @@ html.static{scroll-behavior:auto}
 </div>
 
 <!-- AUDIENCE -->
-<section class="audience" id="audience">
+<section class="audience" id="audience" aria-labelledby="aud-h">
   <div class="aud-head reveal">
     <div class="hand-note"><span data-lang="en">who's at the table</span><span data-lang="th" lang="th">ใครนั่งโต๊ะนี้บ้าง</span></div>
-    <h2><span data-lang="en">The Audience</span><span data-lang="th" lang="th">กลุ่มผู้ชม</span></h2>
+    <h2 id="aud-h"><span data-lang="en">The Audience</span><span data-lang="th" lang="th">กลุ่มผู้ชม</span></h2>
     <p><span data-lang="en">One shoot, content for all four.</span><span data-lang="th" lang="th">ถ่ายครั้งเดียว ได้คอนเทนต์ครบทั้งสี่</span></p>
   </div>
 
@@ -850,8 +889,55 @@ html.static{scroll-behavior:auto}
   </div>
 </section>
 
+
+
+<!-- RECENT WORK -->
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="work-head reveal">
+    <div class="hand-note"><span data-lang="en">what they got</span><span data-lang="th" lang="th">ผลลัพธ์ที่ได้</span></div>
+    <h2 id="work-h"><span data-lang="en">Recent work</span><span data-lang="th" lang="th">ผลงานล่าสุด</span></h2>
+    <p><span data-lang="en">Top-performing sponsored posts, and the views they pulled.</span><span data-lang="th" lang="th">คอนเทนต์สปอนเซอร์ที่ทำผลงานสูงสุด และยอดวิวที่ทำได้</span></p>
+  </div>
+  <div class="work-grid">
+    <a class="work-card reveal" href="https://www.instagram.com/reel/DPgluNDASHd/" target="_blank" rel="noopener">
+      <div class="work-shot">
+        <img src="img/bkk2-pajamas-480.jpg" alt="Sleeping Cloud Thai pajamas collab" width="270" height="480" loading="lazy">
+      </div>
+      <div class="work-meta">
+        <div class="work-cat"><span data-lang="en">Fashion</span><span data-lang="th" lang="th">แฟชั่น</span></div>
+        <div class="work-brand">Sleeping Cloud</div>
+        <div class="work-views">1.5M <span data-lang="en">views</span><span data-lang="th" lang="th">วิว</span></div>
+      </div>
+    </a>
+    <a class="work-card reveal" href="https://www.instagram.com/reel/DOdyVgbAXKZ/" target="_blank" rel="noopener">
+      <div class="work-shot">
+        <img src="img/muvmi-480.jpg" alt="MuvMi electric tuk tuk app collab" width="270" height="480" loading="lazy">
+      </div>
+      <div class="work-meta">
+        <div class="work-cat"><span data-lang="en">Transport</span><span data-lang="th" lang="th">การเดินทาง</span></div>
+        <div class="work-brand">MuvMi</div>
+        <div class="work-views">1.09M <span data-lang="en">views</span><span data-lang="th" lang="th">วิว</span></div>
+      </div>
+    </a>
+    <a class="work-card reveal" href="https://www.tiktok.com/@jesszhengg/video/7549170049374768385" target="_blank" rel="noopener">
+      <div class="work-shot">
+        <img src="img/shanghai-wonderland-480.jpg" alt="InterContinental Shanghai Wonderland collab" width="270" height="480" loading="lazy">
+      </div>
+      <div class="work-meta">
+        <div class="work-cat"><span data-lang="en">Luxury hotel</span><span data-lang="th" lang="th">โรงแรมหรู</span></div>
+        <div class="work-brand">InterContinental Shanghai</div>
+        <div class="work-views">229.5K <span data-lang="en">views</span><span data-lang="th" lang="th">วิว</span></div>
+      </div>
+    </a>
+  </div>
+  <p class="work-note reveal">
+    <span data-lang="en">A <b>149K</b> following, and paid posts that travel well past it.</span>
+    <span data-lang="th" lang="th">ผู้ติดตาม <b>149K</b> แต่คอนเทนต์ที่ได้รับการสนับสนุนไปได้ไกลกว่านั้นมาก</span>
+  </p>
+</section>
+
 <!-- PAST DINNER GUESTS -->
-<section class="guests reveal">
+<section class="guests reveal" aria-label="Brands Jess has worked with">
   <div class="hand-note"><span data-lang="en">in good company ✦</span><span data-lang="th" lang="th">แบรนด์ดังการันตี ✦</span></div>
   <div class="guests-label"><span data-lang="en">Brands I've worked with</span><span data-lang="th" lang="th">แบรนด์ที่เคยร่วมงาน</span></div>
   <div class="logo-row">
@@ -866,22 +952,6 @@ html.static{scroll-behavior:auto}
   </div>
 </section>
 
-<!-- PHOTO STRIP -->
-<section class="strip">
-  <div class="polaroid reveal">
-    <img src="img/bkk4-markets-480.jpg" alt="Bangkok night market" width="400" height="500" style="aspect-ratio:4/5;object-fit:cover" loading="lazy">
-    <span class="cap"><span data-lang="en">night market run</span><span data-lang="th" lang="th">ตะลุยตลาดกลางคืน</span></span>
-  </div>
-  <div class="polaroid reveal">
-    <img src="img/bkk6-tuktuk-480.jpg" alt="Tuk tuk ride in Bangkok" width="400" height="500" style="aspect-ratio:4/5;object-fit:cover" loading="lazy">
-    <span class="cap"><span data-lang="en">commute</span><span data-lang="th" lang="th">ระหว่างเดินทาง</span></span>
-  </div>
-  <div class="polaroid reveal">
-    <img src="img/grid5-rooftop-480.jpg" alt="Bangkok rooftop" width="400" height="500" style="aspect-ratio:4/5;object-fit:cover" loading="lazy">
-    <span class="cap"><span data-lang="en">office view</span><span data-lang="th" lang="th">วิวออฟฟิศ</span></span>
-  </div>
-</section>
-
   <p class="small-print reveal">
     <span class="hand-note"><span data-lang="en">the fine print</span><span data-lang="th" lang="th">เรื่องเล็กๆ ที่ควรรู้</span></span>
     <span data-lang="en">Every deliverable includes one revision. Multi-video deals, long-term partnerships
@@ -891,12 +961,12 @@ html.static{scroll-behavior:auto}
   </p>
 
 <!-- BOOK -->
-<section class="book" id="book">
+<section class="book" id="book" aria-labelledby="book-h">
   <div class="glow glow-pink" data-depth="10"></div>
   <div class="doodle doodle-spark spark-3" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M12 1v5"/><circle cx="12" cy="14" r="7"/><path d="M9 23h6M10 26h4M12 11v4M10 13l2 2 2-2"/></svg></div>
   <div class="doodle doodle-spark spark-4" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M12 1v5"/><circle cx="12" cy="14" r="7"/><path d="M9 23h6M10 26h4M12 11v4M10 13l2 2 2-2"/></svg></div>
   <div class="book-head reveal">
-    <h2><span data-lang="en">Say <em>hi!</em></span><span data-lang="th" lang="th">ทักมา<em>เลย!</em></span></h2>
+    <h2 id="book-h"><span data-lang="en">Say <em>hi!</em></span><span data-lang="th" lang="th">ทักมา<em>เลย!</em></span></h2>
   </div>
   <p class="reveal">
     <span data-lang="en">Tell me about your brand and let's make something people actually watch.</span>
@@ -1284,15 +1354,8 @@ html.static{scroll-behavior:auto}
     }
   });
 
-  /* ---------- photo strip drifts at three depths (desktop only) ---------- */
-  if (window.matchMedia("(min-width: 761px)").matches) {
-    document.querySelectorAll(".strip .polaroid").forEach(function(p, i){
-      gsap.to(p, {
-        yPercent: [-12, -20, -7][i % 3], ease: "none",
-        scrollTrigger: { trigger: ".strip", start: "top bottom", end: "bottom top", scrub: 1 }
-      });
-    });
-  }
+  /* no parallax on the work cards: they already carry a reveal tween and a CSS
+     hover lift, and a third transform writer would silently kill the hover */
 
   /* ---------- magnetic CTA (desktop only) ---------- */
   var cta = document.getElementById("cta");
