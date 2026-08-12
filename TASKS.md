@@ -27,7 +27,10 @@
       review workflow fixes — deployed 2026-08-12
 - [x] /temp v3: menu metaphor removed per William (labels now literal: Rate Card,
       Services & Rates, Content/Add-ons, The Bundle, Say hi!), Bangkok charm and
-      cuteness kept — deployed 2026-08-12, awaiting William's verdict
+      cuteness kept — deployed 2026-08-12
+- [x] /temp v4: crazier + polish (velocity marquees, chase-light bundle ring,
+      choreographed bundle timeline, sign drop, parallax polaroids, OG tags);
+      review cut tuk2/blur/shake/conic — deployed 2026-08-12, awaiting verdict
 
 ## To Do
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete

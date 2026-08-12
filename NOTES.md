@@ -1,5 +1,23 @@
 # Notes
 
+## /temp Rate Card v4: crazier + polish (2026-08-12)
+- New: velocity-reactive marquees (gsap-driven, reverse on scroll-up, timeScale
+  from getVelocity; clone-to-fill kills the seam gap on wide screens; deep
+  totalTime(600) so negative timeScale never hits t=0), sign drops onto chains,
+  chase-light ring on bundle (::before repeating-linear-gradient, bg-position
+  loop = composited; ::before so badge/stamp paint over it), ONE bundle timeline
+  (roll -> circle draw -> stamp slam -> stamp recoil + sparks), parallax
+  polaroids (hover moved to img filter, gsap owns polaroid transform), price
+  hover pop, OG/twitter meta, scroll-hint scrub fade (scrub owns opacity solo)
+- Cut by measured review (2-agent, live-browser): tuk2 (100% clipped by .book
+  overflow:hidden AND same joke twice), odometer blur (unreadable prices),
+  .special x-shake (price must hold still), conic sweep (generic SaaS border)
+- tuk1 parks back at x:-140 after driving: parking at 108vw inflated
+  document scrollWidth by 135px (body overflow-x:hidden masks it but
+  programmatic scrollX could shift layout)
+- Browser-pane gotcha: hidden pane pauses rAF so ScrollTriggers queue; verify
+  structurally via JS, not by waiting for tweens
+
 ## /temp Rate Card v3: de-metaphored (2026-08-12)
 - William: menu idea confusing; wants clear + brilliant + beautiful + CUTE
 - Kept: full Bangkok atmosphere (neon sign, food/bulb doodles, tuk-tuk, polaroids,
