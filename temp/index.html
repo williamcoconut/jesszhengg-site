@@ -52,7 +52,10 @@ body{
 }
 ::selection{background:var(--neon);color:var(--night)}
 a{color:inherit;cursor:pointer}
-a:focus-visible,button:focus-visible{outline:2px solid var(--neon);outline-offset:3px;border-radius:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+/* only square off inline text links: a shared border-radius here outranks each
+   pill component's own 999px and squares the buttons while focused */
+a:not([class]):focus-visible{border-radius:2px}
 img{max-width:100%;height:auto;display:block}
 
 /* language switching: both languages live in the DOM, html.th flips them */
@@ -160,7 +163,7 @@ html.th .dish h3{font-family:var(--disp)} /* platform names stay Latin */
 
 h1{
   font-family:var(--disp);font-weight:800;
-  font-size:clamp(62px,17vw,230px);
+  font-size:min(clamp(62px,17vw,230px),21vh);
   line-height:.9;letter-spacing:-.02em;text-transform:uppercase;
   position:relative;z-index:2;
 }
@@ -170,7 +173,7 @@ h1 .menu-word{
   color:var(--tungsten); /* on the word, not .ch: split chars don't exist in static/reduced mode */
   text-shadow:0 0 26px rgba(255,179,92,.45);
 }
-html.th h1{font-size:clamp(56px,15vw,200px)} /* เรทราคา is a longer word than the EN pair */
+html.th h1{font-size:min(clamp(56px,15vw,200px),19vh)} /* เรทราคา is a longer word than the EN pair */
 /* Thai vowel descenders (สระ อู) reach below the baseline; pad the reveal mask
    so they aren't clipped, and pull the gap back in with a negative margin */
 html.th h1 .word[data-lang="th"]{padding:.06em 0 .3em;margin-bottom:-.3em}
@@ -237,18 +240,6 @@ html.th .hero-cta{font-family:"Noto Sans Thai",var(--disp);letter-spacing:.02em;
   .hero-cta{margin-top:22px;padding:13px 24px}
 }
 
-.scroll-hint{
-  position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
-  font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-}
-html.th .scroll-hint{text-transform:none;letter-spacing:.04em}
-.scroll-hint .arr{animation:dip 1.6s ease-in-out infinite;font-size:15px}
-/* on mobile the "See rates" button does the hint's job, and dropping it keeps the
-   hero inside one screen instead of overlapping the polaroid
-   (must come after the base rule above: same specificity, source order decides) */
-@media(max-width:760px){.scroll-hint{display:none}}
-@keyframes dip{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
 
 /* ---------- ticker sandwich ---------- */
 .ticker-zone{position:relative}
@@ -403,7 +394,7 @@ html.th .special h3{font-family:var(--thdisp);text-transform:none}
 .small-print .hand-note{font-size:15px;display:block;margin-bottom:8px}
 
 /* ---------- audience proof ---------- */
-.audience{max-width:860px;margin:0 auto;padding:clamp(30px,5vh,60px) 24px 0}
+.audience{max-width:860px;margin:0 auto;padding:clamp(56px,9vh,110px) 24px 0}
 .aud-head{text-align:center;margin-bottom:clamp(34px,5vh,54px)}
 .aud-head .hand-note{margin-bottom:8px}
 .aud-head h2{font-size:clamp(30px,5.5vw,54px)}
@@ -411,6 +402,7 @@ html.th .special h3{font-family:var(--thdisp);text-transform:none}
 
 /* neon tube bars: one per platform, height = share of followers */
 .bars{
+  list-style:none;
   display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,3vw,30px);
   align-items:end;margin-bottom:clamp(38px,6vh,60px);
 }
@@ -422,28 +414,43 @@ html.th .special h3{font-family:var(--thdisp);text-transform:none}
 .bar-track{
   position:relative;height:clamp(120px,20vh,190px);
   width:clamp(34px,7vw,54px);margin:0 auto; /* narrow enough to read as a light tube, not a pill */
-  border-radius:999px;background:rgba(253,243,228,.06);overflow:hidden;
+  /* empty glass, not a filled trough: a tinted track behind a rounded fill
+     reads as a battery gauge rather than a light source */
+  border-radius:999px;background:transparent;overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(253,243,228,.10);
 }
 .bar-fill{
-  position:absolute;left:0;right:0;bottom:0;border-radius:999px;
+  position:absolute;left:0;right:0;bottom:0;
+  border-radius:999px 999px 4px 4px; /* lit gas meets the tube base, no floating pill */
   background:linear-gradient(180deg,rgba(255,179,92,.95),rgba(255,179,92,.5));
   box-shadow:0 0 18px rgba(255,179,92,.5),inset 0 0 12px rgba(255,255,255,.25);
 }
-.bar-col.lead .bar-fill{
-  background:linear-gradient(180deg,rgba(255,77,141,.95),rgba(255,77,141,.5));
-  box-shadow:0 0 22px rgba(255,77,141,.55),inset 0 0 12px rgba(255,255,255,.25);
+/* the tubes hang from wires, borrowed from the hero's neon sign rig */
+.bar-col{position:relative}
+.bar-col::before,.bar-col::after{
+  content:"";position:absolute;top:26px;width:1.5px;height:18px;background:var(--line);
 }
+.bar-col::before{left:34%}
+.bar-col::after{right:34%}
 .bar-name{
   margin-top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faded);
 }
+html.th .bar-name{font-family:var(--body)} /* platform names stay Latin */
+/* visually hidden, still announced */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:520px){.bar-name{letter-spacing:.06em;font-size:11px}}
 
 /* fact strip */
+/* explicit steps, never auto-fit: auto-fit lands on 3 columns between ~530 and
+   720px and orphans the fourth fact alone on a second row */
 .facts{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  display:grid;grid-template-columns:repeat(2,1fr);
   gap:clamp(16px,3vw,26px);
   border-top:1px solid var(--line);padding-top:clamp(26px,4vh,38px);
 }
+@media(min-width:730px){.facts{grid-template-columns:repeat(4,1fr)}}
+.fact{display:flex;flex-direction:column}
+.split-bar{margin-top:auto} /* all four columns end on the same line */
 .fact-label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
 html.th .fact-label{letter-spacing:.04em;text-transform:none}
 .fact-value{font-family:var(--disp);font-weight:800;font-size:clamp(22px,3.2vw,30px);color:var(--tungsten)}
@@ -456,8 +463,10 @@ html.th .fact-label{letter-spacing:.04em;text-transform:none}
   background:rgba(253,243,228,.06);
 }
 .split-bar i{display:block;height:100%}
-.split-f{background:var(--neon);box-shadow:0 0 12px rgba(255,77,141,.6)}
-.split-m{background:var(--tungsten);opacity:.75}
+/* one hue at two intensities: pink here would borrow the chart's palette and
+   imply a relationship to the platform bars that does not exist */
+.split-f{background:var(--tungsten)}
+.split-m{background:var(--tungsten);opacity:.35}
 
 /* ---------- past dinner guests (brand logos) ---------- */
 .guests{text-align:center;padding:clamp(48px,8vh,90px) 24px 10px;position:relative}
@@ -585,6 +594,7 @@ html.static{scroll-behavior:auto}
   </div>
 </header>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="glow glow-pink" data-depth="18"></div>
@@ -638,10 +648,6 @@ html.static{scroll-behavior:auto}
     <span class="sticker" aria-hidden="true">อร่อย!</span>
   </div>
 
-  <div class="scroll-hint">
-    <span><span data-lang="en">scroll for rates</span><span data-lang="th" lang="th">เลื่อนลงดูเรทราคา</span></span>
-    <span class="arr" aria-hidden="true">▼</span>
-  </div>
 </section>
 
 <!-- TICKER SANDWICH + TUK-TUK -->
@@ -679,7 +685,7 @@ html.static{scroll-behavior:auto}
 </div>
 
 <!-- MENU -->
-<main class="menu" id="menu">
+<div class="menu" id="menu" tabindex="-1">
   <div class="menu-head reveal">
     <div class="hand-note"><span data-lang="en">all prices in USD</span><span data-lang="th" lang="th">ราคาทั้งหมดเป็นดอลลาร์สหรัฐ</span></div>
     <h2><span data-lang="en">Services &amp; Rates</span><span data-lang="th" lang="th">บริการ &amp; ราคา</span></h2>
@@ -784,45 +790,38 @@ html.static{scroll-behavior:auto}
     </ul>
   </section>
 
-  <p class="small-print reveal">
-    <span class="hand-note"><span data-lang="en">the fine print</span><span data-lang="th" lang="th">เรื่องเล็กๆ ที่ควรรู้</span></span>
-    <span data-lang="en">Every deliverable includes one revision. Multi-video deals, long-term partnerships
-    and custom bundles are priced on request. Service with a smile, always.</span>
-    <span data-lang="th" lang="th">ทุกงานรวมการแก้ไข 1 ครั้ง ดีลหลายวิดีโอ พาร์ทเนอร์ชิพระยะยาว
-    และแพ็คเกจพิเศษ สอบถามเพิ่มเติมได้ พร้อมบริการด้วยรอยยิ้มเสมอ</span>
-  </p>
-</main>
+</div>
 
 <!-- AUDIENCE -->
-<section class="audience">
+<section class="audience" id="audience">
   <div class="aud-head reveal">
-    <div class="hand-note"><span data-lang="en">so who's watching? ✦</span><span data-lang="th" lang="th">แล้วใครดูอยู่บ้าง? ✦</span></div>
+    <div class="hand-note"><span data-lang="en">who's at the table</span><span data-lang="th" lang="th">ใครนั่งโต๊ะนี้บ้าง</span></div>
     <h2><span data-lang="en">The Audience</span><span data-lang="th" lang="th">กลุ่มผู้ชม</span></h2>
-    <p><span data-lang="en">Followers by platform. One shoot reaches all four.</span><span data-lang="th" lang="th">ผู้ติดตามแต่ละแพลตฟอร์ม ถ่ายครั้งเดียวถึงครบทั้งสี่</span></p>
+    <p><span data-lang="en">One shoot, content for all four.</span><span data-lang="th" lang="th">ถ่ายครั้งเดียว ได้คอนเทนต์ครบทั้งสี่</span></p>
   </div>
 
-  <div class="bars reveal">
-    <div class="bar-col lead">
-      <div class="bar-num">62K</div>
+  <ul class="bars reveal">
+    <li class="bar-col">
+      <div class="bar-num">62K<span class="vh"> followers on</span></div>
       <div class="bar-track"><div class="bar-fill" style="height:100%"></div></div>
       <div class="bar-name">TikTok</div>
-    </div>
-    <div class="bar-col">
-      <div class="bar-num">43.7K</div>
+    </li>
+    <li class="bar-col">
+      <div class="bar-num">43.7K<span class="vh"> followers on</span></div>
       <div class="bar-track"><div class="bar-fill" style="height:70%"></div></div>
       <div class="bar-name">Instagram</div>
-    </div>
-    <div class="bar-col">
-      <div class="bar-num">23K</div>
+    </li>
+    <li class="bar-col">
+      <div class="bar-num">23K<span class="vh"> followers on</span></div>
       <div class="bar-track"><div class="bar-fill" style="height:37%"></div></div>
       <div class="bar-name">YouTube</div>
-    </div>
-    <div class="bar-col">
-      <div class="bar-num">20K</div>
+    </li>
+    <li class="bar-col">
+      <div class="bar-num">20K<span class="vh"> followers on</span></div>
       <div class="bar-track"><div class="bar-fill" style="height:32%"></div></div>
       <div class="bar-name">Facebook</div>
-    </div>
-  </div>
+    </li>
+  </ul>
 
   <div class="facts reveal">
     <div class="fact">
@@ -858,11 +857,11 @@ html.static{scroll-behavior:auto}
   <div class="logo-row">
     <img src="../images/logos/central.svg" alt="Central" width="389" height="40" loading="lazy">
     <img src="../images/logos/intercontinental.svg" alt="InterContinental" width="125" height="63" loading="lazy">
-    <img src="../images/logos/eveandboy.svg" alt="EVE AND BOY" width="551" height="76" loading="lazy">
+    <img src="../images/logos/eveandboy.svg" alt="EVEANDBOY" width="551" height="76" loading="lazy">
     <img src="../images/logos/capcut.svg" alt="CapCut" width="960" height="182" loading="lazy">
-    <img src="../images/logos/gowabi.png" alt="GOWABI" width="200" height="76" loading="lazy">
+    <img src="../images/logos/gowabi.png" alt="GoWabi" width="200" height="76" loading="lazy">
     <img src="../images/logos/muvmi.png" alt="MuvMi" width="547" height="84" loading="lazy">
-    <img src="../images/logos/hungryhub.png" alt="Hungry Hub" width="754" height="225" loading="lazy">
+    <img src="../images/logos/hungryhub.png" alt="HungryHub" width="754" height="225" loading="lazy">
     <img src="../images/logos/allmax.png" alt="Allmax" width="792" height="88" loading="lazy">
   </div>
 </section>
@@ -882,6 +881,14 @@ html.static{scroll-behavior:auto}
     <span class="cap"><span data-lang="en">office view</span><span data-lang="th" lang="th">วิวออฟฟิศ</span></span>
   </div>
 </section>
+
+  <p class="small-print reveal">
+    <span class="hand-note"><span data-lang="en">the fine print</span><span data-lang="th" lang="th">เรื่องเล็กๆ ที่ควรรู้</span></span>
+    <span data-lang="en">Every deliverable includes one revision. Multi-video deals, long-term partnerships
+    and custom bundles are priced on request. Service with a smile, always.</span>
+    <span data-lang="th" lang="th">ทุกงานรวมการแก้ไข 1 ครั้ง ดีลหลายวิดีโอ พาร์ทเนอร์ชิพระยะยาว
+    และแพ็คเกจพิเศษ สอบถามเพิ่มเติมได้ พร้อมบริการด้วยรอยยิ้มเสมอ</span>
+  </p>
 
 <!-- BOOK -->
 <section class="book" id="book">
@@ -912,17 +919,18 @@ html.static{scroll-behavior:auto}
     <a href="https://facebook.com/jesszhengg" target="_blank" rel="noopener">Facebook</a>
   </div>
 </section>
+</main>
 
 <footer>
   <span>© 2026 Jess Zheng · Bangkok</span> · <a href="https://jesszheng.co"><span data-lang="en">full media kit</span><span data-lang="th" lang="th">มีเดียคิทฉบับเต็ม</span> ↗</a>
 </footer>
 
 <!-- STICKY MOBILE BOOK BAR -->
-<div class="sticky-cta" id="stickyCta">
+<div class="sticky-cta" id="stickyCta" inert aria-hidden="true">
   <div class="sc-label">
     <span class="sc-var sc-early">
       <span class="sc-name"><span data-lang="en">Rates from</span><span data-lang="th" lang="th">ราคาเริ่มต้น</span></span>
-      <b>$200</b> <span data-lang="en">· 4 platforms</span><span data-lang="th" lang="th">· 4 แพลตฟอร์ม</span>
+      <b>$200</b> <span data-lang="en">· add-ons</span><span data-lang="th" lang="th">· บริการเสริม</span>
     </span>
     <span class="sc-var sc-late">
       <span class="sc-name"><span data-lang="en">The Bundle</span><span data-lang="th" lang="th">แพ็คเกจรวม</span></span>
@@ -976,7 +984,14 @@ html.static{scroll-behavior:auto}
   /* ---------- sticky mobile book bar (UX, not decoration: runs even with reduced motion) ---------- */
   var bar = document.getElementById("stickyCta");
   var menuSeen = false, bookVisible = false;
-  function updateBar(){ bar.classList.toggle("on", menuSeen && !bookVisible); }
+  function updateBar(){
+    var on = menuSeen && !bookVisible;
+    bar.classList.toggle("on", on);
+    /* hidden purely by transform, so without these the button stays tabbable and
+       announced while parked off-screen (permanently so when JS never runs) */
+    bar.toggleAttribute("inert", !on);
+    bar.setAttribute("aria-hidden", String(!on));
+  }
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if (en.isIntersecting) menuSeen = true; });
@@ -1136,13 +1151,6 @@ html.static{scroll-behavior:auto}
     }
   });
 
-  /* the scroll hint fades before the tuk-tuk crosses its lane
-     (the scrub owns the hint's opacity outright: sharing it with the
-     entrance stagger risks the scrub capturing a mid-fade start value) */
-  gsap.fromTo(".scroll-hint", { opacity: 1 }, {
-    opacity: 0, ease: "none",
-    scrollTrigger: { trigger: ".ticker-zone", start: "top 98%", end: "top 82%", scrub: true }
-  });
 
   /* ---------- scroll reveals ---------- */
   document.querySelectorAll(".reveal").forEach(function(el){
