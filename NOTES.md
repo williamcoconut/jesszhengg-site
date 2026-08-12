@@ -1,5 +1,27 @@
 # Notes
 
+## /temp Rate Card v5: audience proof + mobile hero (2026-08-12)
+- Added an Audience section AFTER the prices (a brand manager's 2nd question,
+  right where they judge whether $900 is worth it), before the brand logos:
+  neon-tube bar chart of followers per platform + fact strip
+- ALL numbers copied from index.html, none invented: 62.3K TikTok / 43.7K IG /
+  23K YT / 20K FB (sums to the 149K+ claim), 100M+ views, 5.8% avg engagement,
+  18-34, 65/35 women/men, US CA UK AU. Bar heights are honest ratios of 62.3K
+  (100/70/37/32%). If these ever change, update index.html AND temp/index.html.
+- Hero: added a quiet "See rates / ดูราคา" ghost button anchored to #menu
+  (an action above the fold; the old review flagged time-to-price)
+- Sticky bar no longer always shouts $1,500: starts "Rates from $200", swaps to
+  the bundle once .special has been seen (IntersectionObserver, then disconnects)
+- Mobile hero was overflowing 989px into an 844px screen with the scroll hint
+  overlapping the polaroid: compact chips, smaller polaroid, hint hidden <=760px
+- CSS ORDER GOTCHA: the first attempt at hiding the hint failed silently because
+  the media query sat ABOVE the base .scroll-hint{display:flex} rule. Same
+  specificity means source order wins. Mobile overrides must come after the base.
+- Logo <img> now carry real intrinsic width/height read from the SVG/PNG files
+  (guessing them would reserve the wrong space and cause the CLS being fixed)
+- QC GOTCHA: the browser pane serves a stale cached copy after edits. Append a
+  cache-buster (?static&cb=N) or you will verify the previous version.
+
 ## /temp Rate Card v4: crazier + polish (2026-08-12)
 - New: velocity-reactive marquees (gsap-driven, reverse on scroll-up, timeScale
   from getVelocity; clone-to-fill kills the seam gap on wide screens; deep
