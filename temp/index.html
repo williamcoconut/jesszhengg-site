@@ -6,7 +6,14 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Jess Zheng · Rate Card</title>
 <meta name="description" content="Rates for working with Jess Zheng. Canadian creator, Bangkok local.">
+<meta property="og:title" content="Jess Zheng · Rate Card">
+<meta property="og:description" content="Rates for working with Jess Zheng. Canadian creator, Bangkok local. 149K+ followers across 4 platforms.">
+<meta property="og:image" content="https://jesszheng.co/images/profile-hd.jpg">
+<meta property="og:url" content="https://jesszheng.co/temp/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9C%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Schibsted+Grotesk:wght@400;500;700&family=Sriracha&family=Chonburi&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
@@ -295,7 +302,9 @@ html.th h2{text-transform:none}
   color:var(--tungsten);font-variant-numeric:tabular-nums;white-space:nowrap;
   text-shadow:0 0 22px rgba(255,179,92,.35);
   display:inline-flex;align-items:flex-start;line-height:1;
+  transition:transform .25s cubic-bezier(.2,.9,.3,1.4);
 }
+.menu-row:hover .price{transform:scale(1.08)}
 /* odometer digits */
 .od-col{display:block;height:1em;overflow:hidden;text-align:center}
 .od-strip{display:block} /* transforms are ignored on inline elements */
@@ -310,6 +319,18 @@ html.th h2{text-transform:none}
   background:linear-gradient(140deg,rgba(255,77,141,.09),rgba(255,179,92,.05) 65%,transparent);
   box-shadow:0 0 34px rgba(255,77,141,.14),inset 0 0 30px rgba(255,77,141,.05);
 }
+/* chase lights running around the bundle card, like bulbs on a stall sign
+   (::before so the badge and stamp paint over it; background-position loop is composited) */
+.special::before{
+  content:"";position:absolute;inset:-3px;border-radius:19px;padding:2px;
+  background:repeating-linear-gradient(90deg,var(--neon) 0 6px,transparent 6px 18px);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:chase 1.1s linear infinite;opacity:.45;pointer-events:none;
+}
+@keyframes chase{to{background-position:18px 0}}
+@media(prefers-reduced-motion:reduce){.special::before{display:none}}
+html.static .special::before{display:none}
 .special .badge{
   position:absolute;top:-14px;left:clamp(22px,4vw,40px);
   background:var(--neon);color:var(--night);
@@ -380,7 +401,9 @@ html.th .guests-label{text-transform:none;letter-spacing:.06em}
 .strip .polaroid:nth-child(1){transform:rotate(-4deg)}
 .strip .polaroid:nth-child(2){transform:rotate(2deg)}
 .strip .polaroid:nth-child(3){transform:rotate(-1.5deg)}
-.strip .polaroid:hover{transform:rotate(0) scale(1.05);transition:transform .3s}
+/* hover pop lives on the img filter: gsap owns the polaroid's transform for parallax */
+.strip .polaroid img{transition:filter .3s}
+.strip .polaroid:hover img{filter:saturate(1.25) brightness(1.07)}
 
 /* ---------- book ---------- */
 .book{
@@ -489,10 +512,12 @@ html.static{scroll-behavior:auto}
   <div class="doodle doodle-spark spark-1" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M12 1v5"/><circle cx="12" cy="14" r="7"/><path d="M9 23h6M10 26h4M12 11v4M10 13l2 2 2-2"/></svg></div>
   <div class="doodle doodle-spark spark-2" aria-hidden="true"><svg viewBox="0 0 24 30"><path d="M12 1v5"/><circle cx="12" cy="14" r="7"/><path d="M9 23h6M10 26h4M12 11v4M10 13l2 2 2-2"/></svg></div>
 
-  <div class="sign-rig">
-    <div class="neon-sign flicker">
-      <span class="th-word" lang="th">เปิด</span>
-      <span><span data-lang="en">open for collabs</span><span data-lang="th" lang="th">รับคอลแลบ</span></span>
+  <div class="sign-drop">
+    <div class="sign-rig">
+      <div class="neon-sign flicker">
+        <span class="th-word" lang="th">เปิด</span>
+        <span><span data-lang="en">open for collabs</span><span data-lang="th" lang="th">รับคอลแลบ</span></span>
+      </div>
     </div>
   </div>
 
@@ -873,9 +898,11 @@ html.static{scroll-behavior:auto}
     duration: 1.3, stagger: 0.055, ease: "elastic.out(1, 0.55)", delay: 0.15
   });
   gsap.from("h1 .word[data-lang='th']", { yPercent: 120, duration: 1.1, ease: "elastic.out(1, 0.55)", delay: 0.2 });
-  gsap.from(".hero-sub, .hero-stats, .scroll-hint", {
+  gsap.from(".hero-sub, .hero-stats", {
     opacity: 0, y: 24, duration: 0.7, stagger: 0.09, ease: "power2.out", delay: 0.8
   });
+  /* the neon sign drops in on its chains, then keeps swaying (CSS) */
+  gsap.from(".sign-drop", { y: -110, opacity: 0, duration: 1.1, ease: "elastic.out(1, 0.5)", delay: 0.05 });
   /* polaroid drops in and settles */
   gsap.from(".polaroid-hero", {
     y: -60, opacity: 0, rotate: 20, duration: 1.1, ease: "elastic.out(1, 0.5)", delay: 1.05
@@ -897,6 +924,41 @@ html.static{scroll-behavior:auto}
     });
   }
 
+  /* ---------- marquees react to scroll: faster with velocity, reverse on scroll-up ---------- */
+  var marquees = [];
+  document.querySelectorAll(".ticker-track").forEach(function(track){
+    track.style.animation = "none"; /* gsap takes over from the CSS fallback */
+    /* the markup ships two copies; clone until one copy-width overhangs any viewport, so the loop has no seam */
+    var unit = track.scrollWidth / 2;
+    var firstCopy = [].slice.call(track.children, 0, track.children.length / 2);
+    while (track.scrollWidth < innerWidth + unit && firstCopy.length) {
+      firstCopy.forEach(function(s){ track.appendChild(s.cloneNode(true)); });
+    }
+    var pct = -(unit / track.scrollWidth) * 100; /* one copy-width = one seamless cycle */
+    var rev = track.parentElement.classList.contains("rev");
+    var tw = rev
+      ? gsap.fromTo(track, { xPercent: pct }, { xPercent: 0, duration: 38, ease: "none", repeat: -1 })
+      : gsap.fromTo(track, { xPercent: 0 }, { xPercent: pct, duration: 30, ease: "none", repeat: -1 });
+    tw.totalTime(600); /* deep playhead so negative timeScale has runway and never hits t=0 */
+    marquees.push(tw);
+  });
+  var settleTimer;
+  ScrollTrigger.create({
+    start: 0, end: "max",
+    onUpdate: function(self){
+      gsap.killTweensOf(marquees); /* a live gesture always beats the settle tween */
+      var raw = self.getVelocity();
+      var v = gsap.utils.clamp(-3.5, 3.5, raw / 700);
+      if (Math.abs(raw) < 300) v = 1; /* momentum noise keeps the ticker moving forward */
+      else if (Math.abs(v) < 1) v = v < 0 ? -1 : 1;
+      marquees.forEach(function(tw){ tw.timeScale(v); });
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(function(){
+        marquees.forEach(function(tw){ gsap.to(tw, { timeScale: 1, duration: 0.8 }); });
+      }, 150);
+    }
+  });
+
   /* ---------- tuk-tuk drives across when the ticker arrives ---------- */
   var tuk = document.getElementById("tuk1");
   ScrollTrigger.create({
@@ -904,10 +966,21 @@ html.static{scroll-behavior:auto}
     onEnter: function(){
       tuk.classList.add("driving");
       gsap.fromTo(tuk, { x: -140 }, {
-        x: "108vw", duration: 3, ease: "power1.inOut", /* vw so rotation can't strand it mid-page */
-        onComplete: function(){ tuk.classList.remove("driving"); }
+        x: "108vw", duration: 3, ease: "power1.inOut",
+        onComplete: function(){
+          tuk.classList.remove("driving");
+          gsap.set(tuk, { x: -140 }); /* park off-left: right overhang inflates scrollWidth */
+        }
       });
     }
+  });
+
+  /* the scroll hint fades before the tuk-tuk crosses its lane
+     (the scrub owns the hint's opacity outright: sharing it with the
+     entrance stagger risks the scrub capturing a mid-fade start value) */
+  gsap.fromTo(".scroll-hint", { opacity: 1 }, {
+    opacity: 0, ease: "none",
+    scrollTrigger: { trigger: ".ticker-zone", start: "top 98%", end: "top 82%", scrub: true }
   });
 
   /* ---------- scroll reveals ---------- */
@@ -930,6 +1003,7 @@ html.static{scroll-behavior:auto}
   }
 
   /* ---------- odometer prices: digits roll like a menu board ---------- */
+  var specialRoll = null; /* the bundle's roll is choreographed by the special timeline below */
   document.querySelectorAll(".price[data-price]").forEach(function(el){
     var label = el.textContent.trim();
     el.setAttribute("aria-label", label);
@@ -949,36 +1023,52 @@ html.static{scroll-behavior:auto}
         st.textContent = c; el.appendChild(st);
       }
     });
-    ScrollTrigger.create({
-      trigger: el, start: "top 92%", once: true,
-      onEnter: function(){
-        strips.forEach(function(s, i){
-          gsap.fromTo(s.strip, { yPercent: 0 }, {
-            yPercent: -(10 + s.d) * 5, /* strip is 20 digits tall */
-            duration: 0.9 + i * 0.06, ease: "power3.inOut", delay: i * 0.05
-          });
+    function roll(){
+      strips.forEach(function(s, i){
+        gsap.fromTo(s.strip, { yPercent: 0 }, {
+          yPercent: -(10 + s.d) * 5, /* strip is 20 digits tall */
+          duration: 0.9 + i * 0.06, ease: "power3.inOut", delay: i * 0.05
         });
-      }
-    });
+      });
+    }
+    if (el.closest(".special")) { specialRoll = roll; }
+    else ScrollTrigger.create({ trigger: el, start: "top 82%", once: true, onEnter: roll });
   });
 
-  /* ---------- hand-drawn circle around the special price ---------- */
+  /* ---------- the bundle moment: one timeline, so the price never fights the stamp ---------- */
   var path = document.getElementById("circle-path");
   if (path) {
     var len = path.getTotalLength();
     gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
-    gsap.to(path, {
-      strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut",
-      scrollTrigger: { trigger: ".special", start: "top 75%" }
+  }
+  gsap.set("#stamp", { autoAlpha: 0 });
+  ScrollTrigger.create({
+    trigger: ".special", start: "top 78%", once: true,
+    onEnter: function(){
+      var tl = gsap.timeline();
+      if (specialRoll) tl.call(specialRoll, null, 0);                    /* digits roll (~1.2s) */
+      if (path) tl.to(path, { strokeDashoffset: 0, duration: 1.1, ease: "power2.inOut" }, 0.85);
+      tl.fromTo("#stamp",
+        { autoAlpha: 0, scale: 2.6, rotation: 15, transformOrigin: "50% 50%" },
+        { autoAlpha: 0.95, scale: 1, rotation: -10, duration: 0.55, ease: "back.out(2.2)" }, ">-0.2");
+      tl.call(function(){
+        /* the stamp recoils; the card and the price hold still */
+        gsap.fromTo("#stamp", { rotation: -10 }, { rotation: -14, duration: 0.05, repeat: 5, yoyo: true, clearProps: "rotation" });
+        var r = document.getElementById("stamp").getBoundingClientRect();
+        burst(r.left + r.width / 2, r.top + r.height / 2);
+      });
+    }
+  });
+
+  /* ---------- photo strip drifts at three depths (desktop only) ---------- */
+  if (window.matchMedia("(min-width: 761px)").matches) {
+    document.querySelectorAll(".strip .polaroid").forEach(function(p, i){
+      gsap.to(p, {
+        yPercent: [-12, -20, -7][i % 3], ease: "none",
+        scrollTrigger: { trigger: ".strip", start: "top bottom", end: "bottom top", scrub: 1 }
+      });
     });
   }
-
-  /* ---------- rubber stamp slams in ---------- */
-  gsap.from("#stamp", {
-    scale: 2.6, opacity: 0, rotate: 15, transformOrigin: "50% 50%",
-    duration: 0.55, ease: "back.out(2.2)",
-    scrollTrigger: { trigger: ".special", start: "top 70%" }
-  });
 
   /* ---------- magnetic CTA (desktop only) ---------- */
   var cta = document.getElementById("cta");
