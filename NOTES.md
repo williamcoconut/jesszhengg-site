@@ -25,6 +25,26 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v6: Recent work proof (2026-08-12)
+- Added a Recent work section showing three real campaigns with view counts,
+  each linking to the live post: Sleeping Cloud 1.5M, MuvMi 1.09M,
+  InterContinental Shanghai 229.5K. Replaced the decorative polaroid strip.
+- Follower counts prove reach; campaign results prove performance. That is what
+  justifies $900-1500, so it sits right after the audience bars.
+- HONESTY GUARD: index.html frames these as "top-performing sponsored content",
+  so the section says top-performing. Do not re-word this to imply typical
+  results. All view counts and URLs come from index.html, never estimated.
+- DISCOVERY: images/bkk6-tuktuk.jpg and images/muvmi.jpg are the SAME file
+  (identical md5; git confirmed a 100% rename). The old strip captioned a
+  sponsored MuvMi campaign shot as a personal "commute". Now credited properly.
+- Section order: rates, audience, results, logos, terms, book. Strongest proof
+  before the quieter breadth signal.
+- Sections carry aria-labelledby/aria-label so landmark nav reaches each.
+- Work cards get NO parallax: they already have a reveal tween plus a CSS hover
+  lift, and a third transform writer silently kills the hover.
+- img width/height must be the TRUE intrinsic size. sips -Z 480 makes the LONG
+  side 480, so a 1080x1920 source becomes 270x480, not 384x480.
+
 ### v5 audit fixes (17-finding review, applied 2026-08-12)
 - Sticky bar hides by transform only, so it stayed tabbable and announced while
   parked off-screen (permanently, with JS off). Ships `inert aria-hidden="true"`,

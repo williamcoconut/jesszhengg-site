@@ -36,8 +36,10 @@
       overflow fix — deployed 2026-08-12
 - [x] /temp v5 audit pass: 17-finding review applied (sticky bar inert, fact
       grid orphan, hero fold + duplicate scroll hint, bar chart battery look,
-      colour discipline, landmark/focus a11y) — deployed 2026-08-12, awaiting
-      William's verdict
+      colour discipline, landmark/focus a11y) — deployed 2026-08-12
+- [x] /temp v6: Recent work section (3 real campaigns with view counts, linked
+      to live posts), replacing the decorative photo strip; proof order fixed
+      — deployed 2026-08-12, awaiting William's verdict
 
 ## To Do
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete
