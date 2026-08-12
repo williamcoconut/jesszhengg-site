@@ -19,8 +19,23 @@
   specificity means source order wins. Mobile overrides must come after the base.
 - Logo <img> now carry real intrinsic width/height read from the SVG/PNG files
   (guessing them would reserve the wrong space and cause the CLS being fixed)
-- QC GOTCHA: the browser pane serves a stale cached copy after edits. Append a
-  cache-buster (?static&cb=N) or you will verify the previous version.
+- Corrected TikTok 62.3K -> 62K. 62.3K was derived by subtracting the other
+  platforms from 149K; her media kit publishes 62K. Never state a precision she
+  does not publish. All other figures verified against index.html.
+- Bundle digits are now real children of the bundle timeline (were a
+  fire-and-forget gsap call, which any jump or scrub would skip).
+
+### QC gotchas in the browser pane (cost me three false diagnoses)
+1. Stale cache after edits: append ?static&cb=N or you verify the OLD file.
+2. When the pane is hidden/collapsed, `innerHeight` reads 0, rAF never runs
+   (gsap.ticker.frame stays 0) and IntersectionObserver callbacks never fire.
+   Frozen tweens then look exactly like "the trigger never fired". Check
+   `document.hidden` and `gsap.ticker.frame` BEFORE concluding there is a bug.
+3. `gsap.globalTimeline.totalTime(n)` suppresses callbacks, so anything inside
+   a .call() appears not to run. Only tween-based state survives that jump.
+4. Reading a gsap transform with /-?[\d.]+/ grabs the X value out of
+   `translate(0%, -95%)` and always reports 0. Match the Y group explicitly.
+   Verify the measuring tool before trusting a scary measurement.
 
 ## /temp Rate Card v4: crazier + polish (2026-08-12)
 - New: velocity-reactive marquees (gsap-driven, reverse on scroll-up, timeScale
