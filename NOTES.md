@@ -25,6 +25,28 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v7: work-card fixes from the v6 audit (2026-08-12)
+- CRITICAL, caught by audit not by me: index.html pairs 1.5M and 1.09M with
+  "IG + TikTok", i.e. COMBINED across two platforms. My cards linked to a single
+  Instagram Reel, so the number read as that one post's result, next to a $900
+  Instagram Reel price. Every card now states its platforms. When lifting a
+  number from index.html, lift its qualifier too.
+- GSAP `gsap.from()` leaves an inline transform on completion, which outranks
+  the stylesheet and kills every CSS :hover/:active transform on .reveal
+  elements. Fixed with clearProps:"transform". This had also been silently
+  killing .menu-row:active. My code comment had asserted the hover was fine.
+- Cards rebuilt from existing page parts (polaroid frame + tape, Sriracha hook,
+  dotted leader, tungsten number with the price glow) instead of a 4th card style.
+- Her real hooks beat my invented category chips. The burned-in TikTok captions
+  are removed by cropping to 4:5 in export rather than letting CSS chop them.
+- Deleted the logo wall: it repeated two brands the cards prove with numbers.
+- CSS REGEX SURGERY BIT AGAIN: deleting `.guests-label{...}` left an orphaned
+  `html.th ` that glued onto `.logo-row{`, silently making it display:block.
+  Same failure as the earlier `html.th @keyframes dip`. After any regex CSS
+  deletion, grep the neighbouring selector and re-check computed styles.
+- A `white-space:nowrap` fix for the ↗ made the row unshrinkable and caused
+  horizontal overflow. Use &nbsp; to bind a trailing glyph, not nowrap.
+
 ## /temp v6: Recent work proof (2026-08-12)
 - Added a Recent work section showing three real campaigns with view counts,
   each linking to the live post: Sleeping Cloud 1.5M, MuvMi 1.09M,

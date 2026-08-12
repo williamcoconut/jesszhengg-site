@@ -39,7 +39,11 @@
       colour discipline, landmark/focus a11y) — deployed 2026-08-12
 - [x] /temp v6: Recent work section (3 real campaigns with view counts, linked
       to live posts), replacing the decorative photo strip; proof order fixed
-      — deployed 2026-08-12, awaiting William's verdict
+      — deployed 2026-08-12
+- [x] /temp v7: fixed misattributed view counts (1.5M/1.09M are IG+TikTok
+      combined, now stated), GSAP clearProps hover bug, cards rebuilt with
+      polaroid frames and her real hooks, logo wall cut — deployed 2026-08-12,
+      awaiting William's verdict
 
 ## To Do
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete
