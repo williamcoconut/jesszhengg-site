@@ -47,6 +47,9 @@
       the whole .book rule live, visible email fallback for in-app browsers,
       sticky bar anchors at $900 not $200, hospitality logos (Sri Panwa),
       iOS perf (grain, backdrop-filter, ignoreMobileResize) — deployed
+      2026-08-13
+- [x] /temp v9: work cards autoplay muted 5s clips of her real posts (self
+      hosted, viewport-gated, poster fallback) + 8-photo gallery — deployed
       2026-08-13, awaiting William's verdict
 
 ## To Do

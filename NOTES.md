@@ -25,6 +25,31 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v9: autoplay clips + photo gallery (2026-08-13)
+- Work cards now play 5s MUTED LOOPS of her actual posts instead of stills.
+  Deliberately NOT Instagram/TikTok embeds: those need third-party JS, are
+  often blocked, cannot reliably autoplay, and would not match the design.
+- SOURCE OF THE CLIPS: ~/Development/viralme/api/data/videos/tiktok/jesszhengg/
+  has 227 archived posts. The two Instagram reels are not there, but all three
+  campaigns also ran on TikTok, so the TikTok versions were used:
+  7558467590918606096 pajamas, 7548840572904082705 muvmi,
+  7549170049374768385 hotel. That archive also holds PER-PLATFORM view counts
+  in the .info.json files, which is where a median could come from.
+- ffmpeg recipe: crop 576x720 at y=40 (clears the burned-in caption bands),
+  scale 360x450, fps 24, no audio, crf 30, faststart. ~130KB per clip.
+  Poster is a frame from the same timestamp so there is no flash on play.
+- Playback is gated: IntersectionObserver plays only what is on screen, pauses
+  the rest, pauses all on tab hide, and does not autoplay at all under
+  prefers-reduced-motion, Save-Data or 2g. Clips sit inside the existing links
+  with no controls, so a tap still opens the real post.
+- Gallery: 8 lazy 420px photos in temp/img/gal/. The Sri Panwa tile is a
+  "most luxurious hotel in Thailand" room tour, which is the Thailand
+  hospitality proof the v8 review said was missing.
+- ALWAYS look at an image before writing its alt text. Two of eight were wrong
+  on the first pass: a seafood buffet labelled Japanese food, and MBK Center
+  labelled street food.
+- Net initial load is unchanged: everything new is lazy or preload=none.
+
 ## /temp v8: final review, 22 findings (2026-08-13)
 - CRITICAL, shipped live for ~2 hours: a stray `}` left over from the work-card
   CSS rewrite sat after an @media block. CSS error recovery then swallowed the
