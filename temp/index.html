@@ -116,7 +116,7 @@ html.th .dish h3{font-family:var(--disp)} /* platform names stay Latin */
 
 /* ---------- hero ---------- */
 .hero{
-  position:relative;min-height:100svh;
+  position:relative;min-height:100vh;min-height:100svh; /* vh first for pre-15.4 Safari */
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;padding:110px 20px 70px;overflow:hidden;
 }
@@ -601,9 +601,13 @@ footer a:hover{color:var(--neon)}
   padding:10px 16px calc(10px + env(safe-area-inset-bottom));
   background:rgba(34,18,25,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-top:1px solid rgba(255,77,141,.35);
-  transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.9,.3,1.1);
+  /* visibility backs up the inert attribute for browsers without it, and the
+     0s delay lets the slide finish before the bar leaves the a11y tree */
+  visibility:hidden;
+  transform:translateY(110%);
+  transition:transform .35s cubic-bezier(.2,.9,.3,1.1),visibility 0s .35s;
 }
-.sticky-cta.on{transform:translateY(0)}
+.sticky-cta.on{visibility:visible;transform:translateY(0);transition:transform .35s cubic-bezier(.2,.9,.3,1.1),visibility 0s 0s}
 .sc-label{font-size:13.5px;color:var(--faded);line-height:1.3}
 /* the bar leads with the entry price, then switches to the bundle once it's been seen */
 .sc-late{display:none}
