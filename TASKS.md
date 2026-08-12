@@ -33,7 +33,11 @@
       review cut tuk2/blur/shake/conic — deployed 2026-08-12
 - [x] /temp v5: audience proof section (neon bar chart + real stats from
       index.html), hero "See rates" button, contextual sticky bar, mobile hero
-      overflow fix — deployed 2026-08-12, awaiting William's verdict
+      overflow fix — deployed 2026-08-12
+- [x] /temp v5 audit pass: 17-finding review applied (sticky bar inert, fact
+      grid orphan, hero fold + duplicate scroll hint, bar chart battery look,
+      colour discipline, landmark/focus a11y) — deployed 2026-08-12, awaiting
+      William's verdict
 
 ## To Do
 - [ ] Decide fate of /temp experiment: promote the design, iterate, or delete

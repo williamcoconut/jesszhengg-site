@@ -25,6 +25,24 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+### v5 audit fixes (17-finding review, applied 2026-08-12)
+- Sticky bar hides by transform only, so it stayed tabbable and announced while
+  parked off-screen (permanently, with JS off). Ships `inert aria-hidden="true"`,
+  both toggled in updateBar(). Any transform-hidden control needs this.
+- .facts used auto-fit -> 3 columns + orphan between ~530-720px. Explicit 2-up /
+  4-up at 730px. Prefer explicit steps over auto-fit for a known item count.
+- Deleted .scroll-hint: it duplicated the new "See rates" button and pushed it
+  below the fold on laptops. h1 is now capped by height too: min(clamp(),21vh).
+- Bar chart read as a battery gauge. Track is empty glass + hairline, fill is
+  flat-bottomed, tubes hang from wires copied from .sign-rig.
+- Colour discipline: pink had 3 meanings on one screen. Bars amber (height ranks
+  them), pink reserved for the 5.8% stat, split bar one hue at two intensities.
+- The shared a:focus-visible rule carried border-radius:2px, which outranks each
+  pill's own 999px and squares buttons while focused. Scope shared focus styles.
+- <main> wrapped only the rates; everything after it sat outside any landmark.
+- Never write "$200 · 4 platforms" as one sticky label: true separately, false
+  together ($200 is IG Stories, a single-platform add-on).
+
 ### QC gotchas in the browser pane (cost me three false diagnoses)
 1. Stale cache after edits: append ?static&cb=N or you verify the OLD file.
 2. When the pane is hidden/collapsed, `innerHeight` reads 0, rAF never runs
