@@ -61,7 +61,7 @@ img{max-width:100%;height:auto;display:block}
 
 /* language switching: both languages live in the DOM, html.th flips them */
 [data-lang="th"]{display:none}
-h1 .word[data-lang="th"]{display:none} /* h1 .word's display:block outranks the attr selector, so re-hide explicitly */
+h1 .word[data-lang="th"]{display:none} /* h1 .word's display:block outranks the attr selector */
 html.th [data-lang="en"]{display:none}
 html.th h1 .word[data-lang="en"]{display:none}
 html.th [data-lang="th"]{display:inline}
@@ -163,16 +163,20 @@ html.th .dish h3{font-family:var(--disp)} /* platform names stay Latin */
 
 h1{
   font-family:var(--disp);font-weight:800;
-  font-size:min(clamp(62px,17vw,230px),21vh);
-  line-height:.9;letter-spacing:-.02em;text-transform:uppercase;
+  font-size:min(clamp(46px,11vw,132px),19vh);
+  line-height:.94;letter-spacing:-.025em;
   position:relative;z-index:2;
 }
 h1 .word{display:block;overflow:hidden;padding:.06em 0}
 h1 .ch{display:inline-block}
-h1 .menu-word{
-  color:var(--tungsten); /* on the word, not .ch: split chars don't exist in static/reduced mode */
+h1 .script{
+  font-family:var(--hand);font-weight:400;
+  font-size:.78em;letter-spacing:0;line-height:1.15;
+  padding-bottom:.12em;margin-top:-.04em;
 }
-html.th h1{font-size:min(clamp(56px,15vw,200px),19vh)} /* เรทราคา is a longer word than the EN pair */
+html.th h1 .script{font-family:var(--hand);font-size:.72em}
+h1 .script{color:var(--tungsten)} /* on the word, not .ch: split chars do not exist in static mode */
+html.th h1{font-size:min(clamp(40px,9.5vw,112px),17vh)}
 /* Thai vowel descenders (สระ อู) reach below the baseline; pad the reveal mask
    so they aren't clipped, and pull the gap back in with a negative margin */
 html.th h1 .word[data-lang="th"]{padding:.06em 0 .3em;margin-bottom:-.3em}
@@ -282,8 +286,8 @@ html.th .hero-cta{font-family:"Noto Sans Thai",var(--disp);letter-spacing:.02em;
 .hand-note{font-family:var(--hand);color:var(--tungsten);font-size:clamp(16px,2vw,20px)}
 .menu-head .hand-note{margin-bottom:10px}
 h2{
-  font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;
-  font-size:clamp(36px,7vw,70px);line-height:1.05;
+  font-family:var(--disp);font-weight:800;letter-spacing:-.015em;
+  font-size:clamp(32px,5.6vw,56px);line-height:1.1;
 }
 html.th h2{text-transform:none}
 .squiggle{display:block;margin:10px auto 0;width:min(240px,60%)}
@@ -693,10 +697,11 @@ html.static{scroll-behavior:auto}
     </div>
   </div>
 
-  <h1 id="hero-title" aria-label="Rate Card">
-    <span class="word split" data-lang="en">Rate</span>
-    <span class="word menu-word split" data-lang="en">Card</span>
-    <span class="word menu-word" data-lang="th" lang="th">เรทราคา</span>
+  <h1 id="hero-title" aria-label="Let's work together">
+    <span class="word split" data-lang="en">Let’s work</span>
+    <span class="word script" data-lang="en">together</span>
+    <span class="word" data-lang="th" lang="th">มาร่วมงาน</span>
+    <span class="word script" data-lang="th" lang="th">ด้วยกัน</span>
   </h1>
 
   <p class="hero-sub">
@@ -1100,7 +1105,7 @@ html.static{scroll-behavior:auto}
     document.documentElement.lang = th ? "th" : "en";
     btnEn.setAttribute("aria-pressed", String(!th));
     btnTh.setAttribute("aria-pressed", String(th));
-    h1.setAttribute("aria-label", th ? "เรทราคา" : "Rate Card");
+    h1.setAttribute("aria-label", th ? "มาร่วมงานด้วยกัน" : "Let’s work together");
     document.querySelector(".lang-toggle").setAttribute("aria-label", th ? "ภาษา" : "Language");
     try { localStorage.setItem("jz-lang", lang); } catch (e) {}
     if (anchor) window.scrollBy({ top: anchor.getBoundingClientRect().top - before, behavior: "instant" });
@@ -1112,7 +1117,7 @@ html.static{scroll-behavior:auto}
   if (document.documentElement.classList.contains("th")) {
     btnEn.setAttribute("aria-pressed", "false");
     btnTh.setAttribute("aria-pressed", "true");
-    h1.setAttribute("aria-label", "เรทราคา");
+    h1.setAttribute("aria-label", "มาร่วมงานด้วยกัน");
   }
 
   /* ---------- sticky mobile book bar (UX, not decoration: runs even with reduced motion) ---------- */
