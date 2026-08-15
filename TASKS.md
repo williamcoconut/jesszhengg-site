@@ -55,7 +55,10 @@
       (the amber glow was making both edges muddy brown) — deployed 2026-08-13
 - [x] /temp v11: flipped to a LIGHT whimsical theme (blush paper, berry + grape
       + candy pink, all effects rebuilt off dark assumptions) — deployed
-      2026-08-13, awaiting William's verdict. Dark version is in git history.
+      2026-08-13. Dark version is in git history.
+- [x] /temp v12: headline "Let's work together" (RATE CARD read too direct),
+      all-caps dropped from h1/h2, display scale reduced — deployed 2026-08-13,
+      awaiting William's verdict
 
 ## To Do
 - [ ] ASK JESS: typical/median views per Reel and per TikTok. Every performance

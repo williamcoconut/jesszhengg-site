@@ -25,6 +25,21 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v12: warmer headline, softer type (2026-08-13)
+- William: the big bold "RATE CARD" was "too direct". Replaced with
+  "Let's work together", second word in Sriracha grape. Thai reuses her own
+  site's มาร่วมงานกัน voice, split as มาร่วมงาน / ด้วยกัน.
+- Removed text-transform:uppercase from h1 AND every h2. The markup already had
+  proper sentence case, so the CSS was shouting copy that did not need to.
+  This was a large part of why the page felt blunt.
+- Scale down: h1 ceiling 230px -> 132px, h2 70px -> 56px. Hero now fits one
+  screen on desktop and mobile with the See rates button visible.
+- NOTE: the char-split entrance only runs on .split, so the handwritten word is
+  deliberately excluded (Sriracha per-char would look broken). The colour rule
+  lives on .script, not .ch, because split chars do not exist in static mode.
+- Clarity preserved deliberately: tab title, meta description, hero sub,
+  "See rates" button and the "Services & Rates" heading all still name the job.
+
 ## /temp v11: LIGHT theme (2026-08-13)
 - William asked for a light background, cute and whimsy. This was a re-skin,
   not a token swap: the neon sign, glowing prices and all cream-on-dark rules
