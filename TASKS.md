@@ -52,8 +52,10 @@
       hosted, viewport-gated, poster fallback) + 8-photo gallery — deployed
       2026-08-13
 - [x] /temp v10: palette softened to candy pink + lilac on plum, peach accent
-      (the amber glow was making both edges muddy brown) — deployed 2026-08-13,
-      awaiting William's verdict
+      (the amber glow was making both edges muddy brown) — deployed 2026-08-13
+- [x] /temp v11: flipped to a LIGHT whimsical theme (blush paper, berry + grape
+      + candy pink, all effects rebuilt off dark assumptions) — deployed
+      2026-08-13, awaiting William's verdict. Dark version is in git history.
 
 ## To Do
 - [ ] ASK JESS: typical/median views per Reel and per TikTok. Every performance

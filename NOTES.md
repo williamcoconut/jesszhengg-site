@@ -25,6 +25,28 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v11: LIGHT theme (2026-08-13)
+- William asked for a light background, cute and whimsy. This was a re-skin,
+  not a token swap: the neon sign, glowing prices and all cream-on-dark rules
+  assumed a dark page.
+- Palette: paper #fff6f4, blush #ffe9f0, ink #3d2136, faded .78, dim .66,
+  berry #c2185b (text/links/strokes), grape #7c3aed (prices/handwriting),
+  candy #ff6fa5 (decorative fills ONLY).
+- HARD CONSTRAINT: hot pink #ff4d8d measures 2.95:1 on light. It CANNOT carry
+  text or act as a UI border here. Buttons use candy fill + ink text (4.56).
+  This is why --neon became berry and a separate --candy token was added.
+- Effects rebuilt for light: neon sign -> white badge + candy border + soft
+  shadow; removed amber text-shadow glows; cursor lantern screen -> multiply;
+  glows raised to pastel washes; polaroid frames cream -> white (cream had no
+  separation from paper); all shadows re-tinted black -> plum; grain 3.5% -> 2%
+  because it reads as dirt on light; bar fills amber -> grape gradient.
+- The dark version is preserved in git history (v10, commit before this one) if
+  he wants to go back.
+- VERIFICATION THAT ACTUALLY WORKS: a full-DOM scan computing each visible text
+  element against itsreal backdrop (walking ancestors for the first opaque bg,
+  applying alpha, and using the large-text 3:1 threshold) returned 0 failures.
+  This catches invisible-text bugs that eyeballing a suspended pane cannot.
+
 ## /temp v10: softer, cuter palette (2026-08-13)
 - William: the side colours looked "ugly", wanted light pink and a cutesy vibe.
   Root cause was the AMBER glow: pink .13 + amber .10 blurred 70px over a
