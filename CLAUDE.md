@@ -24,18 +24,18 @@ Single-page media kit / portfolio website for content creator Jess Zheng (Bangko
 ## Project Structure
 ```
 index.html          # The live media kit: HTML, CSS, JS (inline)
-temp/index.html     # Experimental animated rate card (see below)
-temp/img/           # Resized images used only by temp/
+collab/index.html   # Experimental animated rate card (see below)
+collab/img/         # Resized images and clips used only by collab/
 images/             # All image assets
 images/logos/       # Brand/partner logos
 .gitignore          # Excludes .DS_Store
 ```
 
-## The /temp experiment (started 2026-08-12)
-- Live at https://jesszheng.co/temp/, `noindex`, self-contained single file.
+## The /collab experiment (started 2026-08-12)
+- Live at https://jesszheng.co/collab/, `noindex`, self-contained single file.
 - A standalone animated rate card, separate from index.html. It is NOT a copy:
   it uses the public rates only and has its own EN/ไทย toggle, sections and
-  visual language (Bangkok night-market neon; GSAP + ScrollTrigger from CDN).
+  visual language (light blush/pink theme; GSAP + ScrollTrigger from CDN).
 - **index.html is the source of truth for every number.** Follower counts,
   view counts, engagement, demographics and prices must be copied from it,
   never derived. Copy each figure's qualifier too: the 1.5M and 1.09M campaign

@@ -1,13 +1,13 @@
 # Notes
 
-## /temp Rate Card v5: audience proof + mobile hero (2026-08-12)
+## /collab Rate Card v5: audience proof + mobile hero (2026-08-12)
 - Added an Audience section AFTER the prices (a brand manager's 2nd question,
   right where they judge whether $900 is worth it), before the brand logos:
   neon-tube bar chart of followers per platform + fact strip
 - ALL numbers copied from index.html, none invented: 62.3K TikTok / 43.7K IG /
   23K YT / 20K FB (sums to the 149K+ claim), 100M+ views, 5.8% avg engagement,
   18-34, 65/35 women/men, US CA UK AU. Bar heights are honest ratios of 62.3K
-  (100/70/37/32%). If these ever change, update index.html AND temp/index.html.
+  (100/70/37/32%). If these ever change, update index.html AND collab/index.html.
 - Hero: added a quiet "See rates / ดูราคา" ghost button anchored to #menu
   (an action above the fold; the old review flagged time-to-price)
 - Sticky bar no longer always shouts $1,500: starts "Rates from $200", swaps to
@@ -25,14 +25,14 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
-## /temp tier pages (2026-08-13)
+## /collab tier pages (2026-08-13)
 - Three versions, mirroring the main site's tiering, all design-identical:
-    temp/k2m9v4.html  LOW   reel 550,  bundle 1000, saves 350
-    temp/index.html   MID   reel 900,  bundle 1500, saves 700   (the public one)
-    temp/q7x3b8.html  HIGH  reel 1500, bundle 2600, saves 1100
+    collab/k2m9v4.html  LOW   reel 550,  bundle 1000, saves 350
+    collab/index.html   MID   reel 900,  bundle 1500, saves 700   (the public one)
+    collab/q7x3b8.html  HIGH  reel 1500, bundle 2600, saves 1100
   (main site equivalents: enrkpf7.html low, ojk8uet.html high)
 - Opaque slugs on purpose so the URLs cannot be guessed from each other.
-- REGENERATE, do not hand-edit: they are produced from temp/index.html.
+- REGENERATE, do not hand-edit: they are produced from collab/index.html.
 - CRITICAL: replace prices POSITIONALLY, never by string value. $550 is a mid
   add-on AND the low reel price; $250 is a mid add-on AND the low Facebook
   price. A value-based replace silently cross-contaminates tiers.
@@ -42,7 +42,7 @@
   saving, and that every data-price matches its visible text.
 - Both inherit noindex from index.html. Keep it that way.
 
-## /temp v12: warmer headline, softer type (2026-08-13)
+## /collab v12: warmer headline, softer type (2026-08-13)
 - William: the big bold "RATE CARD" was "too direct". Replaced with
   "Let's work together", second word in Sriracha grape. Thai reuses her own
   site's มาร่วมงานกัน voice, split as มาร่วมงาน / ด้วยกัน.
@@ -57,7 +57,7 @@
 - Clarity preserved deliberately: tab title, meta description, hero sub,
   "See rates" button and the "Services & Rates" heading all still name the job.
 
-## /temp v11: LIGHT theme (2026-08-13)
+## /collab v11: LIGHT theme (2026-08-13)
 - William asked for a light background, cute and whimsy. This was a re-skin,
   not a token swap: the neon sign, glowing prices and all cream-on-dark rules
   assumed a dark page.
@@ -79,7 +79,7 @@
   applying alpha, and using the large-text 3:1 threshold) returned 0 failures.
   This catches invisible-text bugs that eyeballing a suspended pane cannot.
 
-## /temp v10: softer, cuter palette (2026-08-13)
+## /collab v10: softer, cuter palette (2026-08-13)
 - William: the side colours looked "ugly", wanted light pink and a cutesy vibe.
   Root cause was the AMBER glow: pink .13 + amber .10 blurred 70px over a
   brown-leaning near-black mixed into a dull brown wash down both edges.
@@ -95,7 +95,7 @@
   that ignores alpha reports a useless 16.06 for every faded token): dim 5.74,
   faded 7.90, cream 16.06, peach 11.38, neon 5.63. All AA.
 
-## /temp v9: autoplay clips + photo gallery (2026-08-13)
+## /collab v9: autoplay clips + photo gallery (2026-08-13)
 - Work cards now play 5s MUTED LOOPS of her actual posts instead of stills.
   Deliberately NOT Instagram/TikTok embeds: those need third-party JS, are
   often blocked, cannot reliably autoplay, and would not match the design.
@@ -112,7 +112,7 @@
   the rest, pauses all on tab hide, and does not autoplay at all under
   prefers-reduced-motion, Save-Data or 2g. Clips sit inside the existing links
   with no controls, so a tap still opens the real post.
-- Gallery: 8 lazy 420px photos in temp/img/gal/. The Sri Panwa tile is a
+- Gallery: 8 lazy 420px photos in collab/img/gal/. The Sri Panwa tile is a
   "most luxurious hotel in Thailand" room tour, which is the Thailand
   hospitality proof the v8 review said was missing.
 - ALWAYS look at an image before writing its alt text. Two of eight were wrong
@@ -120,7 +120,7 @@
   labelled street food.
 - Net initial load is unchanged: everything new is lazy or preload=none.
 
-## /temp v8: final review, 22 findings (2026-08-13)
+## /collab v8: final review, 22 findings (2026-08-13)
 - CRITICAL, shipped live for ~2 hours: a stray `}` left over from the work-card
   CSS rewrite sat after an @media block. CSS error recovery then swallowed the
   ENTIRE `.book` rule, so the booking section rendered with no centering,
@@ -151,7 +151,7 @@
   or typical views-per-post anywhere, so a buyer cannot build a business case.
   index.html has no median either. Ask Jess for a typical range per platform.
 
-## /temp v7: work-card fixes from the v6 audit (2026-08-12)
+## /collab v7: work-card fixes from the v6 audit (2026-08-12)
 - CRITICAL, caught by audit not by me: index.html pairs 1.5M and 1.09M with
   "IG + TikTok", i.e. COMBINED across two platforms. My cards linked to a single
   Instagram Reel, so the number read as that one post's result, next to a $900
@@ -173,7 +173,7 @@
 - A `white-space:nowrap` fix for the ↗ made the row unshrinkable and caused
   horizontal overflow. Use &nbsp; to bind a trailing glyph, not nowrap.
 
-## /temp v6: Recent work proof (2026-08-12)
+## /collab v6: Recent work proof (2026-08-12)
 - Added a Recent work section showing three real campaigns with view counts,
   each linking to the live post: Sleeping Cloud 1.5M, MuvMi 1.09M,
   InterContinental Shanghai 229.5K. Replaced the decorative polaroid strip.
@@ -223,7 +223,7 @@
    `translate(0%, -95%)` and always reports 0. Match the Y group explicitly.
    Verify the measuring tool before trusting a scary measurement.
 
-## /temp Rate Card v4: crazier + polish (2026-08-12)
+## /collab Rate Card v4: crazier + polish (2026-08-12)
 - New: velocity-reactive marquees (gsap-driven, reverse on scroll-up, timeScale
   from getVelocity; clone-to-fill kills the seam gap on wide screens; deep
   totalTime(600) so negative timeScale never hits t=0), sign drops onto chains,
@@ -241,7 +241,7 @@
 - Browser-pane gotcha: hidden pane pauses rAF so ScrollTriggers queue; verify
   structurally via JS, not by waiting for tweens
 
-## /temp Rate Card v3: de-metaphored (2026-08-12)
+## /collab Rate Card v3: de-metaphored (2026-08-12)
 - William: menu idea confusing; wants clear + brilliant + beautiful + CUTE
 - Kept: full Bangkok atmosphere (neon sign, food/bulb doodles, tuk-tuk, polaroids,
   อร่อย! sticker now wiggling, MOST BOOKED/ยอดฮิต stamp, confetti hearts, tickers,
@@ -260,7 +260,7 @@
   "all prices in USD" (Thai leak removed from EN span), Spark Ads clarifier on
   Gen Code, long-term hyphen, แบรนด์ดังการันตี dedupe
 
-## /temp Rate Card v2 (2026-08-12, same day as v1)
+## /collab Rate Card v2 (2026-08-12, same day as v1)
 - Rework on William's ask: crazier animation, cuter, Thai toggle, mobile conversion
 - Added: EN/ไทย toggle (localStorage jz-lang, html.th class flips [data-lang] spans;
   Chonburi for Thai display headings, Noto Sans Thai body, all Thai spans lang-tagged),
@@ -279,10 +279,10 @@
   เที่ยวโรงแรม -> รีวิวโรงแรม
 - Gotcha: h1 .word overflow:hidden clips Thai descenders (สระ อู) — padded mask +
   negative margin on the Thai word
-- Images: temp/img/*-480.jpg copies (sips -Z 480), main images/ untouched
+- Images: collab/img/*-480.jpg copies (sips -Z 480), main images/ untouched
 
-## Experimental /temp Rate Card v1 (2026-08-12)
-- Live at https://jesszheng.co/temp/ — standalone, does NOT touch index.html or tier pages
+## Experimental /collab Rate Card v1 (2026-08-12)
+- Live at https://jesszheng.co/collab/ — standalone, does NOT touch index.html or tier pages
 - Concept: rate card as a Bangkok night-market menu (Jess is known for street food
   content). Mains = platform rates, Sides = add-ons, Chef's Special = bundle with a
   hand-drawn neon circle that draws itself on scroll
