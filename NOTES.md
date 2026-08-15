@@ -25,6 +25,23 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp tier pages (2026-08-13)
+- Three versions, mirroring the main site's tiering, all design-identical:
+    temp/k2m9v4.html  LOW   reel 550,  bundle 1000, saves 350
+    temp/index.html   MID   reel 900,  bundle 1500, saves 700   (the public one)
+    temp/q7x3b8.html  HIGH  reel 1500, bundle 2600, saves 1100
+  (main site equivalents: enrkpf7.html low, ojk8uet.html high)
+- Opaque slugs on purpose so the URLs cannot be guessed from each other.
+- REGENERATE, do not hand-edit: they are produced from temp/index.html.
+- CRITICAL: replace prices POSITIONALLY, never by string value. $550 is a mid
+  add-on AND the low reel price; $250 is a mid add-on AND the low Facebook
+  price. A value-based replace silently cross-contaminates tiers.
+- Everything derived from a price must move too: the bundle saving in EN and
+  TH, plus the sticky bar's entry price, bundle price, saving and cheapest
+  add-on. Check per tier that reel + tiktok + facebook - bundle == the claimed
+  saving, and that every data-price matches its visible text.
+- Both inherit noindex from index.html. Keep it that way.
+
 ## /temp v12: warmer headline, softer type (2026-08-13)
 - William: the big bold "RATE CARD" was "too direct". Replaced with
   "Let's work together", second word in Sriracha grape. Thai reuses her own

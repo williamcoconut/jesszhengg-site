@@ -59,6 +59,9 @@
 - [x] /temp v12: headline "Let's work together" (RATE CARD read too direct),
       all-caps dropped from h1/h2, display scale reduced — deployed 2026-08-13,
       awaiting William's verdict
+- [x] /temp tier pages: low (k2m9v4) and high (q7x3b8) alongside the public mid
+      (index), opaque slugs, generated from index so they stay identical —
+      deployed 2026-08-13
 
 ## To Do
 - [ ] ASK JESS: typical/median views per Reel and per TikTok. Every performance
