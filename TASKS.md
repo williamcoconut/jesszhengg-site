@@ -50,7 +50,10 @@
       2026-08-13
 - [x] /temp v9: work cards autoplay muted 5s clips of her real posts (self
       hosted, viewport-gated, poster fallback) + 8-photo gallery — deployed
-      2026-08-13, awaiting William's verdict
+      2026-08-13
+- [x] /temp v10: palette softened to candy pink + lilac on plum, peach accent
+      (the amber glow was making both edges muddy brown) — deployed 2026-08-13,
+      awaiting William's verdict
 
 ## To Do
 - [ ] ASK JESS: typical/median views per Reel and per TikTok. Every performance

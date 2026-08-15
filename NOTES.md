@@ -25,6 +25,22 @@
 - Bundle digits are now real children of the bundle timeline (were a
   fire-and-forget gsap call, which any jump or scrub would skip).
 
+## /temp v10: softer, cuter palette (2026-08-13)
+- William: the side colours looked "ugly", wanted light pink and a cutesy vibe.
+  Root cause was the AMBER glow: pink .13 + amber .10 blurred 70px over a
+  brown-leaning near-black mixed into a dull brown wash down both edges.
+- Base #140b12 -> #221327 (cleaner plum). Left glow candy pink
+  rgba(255,140,196,.26), right glow LILAC rgba(196,150,255,.20) (was amber).
+- Accent --tungsten #ffb35c -> #ffc48f. Orange on violet is a harsh
+  complementary pair; peach harmonises and still reads as the "value" colour.
+- Grain .05 -> .035; it was greying the colour.
+- GOTCHA: three places hardcoded the old base (.top header gradient rgba(20,11,18),
+  .chip and .hero-cta rgba(34,18,25)) and banded visibly against the new one.
+  After changing --night, grep for the old literal rgb values.
+- Contrast re-verified WITH ALPHA BLENDING (a browser getComputedStyle probe
+  that ignores alpha reports a useless 16.06 for every faded token): dim 5.74,
+  faded 7.90, cream 16.06, peach 11.38, neon 5.63. All AA.
+
 ## /temp v9: autoplay clips + photo gallery (2026-08-13)
 - Work cards now play 5s MUTED LOOPS of her actual posts instead of stills.
   Deliberately NOT Instagram/TikTok embeds: those need third-party JS, are
