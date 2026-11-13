@@ -66,9 +66,15 @@ images/logos/       # Brand/partner logos
   (that one is git tag `pre-revamp-2026-11`; the one before it is `pre-redesign-backup`).
 - Fonts: Trirong (display, weight 300) + Anuphan (text). Both cover Latin AND Thai,
   so EN and TH match with no separate Thai font.
-- Colors: paper #fafbf8, celadon wash #e4ece5, bottle-green ink #16302a,
-  orchid #b4326e. Orchid is for primary buttons ONLY.
-- Rates are a typeset price list with dotted leaders; the bundle is the one dark panel.
+- **The site stays CUTE AND PINK.** William rejected a green "premium" palette the
+  same day (2026-11-14). Clean and premium is fine for layout and type; the colour
+  and personality must stay pink and cute.
+- Colors: blush paper #fff7f9, candy-pink panel #ffe4ec, deep berry text #4b1430,
+  hot pink #d6336f (buttons, the big name, bundle + contact panels), lilac #eadffb
+  behind the portrait.
+- Cute details: arch portrait on a lilac arch, heart sticker, rounded image corners,
+  tilted "Most popular" tag, pink dotted leaders, heart in the footer.
+- Rates are a typeset price list with dotted leaders; the bundle is a hot-pink panel.
 - Motion: one hero load animation only. No scroll reveals, marquees, count-ups or tilt.
 - Copy rules: no em dashes, no emoji, no all-caps labels, sentence case.
 - The old "Content formats" section was folded into the rate rows (same descriptions).

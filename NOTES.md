@@ -1,6 +1,12 @@
 # Notes
 
 ## Clean premium revamp of index.html (2026-11-14)
+- FIRST PASS WAS REJECTED ON COLOUR: I read "clean and premium" as celadon +
+  bottle green. William: "please keep it cute and pink still". Re-themed the same
+  layout to blush + hot pink with cute details (see CLAUDE.md Key Decisions).
+  Lesson: on this site "premium" never means dropping the pink.
+- Mobile nav: English labels are longer than Thai, so test the nav in EN at 375px.
+  It wrapped until the nav button got nowrap and tighter padding under 420px.
 - William asked for: main media kit, new look, same content, "clean and premium",
   refresh stats, new work examples.
 - Live stats read 2026-11-14 (logged-in Chrome for TikTok/IG/FB, curl for YouTube):
