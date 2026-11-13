@@ -24,6 +24,9 @@ Single-page media kit / portfolio website for content creator Jess Zheng (Bangko
 ## Project Structure
 ```
 index.html          # The live media kit: HTML, CSS, JS (inline)
+build_tiers.py      # Rebuilds the hidden tier pages from index.html. RUN AFTER EVERY index.html EDIT
+enrkpf7.html        # Hidden LOW tier (generated, noindex). Never hand-edit
+ojk8uet.html        # Hidden HIGH tier (generated, noindex). Never hand-edit
 collab/index.html   # Experimental animated rate card (see below)
 collab/img/         # Resized images and clips used only by collab/
 images/             # All image assets
@@ -59,11 +62,17 @@ images/logos/       # Brand/partner logos
 
 ## Key Decisions
 - Phone number was removed from contact section (Feb 2026)
-- Full visual redesign (Jul 2026): Fraunces serif + DM Sans + Noto Sans Thai (Google Fonts)
-- Color scheme: coral (#e8707a), cream (#fdfaf7), dark (#141114)
-- Design features: aurora gradient hero, static film-grain overlay, scroll-reveal
-  animations (IntersectionObserver), count-up metrics, 3D-tilt collab cards with
-  shine sweep, infinite logo marquee, tilted kinetic ticker, scroll progress bar
-- All animations respect prefers-reduced-motion; grain is static (animating it
-  repaints the whole page every frame and tanks performance)
-- Marquees (ticker + logos) are duplicated via JS on load for seamless looping
+- **Clean premium revamp (2026-11-14)**, replacing the Jul 2026 coral/cream design
+  (that one is git tag `pre-revamp-2026-11`; the one before it is `pre-redesign-backup`).
+- Fonts: Trirong (display, weight 300) + Anuphan (text). Both cover Latin AND Thai,
+  so EN and TH match with no separate Thai font.
+- Colors: paper #fafbf8, celadon wash #e4ece5, bottle-green ink #16302a,
+  orchid #b4326e. Orchid is for primary buttons ONLY.
+- Rates are a typeset price list with dotted leaders; the bundle is the one dark panel.
+- Motion: one hero load animation only. No scroll reveals, marquees, count-ups or tilt.
+- Copy rules: no em dashes, no emoji, no all-caps labels, sentence case.
+- The old "Content formats" section was folded into the rate rows (same descriptions).
+- The email is selectable text plus a Copy button, because mailto does nothing in
+  the Instagram/TikTok in-app browsers.
+- Prices must keep `class="price"` and page order (IG, TikTok, FB, YT, Bundle,
+  Stories, UGC, Gen Code): build_tiers.py swaps them by position.

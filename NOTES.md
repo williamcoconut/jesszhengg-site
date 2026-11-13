@@ -1,5 +1,30 @@
 # Notes
 
+## Clean premium revamp of index.html (2026-11-14)
+- William asked for: main media kit, new look, same content, "clean and premium",
+  refresh stats, new work examples.
+- Live stats read 2026-11-14 (logged-in Chrome for TikTok/IG/FB, curl for YouTube):
+  TikTok 69.5K followers / 7M likes, Instagram 52.6K, YouTube 23.5K, Facebook 22K.
+  Sum 167.6K, shown as 167K+. 100M+ views and 5.8% engagement NOT re-verified.
+- Work grid is now 8 cards. Kept: Sleeping Cloud 1.5M, MuvMi 1.09M,
+  InterContinental Shanghai 229.5K, Le Lys 211.5K. Added (TikTok-only view counts
+  read off her profile grid): TAGTHAi x KBank Easy Pay 166.3K (video 7699878954689137941),
+  Vimut Hospital 119.6K (7685406294693399828), Amari Bangkok 71.1K
+  (7675376610823965972), GetYourGuide 29.5K (7695025570190576897).
+  Dropped the two "Featured" cards with no number (CapCut, old TAGTHAi reel);
+  both brands are still in the logo grid.
+- New covers are images/work-*.jpg, pulled with
+  `yt-dlp --skip-download --write-thumbnail --convert-thumbnails jpg`.
+  TikTok's oembed endpoint returns NO thumbnail_url, don't bother.
+- Other strong recent posts if cards need swapping: 24-hour spa in China 2.5M
+  (organic, 7693171322884525333), Perfect Tailor 174.7K, Bangkok night-out street
+  129.9K, The Retreat Koh Chang 37.3K, Pisces Phuket yacht 34.1K.
+- build_tiers.py gotcha: swap the "$700" saving BEFORE the prices. The high tier's
+  Facebook price is also $700, and the first version turned it into $1,100.
+- QC gotcha: the Browser pane starts with a 0x0 viewport and pauses CSS animations
+  while hidden, so the hero looks half-drawn. resize_window to 1280x800 and run
+  `document.getAnimations().forEach(a=>a.finish())` before screenshots.
+
 ## /collab Rate Card v5: audience proof + mobile hero (2026-08-12)
 - Added an Audience section AFTER the prices (a brand manager's 2nd question,
   right where they judge whether $900 is worth it), before the brand logos:
