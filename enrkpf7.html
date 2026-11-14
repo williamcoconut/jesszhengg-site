@@ -135,6 +135,11 @@ body.th h1{line-height:.92;letter-spacing:-.015em} /* the name stays in Latin */
 @media (max-width:860px){.work{grid-template-columns:repeat(2,1fr)}}
 .work a{display:block;text-decoration:none}
 .work .shot{overflow:hidden;border-radius:20px;background:var(--wash);aspect-ratio:9/14}
+.work .shot{position:relative}
+/* Real clips sit on top of the cover photos and fade in once they play */
+video.clip{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s;pointer-events:none}
+video.clip.on{opacity:1}
+.portrait video.clip{border-radius:999px 999px 28px 28px}
 .work img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.1,1)}
 .work a:hover img{transform:scale(1.04)}
 .work .views{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
@@ -247,6 +252,7 @@ body.th .about p{line-height:1.6;letter-spacing:0}
     </div>
     <div class="portrait">
       <img src="images/profile-hd.jpg" alt="Jess Zheng" width="1080" height="1080">
+      <video class="clip" src="images/clips/gyg.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
       <div class="sticker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.090C13.09 3.810 14.76 3 16.5 3 19.58 3 22 5.42 22 8.500c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
     </div>
   </div>
@@ -276,56 +282,56 @@ body.th .about p{line-height:1.6;letter-spacing:0}
   <div class="work">
 
     <a href="https://www.instagram.com/reel/DPgluNDASHd/" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/bkk2-pajamas.jpg" alt="Thai pajamas for Sleeping Cloud" width="1080" height="1920" loading="lazy"></div>
+      <div class="shot"><img src="images/bkk2-pajamas.jpg" alt="Thai pajamas for Sleeping Cloud" width="1080" height="1920" loading="lazy"><video class="clip" src="images/clips/pajamas.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>1.5M</b><span>IG + TikTok</span></div>
       <h3>Sleeping Cloud</h3>
       <p><span data-lang="en">Fashion. Thai pajamas you need</span><span data-lang="th">แฟชั่น ชุดนอนไทยที่คุณต้องมี</span></p>
     </a>
 
     <a href="https://www.instagram.com/reel/DOdyVgbAXKZ/" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/muvmi.jpg" alt="MuvMi electric tuk tuk in Bangkok" width="1080" height="1920" loading="lazy"></div>
+      <div class="shot"><img src="images/muvmi.jpg" alt="MuvMi electric tuk tuk in Bangkok" width="1080" height="1920" loading="lazy"><video class="clip" src="images/clips/muvmi.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>1.09M</b><span>IG + TikTok</span></div>
       <h3>MuvMi</h3>
       <p><span data-lang="en">Transport. Electric tuk tuk app</span><span data-lang="th">การเดินทาง แอปตุ๊กตุ๊กไฟฟ้า</span></p>
     </a>
 
     <a href="https://www.tiktok.com/@jesszhengg/video/7549170049374768385" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/shanghai-wonderland.jpg" alt="InterContinental Shanghai Wonderland" loading="lazy"></div>
+      <div class="shot"><img src="images/shanghai-wonderland.jpg" alt="InterContinental Shanghai Wonderland" loading="lazy"><video class="clip" src="images/clips/hotel.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>229.5K</b><span>TikTok</span></div>
       <h3>InterContinental Shanghai</h3>
       <p><span data-lang="en">Luxury hotel. Hotel in an abandoned quarry</span><span data-lang="th">โรงแรมหรู โรงแรมในเหมืองร้าง</span></p>
     </a>
 
     <a href="https://www.tiktok.com/@jesszhengg/video/7542109220179561746" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/lelys-clinic.jpg" alt="Ulthera Prime at Le Lys Clinic" width="1080" height="1920" loading="lazy"></div>
+      <div class="shot"><img src="images/lelys-clinic.jpg" alt="Ulthera Prime at Le Lys Clinic" width="1080" height="1920" loading="lazy"><video class="clip" src="images/clips/lelys.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>211.5K</b><span>IG + TikTok</span></div>
       <h3>Le Lys Clinic</h3>
       <p><span data-lang="en">Beauty and wellness. Ulthera Prime treatment</span><span data-lang="th">ความงามและสุขภาพ ทรีทเมนต์ Ulthera Prime</span></p>
     </a>
 
     <a href="https://www.tiktok.com/@jesszhengg/video/7699878954689137941" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/work-tagthai-easypay.jpg" alt="TAGTHAi Easy Pay at Bangkok airport" width="540" height="960" loading="lazy"></div>
+      <div class="shot"><img src="images/work-tagthai-easypay.jpg" alt="TAGTHAi Easy Pay at Bangkok airport" width="540" height="960" loading="lazy"><video class="clip" src="images/clips/tagthai.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>166.3K</b><span>TikTok</span></div>
       <h3>TAGTHAi x KBank</h3>
       <p><span data-lang="en">Travel. The first thing to do when you land in Bangkok</span><span data-lang="th">ท่องเที่ยว สิ่งแรกที่ต้องทำเมื่อถึงกรุงเทพฯ</span></p>
     </a>
 
     <a href="https://www.tiktok.com/@jesszhengg/video/7685406294693399828" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/work-vimut.jpg" alt="Health check-up at Vimut Hospital" width="540" height="960" loading="lazy"></div>
+      <div class="shot"><img src="images/work-vimut.jpg" alt="Health check-up at Vimut Hospital" width="540" height="960" loading="lazy"><video class="clip" src="images/clips/vimut.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>119.6K</b><span>TikTok</span></div>
       <h3>Vimut Hospital</h3>
       <p><span data-lang="en">Health. A full check-up in Bangkok</span><span data-lang="th">สุขภาพ ตรวจสุขภาพครบวงจรในกรุงเทพฯ</span></p>
     </a>
 
     <a href="https://www.tiktok.com/@jesszhengg/video/7675376610823965972" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/work-amari.jpg" alt="Amari Bangkok hotel" width="540" height="960" loading="lazy"></div>
+      <div class="shot"><img src="images/work-amari.jpg" alt="Amari Bangkok hotel" width="540" height="960" loading="lazy"><video class="clip" src="images/clips/amari.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>71.1K</b><span>TikTok</span></div>
       <h3>Amari Bangkok</h3>
       <p><span data-lang="en">Hotel. Where to stay in the center of Bangkok</span><span data-lang="th">โรงแรม ที่พักใจกลางกรุงเทพฯ</span></p>
     </a>
 
     <a href="https://www.tiktok.com/@jesszhengg/video/7695025570190576897" target="_blank" rel="noopener">
-      <div class="shot"><img src="images/work-getyourguide.jpg" alt="GetYourGuide day tour in China" width="540" height="960" loading="lazy"></div>
+      <div class="shot"><img src="images/work-getyourguide.jpg" alt="GetYourGuide day tour in China" width="540" height="960" loading="lazy"><video class="clip" src="images/clips/gyg.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
       <div class="views"><b>29.5K</b><span>TikTok</span></div>
       <h3>GetYourGuide</h3>
       <p><span data-lang="en">Travel. A full-day experience in China</span><span data-lang="th">ท่องเที่ยว ทัวร์เต็มวันในจีน</span></p>
@@ -577,6 +583,18 @@ copyBtn.addEventListener('click', function () {
   };
   if (navigator.clipboard) navigator.clipboard.writeText('jessxzheng@gmail.com').then(done, function () {});
 });
+
+// Clips: play only while on screen; photos stay if motion or data is limited
+(function(){
+  var vids=document.querySelectorAll('video.clip');
+  var still=matchMedia('(prefers-reduced-motion:reduce)').matches||(navigator.connection&&navigator.connection.saveData);
+  if(still||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();
+  });},{threshold:.35});
+  vids.forEach(function(v){v.addEventListener('playing',function(){v.classList.add('on');});io.observe(v);});
+})();
 </script>
 
 </body>

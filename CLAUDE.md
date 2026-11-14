@@ -75,7 +75,9 @@ images/logos/       # Brand/partner logos
 - Cute details: arch portrait on a lilac arch, heart sticker, rounded image corners,
   tilted "Most popular" tag, pink dotted leaders, heart in the footer.
 - Rates are a typeset price list with dotted leaders; the bundle is a hot-pink panel.
-- Motion: one hero load animation only. No scroll reveals, marquees, count-ups or tilt.
+- Motion: one hero load animation, plus short muted clips of her real posts that play
+  over the hero portrait and the work card covers while in view (`images/clips/`,
+  `video.clip`). No scroll reveals, marquees, count-ups or tilt.
 - Copy rules: no em dashes, no emoji, no all-caps labels, sentence case.
 - The old "Content formats" section was folded into the rate rows (same descriptions).
 - The email is selectable text plus a Copy button, because mailto does nothing in

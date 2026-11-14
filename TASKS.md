@@ -83,3 +83,11 @@
 - [ ] Optional: compress images (profile-hd.jpg etc.) for faster mobile load
 - [ ] Optional: refresh IG grid images (IG blocks logged-out scraping; grab fresh
       screenshots when logged into Instagram in Chrome)
+
+## 2026-11-14 clips on the main site
+- [x] Clips in hero and on the 8 work cards, tier pages rebuilt, committed locally
+- [ ] Push to main (live deploy). Waiting for William's OK. 3 local commits ahead
+- [ ] Confirm with Jess: were Vimut, Amari, GetYourGuide paid or hosted?
+- [ ] /collab still shows old stats (62K / 149K)
+- [ ] 100M+ views and 5.8% engagement are unverified
+- [ ] Optional: favicon, real brand results or quotes, handwritten wordmark

@@ -365,3 +365,15 @@
 - Had to remove/re-add custom domain to unstick SSL cert provisioning
 - Live at: https://jesszheng.co
 - Netlify site deactivated
+
+## Main site clips (2026-11-14)
+- Hero portrait and all 8 work cards have a 5s muted looping clip layered over the
+  cover photo (`<video class="clip">`). The photo stays as the fallback.
+- Clips only play while in view (IntersectionObserver), fade in once playing, and are
+  skipped under prefers-reduced-motion and Save-Data. `preload="none"`, so nothing
+  downloads until a card scrolls in.
+- Clip recipe: `ffmpeg -ss 1 -t 5 -i IN -vf "scale=360:-2,crop=360:560" -an -c:v libx264 -crf 27 -preset slow -pix_fmt yuv420p -movflags +faststart OUT.mp4` (120-300K each).
+- QC gotcha: the in-app Browser pane is hidden, so awaits and timers in javascript_tool
+  hang. Use headless Playwright from Bash (venv + `channel="chrome"`) instead.
+- Checked with Playwright at 1280x800 and 375x812: all clips play in view, off-screen
+  ones stay paused, no overflow. Only console error is the missing favicon.ico (old).
