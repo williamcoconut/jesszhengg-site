@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jess Zheng | Media Kit, Bangkok Content Creator</title>
-<meta name="description" content="Jess Zheng is a Bangkok-based content creator with 167K+ followers and 100M+ views across TikTok, Instagram, YouTube and Facebook. Media kit, rates and brand collaborations.">
+<meta name="description" content="Jess Zheng is a Bangkok-based content creator with 167K+ followers and 100M+ views across TikTok, Instagram, YouTube and Facebook. Media kit and brand collaborations.">
 <meta property="og:title" content="Jess Zheng | Media Kit">
 <meta property="og:description" content="Bangkok-based content creator. 167K+ followers, 100M+ views. Travel, food and lifestyle collaborations.">
 <meta property="og:image" content="https://jesszheng.co/images/profile-hd.jpg">
@@ -195,6 +195,10 @@ body.th .about p{line-height:1.6;letter-spacing:0}
 .bundle .right{text-align:right;margin-left:auto}
 .bundle .price{font-size:clamp(44px,6vw,76px);font-weight:300;letter-spacing:-.02em}
 .bundle .save{color:var(--soft);font-size:15px;margin-top:8px}
+/* Public page: prices are left empty, so show "On request". build_tiers.py fills them on the hidden pages */
+.price:empty::after{content:"On request";font-style:italic;color:var(--mute);font-size:.7em}
+body.th .price:empty::after{content:"สอบถามราคา";font-style:normal}
+.bundle .price:empty::after{color:var(--soft);font-size:.5em}
 .addons-title{font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:0;margin-top:clamp(28px,3.4vw,40px);padding-bottom:12px}
 .rates-note{color:var(--mute);font-size:15.5px;margin-top:24px;max-width:56ch}
 

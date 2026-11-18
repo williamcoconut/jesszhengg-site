@@ -26,6 +26,7 @@ Single-page media kit / portfolio website for content creator Jess Zheng (Bangko
 index.html          # The live media kit: HTML, CSS, JS (inline)
 build_tiers.py      # Rebuilds the hidden tier pages from index.html. RUN AFTER EVERY index.html EDIT
 enrkpf7.html        # Hidden LOW tier (generated, noindex). Never hand-edit
+fkxm0t6.html        # Hidden MID tier (generated, noindex). Never hand-edit
 ojk8uet.html        # Hidden HIGH tier (generated, noindex). Never hand-edit
 collab/index.html   # Experimental animated rate card (see below)
 collab/img/         # Resized images and clips used only by collab/
@@ -82,5 +83,10 @@ images/logos/       # Brand/partner logos
 - The old "Content formats" section was folded into the rate rows (same descriptions).
 - The email is selectable text plus a Copy button, because mailto does nothing in
   the Instagram/TikTok in-app browsers.
+- **No prices on the public page (2026-11-18).** index.html shows "On request" (empty
+  `.price` cells + CSS ::after) so Google never shows her rates. Brands get a hidden
+  tier link: low enrkpf7, mid fkxm0t6 (the old public rates), high ojk8uet.
+  build_tiers.py fills prices, the bundle saving (`{SAVE}`) and the USD subtitle
+  (`<!--rates-sub-->` markers) and refuses to run if index.html contains a `$` price.
 - Prices must keep `class="price"` and page order (IG, TikTok, FB, YT, Bundle,
   Stories, UGC, Gen Code): build_tiers.py swaps them by position.

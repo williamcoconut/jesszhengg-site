@@ -91,3 +91,8 @@
 - [ ] /collab still shows old stats (62K / 149K)
 - [ ] 100M+ views and 5.8% engagement are unverified
 - [ ] Optional: favicon, real brand results or quotes, handwritten wordmark
+
+## 2026-11-18 rates off Google
+- [x] Public page shows "On request", new hidden mid tier fkxm0t6.html, committed locally
+- [ ] Push to main (goes live together with the unpushed revamp + clips)
+- [ ] After push: Search Console > Removals > clear cached URL for jesszheng.co

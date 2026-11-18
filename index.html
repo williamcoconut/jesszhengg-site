@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jess Zheng | Media Kit, Bangkok Content Creator</title>
-<meta name="description" content="Jess Zheng is a Bangkok-based content creator with 167K+ followers and 100M+ views across TikTok, Instagram, YouTube and Facebook. Media kit, rates and brand collaborations.">
+<meta name="description" content="Jess Zheng is a Bangkok-based content creator with 167K+ followers and 100M+ views across TikTok, Instagram, YouTube and Facebook. Media kit and brand collaborations.">
 <meta property="og:title" content="Jess Zheng | Media Kit">
 <meta property="og:description" content="Bangkok-based content creator. 167K+ followers, 100M+ views. Travel, food and lifestyle collaborations.">
 <meta property="og:image" content="https://jesszheng.co/images/profile-hd.jpg">
@@ -194,6 +194,10 @@ body.th .about p{line-height:1.6;letter-spacing:0}
 .bundle .right{text-align:right;margin-left:auto}
 .bundle .price{font-size:clamp(44px,6vw,76px);font-weight:300;letter-spacing:-.02em}
 .bundle .save{color:var(--soft);font-size:15px;margin-top:8px}
+/* Public page: prices are left empty, so show "On request". build_tiers.py fills them on the hidden pages */
+.price:empty::after{content:"On request";font-style:italic;color:var(--mute);font-size:.7em}
+body.th .price:empty::after{content:"สอบถามราคา";font-style:normal}
+.bundle .price:empty::after{color:var(--soft);font-size:.5em}
 .addons-title{font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:0;margin-top:clamp(28px,3.4vw,40px);padding-bottom:12px}
 .rates-note{color:var(--mute);font-size:15.5px;margin-top:24px;max-width:56ch}
 
@@ -471,27 +475,27 @@ body.th .about p{line-height:1.6;letter-spacing:0}
   <div>
     <h2 id="h-rates"><span data-lang="en">Services and rates</span><span data-lang="th">บริการและราคา</span></h2>
     <p class="sub">
-      <span data-lang="en">All rates in USD. Custom packages available.</span>
-      <span data-lang="th">ราคาทั้งหมดเป็นดอลลาร์สหรัฐ มีแพ็คเกจพิเศษตามความต้องการ</span>
+      <!--rates-sub--><span data-lang="en">Rates on request. <a href="#contact">Email</a> for the current rate card. Custom packages available.</span>
+      <span data-lang="th">สอบถามราคาได้ทาง<a href="#contact">อีเมล</a> มีแพ็คเกจพิเศษตามความต้องการ</span><!--/rates-sub-->
     </p>
   </div>
   <div>
     <ul class="rates-list">
       <li>
         <div class="rate-what"><span class="rate-name">Instagram Reel</span><span class="rate-desc"><span data-lang="en">30 to 60s polished vertical video</span><span data-lang="th">วิดีโอแนวตั้ง 30 ถึง 60 วินาที</span></span></div>
-        <span class="dots"></span><div class="price">$900</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
       <li>
         <div class="rate-what"><span class="rate-name">TikTok Video</span><span class="rate-desc"><span data-lang="en">15 to 60s native format, trending audio</span><span data-lang="th">วิดีโอ 15 ถึง 60 วินาที เสียงเทรนด์</span></span></div>
-        <span class="dots"></span><div class="price">$900</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
       <li>
         <div class="rate-what"><span class="rate-name">Facebook Post</span><span class="rate-desc"><span data-lang="en">Cross-posted video, photo post or write-up</span><span data-lang="th">วิดีโอ โพสต์รูป หรือโพสต์ข้ามแพลตฟอร์ม</span></span></div>
-        <span class="dots"></span><div class="price">$400</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
       <li>
         <div class="rate-what"><span class="rate-name">YouTube Long Form</span><span class="rate-desc"><span data-lang="en">5 to 15 min vlog, review or tour</span><span data-lang="th">วล็อก รีวิว หรือทัวร์ 5 ถึง 15 นาที</span></span></div>
-        <span class="dots"></span><div class="price">$1,000</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
     </ul>
 
@@ -502,10 +506,10 @@ body.th .about p{line-height:1.6;letter-spacing:0}
         <span class="rate-desc">IG + TikTok + FB</span>
       </div>
       <div class="right">
-        <div class="price">$1,500</div>
-        <div class="save">
-          <span data-lang="en">Save $700 vs individual</span>
-          <span data-lang="th">ประหยัด $700</span>
+        <div class="price"></div>
+        <div class="save" hidden>
+          <span data-lang="en">Save {SAVE} vs individual</span>
+          <span data-lang="th">ประหยัด {SAVE}</span>
         </div>
       </div>
     </div>
@@ -514,15 +518,15 @@ body.th .about p{line-height:1.6;letter-spacing:0}
     <ul class="rates-list">
       <li>
         <div class="rate-what"><span class="rate-name">IG Stories</span><span class="rate-desc"><span data-lang="en">Real-time takeovers, polls, links</span><span data-lang="th">สตอรี่สด โพล ลิงก์</span></span></div>
-        <span class="dots"></span><div class="price">$200</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
       <li>
         <div class="rate-what"><span class="rate-name">UGC / Whitelisting</span><span class="rate-desc"><span data-lang="en">Raw content for your brand's ads</span><span data-lang="th">คอนเทนต์สำหรับโฆษณาของแบรนด์</span></span></div>
-        <span class="dots"></span><div class="price">$550</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
       <li>
         <div class="rate-what"><span class="rate-name">TikTok Gen Code</span><span class="rate-desc"><span data-lang="en">30-day usage rights</span><span data-lang="th">สิทธิ์ใช้งาน 30 วัน</span></span></div>
-        <span class="dots"></span><div class="price">$250</div>
+        <span class="dots"></span><div class="price"></div>
       </li>
     </ul>
 

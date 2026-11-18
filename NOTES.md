@@ -377,3 +377,15 @@
   hang. Use headless Playwright from Bash (venv + `channel="chrome"`) instead.
 - Checked with Playwright at 1280x800 and 375x812: all clips play in view, off-screen
   ones stay paused, no overflow. Only console error is the missing favicon.ico (old).
+
+## Rates hidden from Google (2026-11-18)
+- William: Jess doesn't want anyone to see her rates just by Googling her.
+- Public index.html now says "On request" for every price (TH: สอบถามราคา) and the
+  subtitle points to the email. The site itself stays on Google so brands can find her.
+- Old public (mid) rates moved to a new hidden page fkxm0t6.html. All three tier pages
+  are noindex. Send brands the tier link you want them to see.
+- Caveats: Google keeps the old snippet until it recrawls; use Search Console >
+  Removals > "Clear cached URL" to speed it up. The GitHub repo is PUBLIC, so the
+  tier pages and old commits with prices can be read there by anyone who looks;
+  making it private needs GitHub Pro for Pages. /collab (noindex) still shows the
+  mid rates to anyone with its link.
