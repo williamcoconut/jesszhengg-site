@@ -86,7 +86,7 @@
 
 ## 2026-11-14 clips on the main site
 - [x] Clips in hero and on the 8 work cards, tier pages rebuilt, committed locally
-- [ ] Push to main (live deploy). Waiting for William's OK. 3 local commits ahead
+- [x] Pushed live 2026-11-19
 - [ ] Confirm with Jess: were Vimut, Amari, GetYourGuide paid or hosted?
 - [ ] /collab still shows old stats (62K / 149K)
 - [ ] 100M+ views and 5.8% engagement are unverified
@@ -94,5 +94,5 @@
 
 ## 2026-11-18 rates off Google
 - [x] Public page shows "On request", new hidden mid tier fkxm0t6.html, committed locally
-- [ ] Push to main (goes live together with the unpushed revamp + clips)
+- [x] Pushed live 2026-11-19 (revamp + clips + rates hidden). Rollback tag: live-before-2026-11-19
 - [ ] After push: Search Console > Removals > clear cached URL for jesszheng.co

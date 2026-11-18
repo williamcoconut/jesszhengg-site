@@ -389,3 +389,8 @@
   tier pages and old commits with prices can be read there by anyone who looks;
   making it private needs GitHub Pro for Pages. /collab (noindex) still shows the
   mid rates to anyone with its link.
+
+## Rollback (2026-11-19)
+- Live before the revamp push = tag `live-before-2026-11-19` (also on GitHub).
+- To go back: `git revert --no-edit live-before-2026-11-19..main && git push` (keeps history).
+- Older looks: `pre-revamp-2026-11` (coral/cream), `pre-redesign-backup`.
